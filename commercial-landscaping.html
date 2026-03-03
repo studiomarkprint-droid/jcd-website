@@ -1851,7 +1851,8 @@
     }
 
     .feature .media {
-      width: 701px;
+      width: 100%;
+      max-width: 100%; max-width: 701px;
       height: 416px;
     }
 
@@ -2165,6 +2166,18 @@
     }
 
     @media (max-width: 768px) {
+
+      html,
+      body {
+        overflow-x: hidden;
+        width: 100%;
+        position: relative;
+      }
+
+      body {
+        padding-top: 52px;
+      }
+
       .site-header {
         padding: 4px 12px;
         height: 52px;
@@ -2188,6 +2201,9 @@
         letter-spacing: 0;
         font-weight: 700;
         white-space: nowrap;
+        max-width: 140px;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       .topbar-right {
@@ -2200,8 +2216,9 @@
 
       .music-player {
         width: auto;
-        flex: 1;
-        max-width: 180px;
+        flex: 0 1 auto;
+        min-width: 0;
+        max-width: 150px;
         margin-top: 0;
         padding: 0 4px;
         height: 32px;
@@ -2706,9 +2723,21 @@
       .mobile-nav-toggle {
         display: block;
         order: 2;
-        margin-left: 5px;
+        margin-left: 2px;
         color: var(--green-800);
-        font-size: 26px;
+        font-size: 22px;
+      }
+
+      /* Extreme mobile scaling */
+      @media (max-width: 480px) {
+        .brand-left .name {
+          font-size: 11px;
+          max-width: 110px;
+        }
+
+        .music-player {
+          max-width: 130px;
+        }
       }
 
       .hero {

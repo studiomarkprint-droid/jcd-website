@@ -57,7 +57,7 @@
       color: var(--color_2);
       background: var(--color_1);
       overflow-x: hidden;
-      
+
     }
 
     h1,
@@ -94,7 +94,7 @@
       padding-top: 20px;
     }
 
-        .site-header {
+    .site-header {
       position: fixed;
       top: 0;
       left: 0;
@@ -108,13 +108,13 @@
       padding: 10px 24px;
       box-sizing: border-box;
       transition: background-color 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
-    
-      }
+
+    }
 
     \.site-header.scrolled {
       background: #ffffff !important;
       padding: 2px 24px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
     }
 
     header,
@@ -131,7 +131,7 @@
       align-items: center;
       gap: 12px;
       height: 36px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease;
     }
 
@@ -177,7 +177,7 @@
       align-items: center;
       gap: 12px;
       height: 36px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease;
     }
 
@@ -233,7 +233,7 @@
       align-items: center;
       gap: 12px;
       height: 36px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease;
     }
 
@@ -274,31 +274,32 @@
       white-space: nowrap;
     }
 
-        .brand-left img {
+    .brand-left img {
       height: 66px;
       max-height: 100%;
       width: auto;
       object-fit: contain;
       display: block;
       transform: translateY(10px);
-      
+
     }
 
-    
 
-        .brand-left .name {
+
+    .brand-left .name {
       font-family: Inter, "Inter Fallback", sans-serif;
-      color: #1f2937;font-size: 17px;
+      color: #1f2937;
+      font-size: 17px;
       font-weight: 400;
       letter-spacing: .4px;
       text-transform: none;
       white-space: nowrap;
       margin-left: -38px;
       margin-top: 26px;
-      
+
     }
 
-    
+
 
     .topbar-right {
       display: flex;
@@ -308,7 +309,7 @@
       max-width: 420px;
     }
 
-    
+
 
     .hero .hero-video {
       position: absolute;
@@ -343,10 +344,10 @@
     /* Top overlay grid like Aubrey */
     .hero-top {
       padding-top: 100px;
-      
+
       width: min(1200px, calc(100% - 80px));
       margin: 0 auto;
-      
+
       display: grid;
       grid-template-columns: 1fr auto;
       grid-template-rows: auto auto;
@@ -1820,7 +1821,8 @@
     }
 
     .feature .media {
-      width: 701px;
+      width: 100%;
+      max-width: 701px;
       height: 416px;
     }
 
@@ -2186,8 +2188,8 @@
       }
 
       .hero-top {
-      padding-top: 100px;
-      
+        padding-top: 100px;
+
         grid-template-columns: 1fr;
       }
 
@@ -2356,7 +2358,7 @@
   </div>
   <!-- GSAP Preloader removed for AJAX compatibility -->
 
-  <header class="site-header" aria-label="Site Header" >
+  <header class="site-header" aria-label="Site Header">
     <div class="topbar">
       <div class="brand-left">
         <img src="Nueva%20carpeta%20con%20elementos%202/JCD-LOGO-HEAD.png"
@@ -2371,14 +2373,21 @@
             <i class="fa-solid fa-play"></i>
           </button>
           <div class="track">
-            <input class="progress" type="range" min="0" max="100" value="0" aria-label="Audio progress" id="volumeSlider">
-            <div class="time"><span class="current" id="timeDisplay">0:00</span> / <span class="duration">0:00</span></div>
+            <input class="progress" type="range" min="0" max="100" value="0" aria-label="Audio progress"
+              id="volumeSlider">
+            <div class="time"><span class="current" id="timeDisplay">0:00</span> / <span class="duration">0:00</span>
+            </div>
           </div>
           <audio class="audio" preload="metadata" loop id="bgMusic">
             <source src="Nueva%20carpeta%20con%20elementos%202/JCD-MUSIC.mp3" type="audio/mpeg">
           </audio>
         </div>
       </div>
+      <input class="progress" type="range" min="0" max="100" value="0" aria-label="Audio progress" id="volumeSlider">
+      <div class="time"><span class="current" id="timeDisplay">0:00</span> / <span class="duration">0:00</span>
+      </div>
+    </div>
+    </div>
     </div>
   </header>
   <!-- Floating -->
@@ -2443,7 +2452,7 @@
         <a class="cta-top" href="#estimate">Request Estimate</a>
       </div>
 
-        <div class="service-area">Serving Fairfield County Areas</div>
+      <div class="service-area">Serving Fairfield County Areas</div>
       <div class="phone">(475) 434-5969</div>
     </div>
 
@@ -2505,8 +2514,8 @@
         <h3>Request Estimate</h3>
 
         <form action="https://formsubmit.co/cristianemilmedranogarcia@gmail.com" method="POST">
-            <input type="hidden" name="_subject" value="Nuevo Presupuesto Solicitado - JCD Tree Service">
-            <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_subject" value="Nuevo Presupuesto Solicitado - JCD Tree Service">
+          <input type="hidden" name="_captcha" value="false">
           <div class="field">
             <label for="fullName">Full Name*</label>
             <input id="fullName" name="Nombre" placeholder="Full Name*" required />
@@ -3323,7 +3332,7 @@
       next.addEventListener('click', nextSlide);
     });
 
-    
+
 
     // Instagram modal (profile embed)
     const igWrapper = document.querySelector('.instagram-embed-wrapper');

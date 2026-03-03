@@ -1890,7 +1890,7 @@
     }
 
     .feature .media {
-      width: 701px;
+      width: 100%; max-width: 701px;
       height: 416px;
     }
 
@@ -2204,8 +2204,16 @@
     }
 
     @media (max-width: 768px) {
+
+      html,
       body {
-        padding-top: 60px;
+        overflow-x: hidden;
+        width: 100%;
+        position: relative;
+      }
+
+      body {
+        padding-top: 52px;
       }
 
       .site-header {
@@ -2231,6 +2239,9 @@
         letter-spacing: 0;
         font-weight: 700;
         white-space: nowrap;
+        max-width: 140px;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       .topbar-right {
@@ -2243,8 +2254,9 @@
 
       .music-player {
         width: auto;
-        flex: 1;
-        max-width: 180px;
+        flex: 0 1 auto;
+        min-width: 0;
+        max-width: 150px;
         margin-top: 0;
         padding: 0 4px;
         height: 32px;
@@ -2443,6 +2455,33 @@
 
       .feature .grid {
         gap: 20px;
+      }
+
+      .feature .media {
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto;
+      }
+
+      .reveal {
+        transform: translateY(30px) !important;
+        margin-bottom: 20px !important;
+      }
+
+      /* Extreme mobile scaling */
+      @media (max-width: 480px) {
+        .brand-left .name {
+          font-size: 11px;
+          max-width: 110px;
+        }
+
+        .music-player {
+          max-width: 130px;
+        }
+
+        .music-player .track-slider {
+          min-width: 30px;
+        }
       }
     }
 
