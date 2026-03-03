@@ -1,0 +1,3431 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JCD Tree Service & Landscaping</title>
+
+  <!-- Fonts (match Aubrey) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lexend:wght@300;400;500;600;700;800;900&family=Rubik:wght@300;400;500;600;700;800;900&family=Poppins:wght@400&family=Playfair+Display:wght@700;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+      --color_1: rgba(255, 255, 255, 1);
+      --color_2: rgba(0, 0, 0, 1);
+      --color_3: rgba(153, 153, 153, 1);
+      --color_4: rgba(25, 67, 47, 1);
+      --color_5: rgba(43, 92, 52, 1);
+      --color_6: rgba(241, 241, 241, 1);
+      --color_7: rgba(255, 200, 52, 1);
+      --color_8: rgba(227, 234, 170, 1);
+      --green-900: #163b2a;
+      --green-800: #1f4c35;
+      --green-700: #2a6044;
+      --green-600: #2f6b49;
+      --panel: #2c5e3c;
+      --mint: var(--color_8);
+      --mint-2: var(--color_8);
+      --cream: #f6f4ee;
+      --text: #0f172a;
+      --shadow: 0 3px 11px rgba(0, 0, 0, .25);
+      --shadow-soft: 0 3px 11px rgba(0, 0, 0, .25);
+      --radius: 20px;
+      --max: 1320px;
+      --hero-max: 1200px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      font-family: Rubik, "Rubik Fallback", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--color_2);
+      background: var(--color_1);
+      overflow-x: hidden;
+      padding-top: 40px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: Lexend, "Lexend Fallback", sans-serif;
+      font-weight: 700;
+      color: inherit;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      position: relative;
+      z-index: 0;
+      min-height: 100vh;
+      overflow: visible;
+      isolation: isolate;
+      background: #0b1220;
+      padding: 0;
+      margin-top: 0;
+      padding-top: 20px;
+    }
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: auto;
+      background: #ffffff !important;
+      border-bottom: none !important;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      padding: 2px 24px;
+      box-sizing: border-box;
+    }
+
+    header,
+    .site-header,
+    .topbar {
+      background: #ffffff !important;
+    }
+
+    .site-header * {
+      box-shadow: none !important;
+    }
+
+    .topbar {
+      width: min(1200px, calc(100% - 24px));
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      height: 100%;
+    }
+
+    .brand-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      white-space: nowrap;
+    }
+
+    .brand-left img {
+      height: 66px;
+      max-height: 100%;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      transform: translateY(10px);
+    }
+
+    .brand-left .name {
+      font-family: Inter, "Inter Fallback", sans-serif;
+      color: #1f2937;
+      font-size: 17px;
+      font-weight: 400;
+      letter-spacing: .4px;
+      text-transform: none;
+      white-space: nowrap;
+      margin-left: -38px;
+      margin-top: 26px;
+    }
+
+    .topbar-right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: min(420px, 42vw);
+      max-width: 420px;
+    }
+
+    .music-player {
+      position: static;
+      background: #ffffff !important;
+      border: none !important;
+      border-radius: 16px;
+      box-shadow: none !important;
+      padding: 0 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      height: 32px;
+      position: relative;
+      overflow: hidden;
+      margin-top: 16px;
+    }
+
+    .music-player button {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, .65);
+      background: var(--green-800);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: transform .18s ease, opacity .18s ease;
+      box-shadow: 0 0 0 3px rgba(227, 234, 170, .9), 0 10px 18px rgba(0, 0, 0, .18);
+    }
+
+    .music-player button:hover {
+      transform: translateY(-1px);
+      opacity: .95;
+    }
+
+    .music-player button:active {
+      transform: translateY(0) scale(.98);
+    }
+
+    .music-player .track {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .music-player .progress {
+      width: 100%;
+    }
+
+    .music-player .time {
+      font-size: 12px;
+      color: #374151;
+      text-align: right;
+      letter-spacing: .2px;
+      white-space: nowrap;
+      padding-left: 4px;
+    }
+
+    .music-player input[type="range"] {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 4px;
+      background: rgba(15, 23, 42, .12);
+      border-radius: 999px;
+      outline: none;
+    }
+
+    .music-player input[type="range"]::-webkit-slider-runnable-track {
+      height: 4px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #1f4d36, #6fb07d);
+    }
+
+    .music-player input[type="range"]::-moz-range-track {
+      height: 4px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #1f4d36, #6fb07d);
+    }
+
+    .music-player input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #1f4d36;
+      cursor: pointer;
+      border: 2px solid #fff;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+    }
+
+    .music-player input[type="range"]::-moz-range-thumb {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #1f4d36;
+      cursor: pointer;
+      border: 2px solid #fff;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+    }
+
+    .music-player .eq {
+      width: 16px;
+      height: 16px;
+      display: inline-grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-left: 2px;
+    }
+
+    .music-player .eq span {
+      width: 100%;
+      height: 100%;
+      background: #1f4d36;
+      border-radius: 2px;
+      transform-origin: bottom;
+      opacity: .75;
+    }
+
+    .music-player.playing .eq span:nth-child(1) {
+      animation: eq 0.9s ease-in-out infinite;
+    }
+
+    .music-player.playing .eq span:nth-child(2) {
+      animation: eq 1.1s ease-in-out infinite;
+    }
+
+    .music-player.playing .eq span:nth-child(3) {
+      animation: eq 0.8s ease-in-out infinite;
+    }
+
+    @keyframes eq {
+
+      0%,
+      100% {
+        transform: scaleY(.35);
+      }
+
+      50% {
+        transform: scaleY(1);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .music-player .progress {
+        width: 100%;
+      }
+
+      .music-player .track {
+        min-width: 0;
+        flex: 1;
+      }
+    }
+
+    .hero .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, .55), rgba(0, 0, 0, .40));
+      z-index: 0;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .hero>* {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Top overlay grid like Aubrey */
+    .hero-top {
+      width: min(1200px, calc(100% - 80px));
+      margin: 0 auto;
+      padding: 28px 0 0;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-rows: auto auto;
+      column-gap: 18px;
+      row-gap: 6px;
+      align-items: start;
+    }
+
+    .rating-area {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .rating {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .rating>div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .rating .score {
+      font-size: 38px;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--color_7);
+    }
+
+    .rating .stars {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      margin-top: 0;
+    }
+
+    .rating .stars svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .rating .stars i {
+      color: var(--color_7);
+      font-size: 16px;
+    }
+
+    .rating .reviews {
+      margin-left: 0;
+      margin-top: 4px !important;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent !important;
+      border: 0 !important;
+      padding: 0 !important;
+      border-radius: 0 !important;
+      color: #fff !important;
+      font-size: 13px !important;
+      font-weight: 700 !important;
+      line-height: 1 !important;
+    }
+
+    .rating .reviews .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent !important;
+      border: 0 !important;
+      padding: 0 !important;
+      border-radius: 0 !important;
+      color: #fff !important;
+      text-decoration: underline !important;
+      text-decoration-thickness: 2px !important;
+      text-underline-offset: 6px !important;
+    }
+
+    .service-area {
+      margin-top: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.35;
+      grid-column: 1;
+      grid-row: 2;
+      color: var(--color_1);
+    }
+
+    .top-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+      padding-top: 0;
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    .cta-top {
+      background: var(--color_8);
+      color: #134029;
+      border: 1px solid rgba(255, 255, 255, .35);
+      border-radius: 10px;
+      padding: 9px 16px;
+      min-width: 260px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 15.5px;
+      box-shadow: none;
+      cursor: pointer;
+      transition: background-color .2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .cta-top::before {
+      content: "\f005";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+    }
+
+    .cta-top:hover {
+      background: var(--color_8);
+    }
+
+    .phone {
+      margin-top: 2px;
+      font-weight: 700;
+      font-size: 14px;
+      grid-column: 2;
+      grid-row: 2;
+      text-align: right;
+      color: var(--color_1);
+    }
+
+    /* Center logo + name like Aubrey */
+    .brand {
+      width: min(var(--hero-max), 100%);
+      margin: -35px auto 10px;
+      padding-top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 6px;
+      text-align: center;
+      transform: translateY(-12px);
+    }
+
+    .brand .logo {
+      width: 180px;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin-top: -55px;
+    }
+
+    .brand .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .brand .logo img {
+      width: auto;
+      height: 180px;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* Simple “leaf” logo placeholder (you can replace with your PNG) */
+    .leaf {
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle at 30% 30%, #d7f0a5, #77b64b 65%, #3f7f2f);
+      clip-path: polygon(6% 54%, 20% 28%, 42% 10%, 66% 8%, 88% 24%, 94% 44%, 78% 52%, 86% 66%, 66% 62%, 56% 74%, 44% 64%, 26% 76%, 22% 60%);
+      border: 2px solid rgba(255, 255, 255, .75);
+      border-radius: 18px;
+      position: relative;
+    }
+
+    .leaf::after {
+      content: "JCD";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      color: #1a4f33;
+      letter-spacing: 0;
+    }
+
+    .brand .name {
+      font-family: Lexend, "Lexend Fallback", serif;
+      font-weight: 700;
+      font-size: 40px;
+      letter-spacing: .6px;
+      color: #ffffff;
+      text-shadow:
+        0 3px 0 rgba(0, 0, 0, .55),
+        0 10px 22px rgba(0, 0, 0, .55);
+      -webkit-text-stroke: 2px rgba(255, 255, 255, .70);
+      paint-order: stroke fill;
+      line-height: 1.05;
+      margin-top: -18px;
+      margin-bottom: 20px;
+    }
+
+    /* Navigation bar */
+    .nav {
+      width: min(var(--hero-max), calc(100% - 80px));
+      margin: -4px auto 0;
+      padding: 6px 0 6.8px;
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      align-items: center;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: .2px;
+      color: var(--color_1);
+      position: relative;
+      z-index: 50;
+    }
+
+    .nav a {
+      position: relative;
+      padding: 0 6px;
+      opacity: 1;
+      transition: transform .18s ease, color .18s ease;
+    }
+
+    .nav a:hover {
+      transform: translateY(-1px);
+    }
+
+    .nav a .caret {
+      opacity: 1;
+      margin-left: 6px;
+      font-size: 14px;
+    }
+
+    .nav a.active::after {
+      content: "";
+      position: absolute;
+      left: 8px;
+      right: 8px;
+      bottom: 0px;
+      height: 3px;
+      background: rgba(255, 255, 255, .85);
+      border-radius: 999px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, .25);
+      transform: scaleX(1);
+      opacity: 1;
+    }
+
+    .nav a::after {
+      content: "";
+      position: absolute;
+      left: 8px;
+      right: 8px;
+      bottom: 0px;
+      height: 3px;
+      background: rgba(255, 255, 255, .85);
+      border-radius: 999px;
+      transform: scaleX(0);
+      opacity: 0;
+      transition: transform .22s ease, opacity .22s ease;
+    }
+
+    .nav a:hover::after {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+
+    .nav a .caret {
+      display: inline-block;
+      transition: transform .2s ease;
+    }
+
+    .nav a:hover .caret {
+      transform: translateY(1px) rotate(180deg);
+    }
+
+    /* Submenu Styles */
+    .nav .dropdown-item {
+      position: relative;
+      display: inline-block;
+    }
+
+    .nav .sub-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--green-900);
+      min-width: 260px;
+      padding: 0;
+      border-top: 2px solid var(--color_8);
+      border-radius: 0 0 8px 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: transform 0., opacity 0.3s ease;
+      z-index: 1000;
+    }
+
+    .nav .dropdown-item:hover .sub-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .nav .sub-menu a {
+      display: block;
+      color: rgba(255, 255, 255, 0.9);
+      padding: 10px 24px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      white-space: nowrap;
+      border-left: 4px solid transparent;
+      transition: transform 0., opacity 0.1s ease;
+      text-align: left;
+    }
+
+    /* Efecto Hover IDÉNTICO a Aubrey: Fondo Blanco Sólido + Texto Oscuro */
+    .nav .sub-menu a:hover {
+      background: #ffffff !important;
+      /* BLANCO PURO (No transparente) */
+      color: var(--green-900) !important;
+      /* TEXTO VERDE OSCURO (Para contraste) */
+      border-left: 5px solid var(--color_8);
+      /* LÍNEA LATERAL MÁS GRUESA */
+      transform: none !important;
+      /* CERO MOVIMIENTO */
+    }
+
+    .nav .sub-menu a::after {
+      display: none;
+    }
+
+    /* Hero main content (left headline + right form) */
+    .hero-main {
+      width: min(var(--hero-max), 100%);
+      margin: 0 auto;
+      padding: 60px 40px;
+      display: grid;
+      grid-template-columns: 62% 38%;
+      gap: 0;
+      align-items: start;
+      color: var(--color_1);
+    }
+
+    .hero-copy {
+      will-change: transform, opacity;
+      max-width: 560px;
+      margin: 42px auto 0;
+      padding: 0;
+      text-align: left;
+      margin-left: -40px;
+      font-family: Lexend, "Lexend Fallback", sans-serif;
+      font-weight: 700;
+    }
+
+    .hero-copy h1 {
+      margin: 0;
+      font-family: Lexend, "Lexend Fallback", sans-serif;
+      font-size: 30px;
+      line-height: 1.12;
+      letter-spacing: -0.01em;
+      font-weight: 700;
+      color: var(--color_1);
+      text-shadow: 0 2px 10px rgba(0, 0, 0, .35);
+    }
+
+    .hero-copy h1 .line {
+      display: block;
+      margin-top: 0;
+    }
+
+    .hero-copy .subline {
+      margin-top: 16px;
+      font-family: Lexend, "Lexend Fallback", sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.6;
+      letter-spacing: 0.01em;
+      opacity: 0.95;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, .25);
+      text-align: left;
+      margin-left: 12px;
+      color: var(--color_1);
+    }
+
+    /* Estimate form panel (right) */
+    .estimate {
+      background: rgba(43, 92, 52, .8);
+      border: 1px solid rgba(255, 255, 255, .3);
+      border-radius: var(--radius);
+      box-shadow: none;
+      padding: 0 0 20px;
+      backdrop-filter: none;
+      width: 340px;
+      max-width: 100%;
+      margin-left: auto;
+      margin-top: 24px;
+      justify-self: end;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .estimate h3 {
+      margin: 24px auto 0;
+      text-align: center;
+      font-family: Lexend, "Lexend Fallback", sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.95;
+      width: 280px;
+      max-width: 100%;
+      padding: 2px 0 0;
+      color: var(--color_1);
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 14px;
+      font-weight: 700;
+      font-size: 15px;
+      opacity: 1;
+      color: var(--color_1);
+      width: 280px;
+      max-width: 100%;
+    }
+
+    .field label {
+      display: none;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      background: var(--color_1);
+      border: 0;
+      border-radius: 8px;
+      padding: 10px;
+      outline: none;
+      font-size: 15px;
+      font-weight: 500;
+      box-shadow: none;
+      color: var(--color_2);
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder {
+      color: #6b7280;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(227, 234, 170, .6);
+    }
+
+    .field textarea {
+      min-height: 92px;
+      resize: vertical;
+    }
+
+    .estimate .btn {
+      margin: 16px auto 0;
+      width: 250px;
+      height: 45px;
+      border: 0;
+      background: var(--color_8);
+      color: var(--color_2);
+      font-family: Lexend, "Lexend Fallback", sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: none;
+      transition: background-color .2s ease;
+    }
+
+    .estimate .btn:hover {
+      filter: brightness(1.05);
+    }
+
+    .estimate .tiny {
+      margin-top: 10px;
+      font-size: 12px;
+      opacity: .85;
+      line-height: 1.4;
+      color: var(--color_1);
+      width: 280px;
+      max-width: 100%;
+    }
+
+    /* Right vertical quick actions */
+    .side-actions {
+      position: fixed;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #dce2b3;
+      border-radius: 8px;
+      box-shadow: var(--shadow-soft);
+      overflow: visible;
+      z-index: 50;
+      transition: opacity .2s ease, transform .2s ease;
+    }
+
+    .side-actions.is-hidden {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-50%) scale(0.98);
+      transition: opacity .2s ease, transform .2s ease;
+    }
+
+    .side-actions a {
+      display: grid;
+      place-items: center;
+      width: 52px;
+      height: 52px;
+      color: #134029;
+      border-bottom: 1px solid rgba(0, 0, 0, .14);
+      transition: background .2s ease, transform .2s ease;
+    }
+
+    .side-actions a:last-child {
+      border-bottom: 0;
+    }
+
+    .side-actions a:hover {
+      background: #cfd59f;
+      transform: translateX(-2px);
+    }
+
+    .side-actions i {
+      font-size: 18px;
+    }
+
+    /* Phone tooltip styles */
+    .phone-container {
+      position: relative;
+      border-bottom: 1px solid rgba(0, 0, 0, .14);
+    }
+
+    #phoneBtn {
+      display: grid;
+      place-items: center;
+      width: 52px;
+      height: 52px;
+      color: #134029;
+      border-bottom: 0;
+      transition: background .2s ease, transform .2s ease;
+    }
+
+    #phoneBtn:hover {
+      background: #cfd59f;
+      transform: translateX(-2px);
+    }
+
+    .phone-tooltip {
+      position: absolute;
+      right: 100%;
+      top: 50%;
+      transform: translateY(-50%) translateX(10px);
+      background: #dce2b3;
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .2);
+      padding: 10px 16px;
+      margin-right: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #134029;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .3s ease, visibility .3s ease, transform .3s ease;
+      z-index: 100;
+    }
+
+    .phone-tooltip.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(-50%) translateX(0);
+    }
+
+    /* Share menu styles */
+    .share-container {
+      position: relative;
+      border-bottom: 1px solid rgba(0, 0, 0, .14);
+    }
+
+    .share-container:last-child {
+      border-bottom: 0;
+    }
+
+    #shareBtn {
+      display: grid;
+      place-items: center;
+      width: 52px;
+      height: 52px;
+      color: #134029;
+      border-bottom: 0;
+      transition: background .2s ease, transform .2s ease;
+    }
+
+    #shareBtn:hover {
+      background: #cfd59f;
+      transform: translateX(-2px);
+    }
+
+    .share-menu {
+      position: absolute;
+      right: 100%;
+      top: 50%;
+      transform: translateY(-50%) translateX(10px);
+      background: #dce2b3;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .2);
+      min-width: 260px;
+      margin-right: 12px;
+      padding: 16px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .3s ease, visibility .3s ease, transform .3s ease;
+      z-index: 100;
+    }
+
+    .share-menu.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(-50%) translateX(0);
+    }
+
+    .share-header {
+      font-size: 14px;
+      font-weight: 600;
+      color: #134029;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .share-options-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .share-option {
+      display: flex !important;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 12px 8px;
+      color: #134029;
+      text-decoration: none;
+      background: rgba(255, 255, 255, .4);
+      border-radius: 8px;
+      transition: background .2s ease, transform .2s ease;
+      width: 100% !important;
+      height: auto !important;
+      border: 0 !important;
+    }
+
+    .share-option:hover {
+      background: #cfd59f;
+      transform: translateY(-2px) !important;
+    }
+
+    .share-option i {
+      font-size: 24px;
+      margin-bottom: 2px;
+    }
+
+    .share-option span {
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    .share-link-section {
+      display: flex;
+      gap: 8px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(0, 0, 0, .1);
+    }
+
+    #shareLinkInput {
+      flex: 1;
+      padding: 8px 12px;
+      background: rgba(255, 255, 255, .6);
+      border: 1px solid rgba(0, 0, 0, .1);
+      border-radius: 6px;
+      font-size: 12px;
+      color: #134029;
+      outline: none;
+    }
+
+    #copyShareLink {
+      padding: 8px 12px;
+      background: rgba(255, 255, 255, .4);
+      border: 1px solid rgba(0, 0, 0, .1);
+      border-radius: 6px;
+      color: #134029;
+      cursor: pointer;
+      transition: background .2s ease, transform .2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #copyShareLink:hover {
+      background: #cfd59f;
+      transform: scale(1.05);
+    }
+
+    #copyShareLink i {
+      font-size: 14px;
+    }
+
+    /* Accessibility button (bottom-left) */
+    .access {
+      position: fixed;
+      left: 12px;
+      bottom: 12px;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #1976d2;
+      display: grid;
+      place-items: center;
+      box-shadow: var(--shadow-soft);
+      z-index: 60;
+    }
+
+    .access i {
+      color: #fff;
+      font-size: 22px;
+    }
+
+    /* ========== SECTIONS (below) ========== */
+    .section {
+      background: #fff;
+      color: #0b1220;
+      padding: 64px 0;
+    }
+
+    #about {
+      background: #ffffff;
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 64px));
+      margin: 0 auto;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1.12fr;
+      gap: 48px;
+      align-items: flex-start;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid rgba(15, 23, 42, .12);
+      border-radius: 18px;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, .10);
+      overflow: hidden;
+    }
+
+    .card .card-head {
+      padding: 18px 18px 0;
+      font-weight: 900;
+      color: #0b1220;
+    }
+
+    .card .card-body {
+      padding: 18px;
+      color: #0f172a;
+      line-height: 1.6;
+    }
+
+    .reviews-section {
+      background: #f8faf9;
+      padding: 80px 0;
+    }
+
+    .reviews-section .wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .reviews-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .reviews-head h2 {
+      margin: 0 0 12px;
+      font-size: 42px;
+      font-weight: 800;
+      color: #0b1220;
+      letter-spacing: -0.5px;
+    }
+
+    .reviews-head .muted {
+      margin: 0;
+      color: #4b5563;
+      font-size: 16px;
+      line-height: 1.6;
+      max-width: 500px;
+    }
+
+    .reviews-rating {
+      background: #ffffff;
+      border: 1px solid rgba(15, 23, 42, .08);
+      border-radius: 16px;
+      padding: 20px 28px;
+      text-align: center;
+      min-width: 240px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .reviews-rating .score-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .reviews-rating .score {
+      font-size: 48px;
+      font-weight: 900;
+      color: #0b1220;
+      line-height: 1;
+    }
+
+    .stars {
+      color: #f59e0b;
+      font-size: 14px;
+      letter-spacing: 1px;
+      margin-top: 8px;
+    }
+
+    .reviews-rating .stars {
+      font-size: 18px;
+      letter-spacing: 2px;
+      margin-top: 0;
+    }
+
+    .reviews-rating .count {
+      font-size: 14px;
+      font-weight: 500;
+      color: #6b7280;
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .review-card {
+      background: #ffffff;
+      border: 1px solid rgba(15, 23, 42, .05);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .review-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .review-card .quote-icon {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      color: #f3f4f6;
+      font-size: 32px;
+      pointer-events: none;
+    }
+
+    .review-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .review-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #1f3d2b;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .review-header-text {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      text-align: left;
+    }
+
+    .review-card .name {
+      font-weight: 800;
+      margin: 0;
+      font-size: 16px;
+      color: #0b1220;
+    }
+
+    .review-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #6b7280;
+      font-size: 13px;
+    }
+
+    .review-stars {
+      color: #f59e0b;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    .review-source {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+      color: #1f3d2b;
+      background: rgba(31, 61, 43, 0.05);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+    }
+
+    .review-card p {
+      margin: 0;
+      color: #374151;
+      line-height: 1.8;
+      font-size: 15px;
+      font-style: italic;
+      position: relative;
+      z-index: 1;
+    }
+
+    .reviews-cta {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .reviews-cta .btn {
+      border: 2px solid rgba(15, 23, 42, .1);
+      background: #ffffff;
+      color: #0b1220;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 12px 28px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: transform 0., opacity 0.2s ease;
+    }
+
+    .reviews-cta .btn.primary {
+      background: #1f3d2b;
+      border-color: #1f3d2b;
+      color: #fff;
+    }
+
+    .reviews-cta .btn:hover {
+      border-color: #1f3d2b;
+      color: #1f3d2b;
+    }
+
+    .reviews-cta .btn.primary:hover {
+      background: #163021;
+      border-color: #163021;
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(22, 48, 33, 0.2);
+    }
+
+    .about-values {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      margin-top: 16px;
+      justify-content: center;
+    }
+
+    .about-values span {
+      border: 1px solid rgba(15, 23, 42, .12);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-weight: 600;
+      font-size: 13px;
+      background: #fff;
+    }
+
+    /* Hide Elfsight Admin Header & Free Badges */
+    [class*="eapp-google-reviews-header-admin-panel"],
+    [class*="WidgetBackground__AdminPanelContainer"],
+    [class*="AdminPanel__Container"],
+    [class*="WidgetBackground__Container"]>a,
+    [class*="eapps-link"] {
+      display: none !important;
+    }
+
+    .fb-embed {
+      width: 100%;
+      max-width: 620px;
+      background: #fff;
+      border-radius: 0;
+      overflow: hidden;
+      box-shadow: none;
+    }
+
+    .fb-embed iframe {
+      display: block;
+      width: 100%;
+      border: 0;
+      border-radius: 0;
+    }
+
+    .fb-embed img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .card,
+    .card-left,
+    .social-card {
+      border-radius: 0;
+    }
+
+    #about .card {
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      padding: 0;
+    }
+
+    .social-left,
+    .left-panel,
+    .fb-wrapper,
+    .facebook-container {
+      background: transparent !important;
+      padding: 0 !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+
+    .hero-secondary,
+    .section-services,
+    .section-split,
+    .section-white {
+      background: #ffffff !important;
+    }
+
+    .fake-social {
+      height: 360px;
+      background:
+        linear-gradient(135deg, rgba(22, 59, 42, .88), rgba(22, 59, 42, .68)),
+        url("https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 18px;
+      color: #fff;
+    }
+
+    .fake-social .row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      font-weight: 800;
+    }
+
+    .fake-social .row .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #7ddc8c;
+      box-shadow: 0 0 0 6px rgba(125, 220, 140, .18);
+    }
+
+    .fake-social .meta {
+      margin-top: 10px;
+      font-size: 14px;
+      opacity: .92;
+      line-height: 1.4;
+    }
+
+    .h2 {
+      font-size: 34px;
+      margin: 0 0 12px;
+      color: #0b1220;
+      letter-spacing: .2px;
+    }
+
+    .p {
+      margin: 0;
+      color: #111827;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .services-list {
+      margin-top: 22px;
+      border-top: 1px solid rgba(15, 23, 42, .12);
+      padding-top: 18px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 16px;
+      color: #0b1220;
+      font-weight: 800;
+    }
+
+    .services-list a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(15, 23, 42, .10);
+      background: #fafafa;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+
+    .services-list a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 18px rgba(0, 0, 0, .10);
+    }
+
+    .services-list i {
+      color: var(--green-700);
+    }
+
+    .big-green-section {
+      background: #1f4d36;
+      width: 100%;
+      padding: 48px 24px 40px;
+    }
+
+    .green-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+      color: #fff;
+    }
+
+    .green-content h2 {
+      font-family: "Poppins", sans-serif;
+      font-size: clamp(28px, 3.2vw, 38px);
+      font-weight: 700;
+      line-height: 1.12;
+      margin: 0 0 16px;
+    }
+
+    .green-content p {
+      max-width: 820px;
+      margin: 0 auto 22px;
+      font-size: 16px;
+      line-height: 1.7;
+      opacity: .95;
+    }
+
+    .green-btn {
+      display: inline-block;
+      padding: 14px 34px;
+      background: #c7d7a5;
+      color: #1f4d36;
+      font-weight: 700;
+      border-radius: 12px;
+      text-decoration: none;
+      margin-bottom: 22px;
+      letter-spacing: .2px;
+    }
+
+    .green-icons {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 28px;
+    }
+
+    .green-icons div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .green-icons img {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 10px;
+      filter: brightness(0) invert(1);
+    }
+
+    .green-icons div {
+      transition: transform .4s ease;
+    }
+
+    .green-icons img {
+      transition: transform .4s ease;
+    }
+
+    .green-icons div:hover {
+      transform: translateY(-3px);
+    }
+
+    .green-icons div:hover img {
+      transform: scale(1.05);
+    }
+
+    .green-icons div,
+    .green-icons img,
+    .green-icons div:hover,
+    .green-icons div:hover img {
+      transition: none;
+      transform: none;
+    }
+
+    .green-icons span {
+      font-size: 13px;
+      line-height: 1.35;
+      text-align: center;
+    }
+
+    .social-section {
+      padding: 80px 0;
+      background: #ffffff;
+    }
+
+    .social-section {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      max-width: 1200px;
+      margin: 120px auto 0;
+      padding-bottom: 0;
+    }
+
+    .social-card {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .instagram-card {
+      flex: 1.15;
+      min-width: 420px;
+      min-height: unset;
+      height: auto;
+      padding-bottom: 0;
+    }
+
+    .facebook-card {
+      flex: 1.35;
+    }
+
+    .social-card iframe {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .instagram-card iframe {
+      width: 100%;
+      min-height: 520px;
+      display: block;
+      margin-bottom: 0;
+    }
+
+    .social-grid {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 48px;
+      align-items: flex-start;
+    }
+
+    .social-box {
+      background: #ffffff;
+    }
+
+    .facebook-box {
+      width: 100%;
+      max-width: 720px;
+      justify-self: end;
+    }
+
+    .facebook-box iframe {
+      width: 100% !important;
+      min-width: 100% !important;
+    }
+
+    .instagram-box {
+      max-width: 420px;
+    }
+
+    .instagram-box iframe {
+      width: 100%;
+      height: 850px;
+      border-radius: 12px;
+    }
+
+    .instagram-embed-wrapper {
+      cursor: pointer;
+    }
+
+    .ig-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .ig-modal-content {
+      background: #fff;
+      max-width: 1100px;
+      width: 90%;
+      padding: 20px;
+      border-radius: 12px;
+      position: relative;
+    }
+
+    .ig-modal iframe {
+      width: 100%;
+      height: 760px;
+      border-radius: 10px;
+    }
+
+    .ig-close {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      font-size: 28px;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    @media (max-width: 980px) {
+      .green-icons {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .social-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .instagram-box iframe {
+        height: 600px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .big-green-section {
+        padding: 36px 18px 30px;
+      }
+
+      .green-icons {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .social-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .facebook-box,
+      .instagram-box {
+        max-width: 100%;
+      }
+    }
+
+    #reviews,
+    .reviews-section,
+    .social-section {
+      margin-bottom: 0 !important;
+      padding-bottom: 0 !important;
+    }
+
+    /* Alternating feature sections */
+    .feature {
+      padding: 66px 0;
+    }
+
+    .feature.white {
+      background: #fff;
+      color: #0b1220;
+    }
+
+    .feature.green {
+      background: linear-gradient(135deg, #1f4c35, #245b3f 60%, #1f4c35);
+      color: #fff;
+    }
+
+    .feature .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .feature .title {
+      font-family: "Poppins", sans-serif;
+      font-size: 34px;
+      margin: 0 0 14px;
+      font-weight: 400;
+      letter-spacing: .2px;
+    }
+
+    .feature .desc {
+      font-family: Arial, sans-serif;
+      font-weight: 400;
+      margin: 0 0 20px;
+      line-height: 1.7;
+      font-size: 16px;
+      opacity: .95;
+    }
+
+    .feature .service-tags {
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      margin-top: 10px;
+      font-size: 13px;
+      letter-spacing: .3px;
+      opacity: .75;
+    }
+
+    .feature .learn {
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 300px;
+      padding: 14px 18px;
+      border-radius: 10px;
+      font-weight: 900;
+      cursor: pointer;
+      border: 0;
+      box-shadow: var(--shadow-soft);
+      transition: transform .2s ease, filter .2s ease;
+    }
+
+    .feature.white .learn {
+      background: var(--green-900);
+      color: #fff;
+    }
+
+    .feature.green .learn {
+      background: var(--mint);
+      color: #134029;
+    }
+
+    .feature .learn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.03);
+    }
+
+    .media {
+      border-radius: 0;
+      overflow: hidden;
+      box-shadow: 0 18px 44px rgba(0, 0, 0, .18);
+      border: 1px solid rgba(0, 0, 0, .10);
+      position: relative;
+      min-height: 290px;
+      line-height: 0;
+    }
+
+    .feature .media {
+      width: 701px;
+      height: 416px;
+    }
+
+    .feature .media {
+      overflow: hidden;
+      background: transparent;
+    }
+
+    .emergency-media {
+      height: 446px;
+    }
+
+    .media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .carousel {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform .6s ease;
+      will-change: transform;
+      transform: translate3d(0, 0, 0);
+    }
+
+    .carousel-slide {
+      flex: 0 0 100%;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 0;
+      background: rgba(0, 0, 0, .55);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .carousel-btn:hover {
+      background: rgba(0, 0, 0, .7);
+    }
+
+    .carousel-btn.prev {
+      left: 12px;
+    }
+
+    .carousel-btn.next {
+      right: 12px;
+    }
+
+    .media {
+      transition: transform .4s ease;
+      overflow: hidden;
+    }
+
+    .media img {
+      transition: transform .4s ease;
+    }
+
+    .media:hover {
+      transform: translateY(-4px);
+    }
+
+    .media:hover img {
+      transform: scale(1);
+    }
+
+    @media (hover:hover) and (pointer:fine) {
+      .services-list a {
+        transition: transform .4s ease;
+      }
+
+      .services-list a:hover {
+        transform: translateY(-4px);
+      }
+    }
+
+    .media .play {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      pointer-events: none;
+    }
+
+    .media .play span {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .92);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 14px 26px rgba(0, 0, 0, .25);
+    }
+
+    .media .play i {
+      color: #0b1220;
+      font-size: 34px;
+      margin-left: 4px;
+    }
+
+    /* Learn more about + footer */
+    .about-band {
+      background: linear-gradient(135deg, #1f4c35, #2a6044);
+      color: #fff;
+      padding: 66px 0 52px;
+    }
+
+    .about-band .grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 26px;
+      align-items: center;
+    }
+
+    .about-band h3 {
+      margin: 0 0 12px;
+      font-size: 34px;
+      font-weight: 900;
+    }
+
+    .about-band p {
+      margin: 0 0 18px;
+      line-height: 1.7;
+      opacity: .95;
+    }
+
+    .watch {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 300px;
+      padding: 14px 18px;
+      border-radius: 10px;
+      font-weight: 900;
+      background: var(--mint);
+      color: #134029;
+      border: 2px solid rgba(255, 255, 255, .25);
+      cursor: pointer;
+      box-shadow: var(--shadow-soft);
+      transition: transform .2s ease, filter .2s ease;
+    }
+
+    .watch:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.03);
+    }
+
+    .footer {
+      background: var(--green-900);
+      color: #fff;
+      padding: 52px 0 34px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 38px;
+    }
+
+    .footer h4 {
+      margin: 0 0 14px;
+      font-weight: 900;
+      letter-spacing: 1.2px;
+    }
+
+    .footer .line {
+      width: 34px;
+      height: 3px;
+      background: rgba(255, 255, 255, .45);
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+
+    .footer p,
+    .footer a {
+      margin: 0;
+      line-height: 1.9;
+      opacity: .95;
+      font-weight: 600;
+      display: block;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer .social {
+      margin-top: 10px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      opacity: .95;
+    }
+
+    .footer .social i {
+      font-size: 20px;
+    }
+
+    .legal {
+      background: #fff;
+      color: #6b7280;
+      font-size: 12px;
+      padding: 14px 0 20px;
+      text-align: center;
+    }
+
+    /* ========== TRANSITIONS ========== */
+    .reveal {
+      will-change: transform, opacity;
+      opacity: 0;
+      transform: translateY(60px);
+      filter: blur(2.5px);
+      will-change: transform, opacity, filter;
+      transition:
+        opacity 1200ms cubic-bezier(0.16, 1, 0.3, 1),
+        transform 1200ms cubic-bezier(0.16, 1, 0.3, 1),
+        filter 1200ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: none;
+      filter: blur(0);
+    }
+
+    .reveal.left {
+      transform: translateX(-70px);
+    }
+
+    .reveal.right {
+      transform: translateX(70px);
+    }
+
+    .reveal.left.in,
+    .reveal.right.in {
+      transform: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        will-change: transform, opacity;
+        transition: none;
+        opacity: 1;
+        transform: none;
+        filter: none;
+      }
+
+      .reveal.in {
+        opacity: 1;
+        transform: none;
+        filter: none;
+      }
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 1100px) {
+      .hero {
+        background-attachment: scroll;
+      }
+
+      .rating .score {
+        font-size: 54px;
+      }
+
+      .cta-top {
+        min-width: 250px;
+      }
+
+      .hero-main {
+        grid-template-columns: 1fr;
+      }
+
+      .estimate {
+        margin: 24px auto 0;
+      }
+
+      .two-col,
+      .feature .grid,
+      .about-band .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .side-actions {
+        top: auto;
+        bottom: 92px;
+        transform: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-copy h1 {
+        font-size: 34px;
+        line-height: 1.12;
+      }
+
+      .hero-copy .subline {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .nav {
+        gap: 26px;
+      }
+
+      .nav a {
+        padding: 0 6px;
+      }
+
+      .nav a::after,
+      .nav a.active::after {
+        left: 6px;
+        right: 6px;
+      }
+
+      .review-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .reviews-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .careers-section .wrap {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 640px) {
+
+      .hero-top,
+      .brand,
+      .nav,
+      .hero-main,
+      .wrap {
+        width: calc(100% - 40px);
+      }
+
+      .hero-top {
+        grid-template-columns: 1fr;
+      }
+
+      .rating-area,
+      .top-actions,
+      .service-area,
+      .phone {
+        grid-column: 1;
+      }
+
+      .phone {
+        text-align: left;
+      }
+
+      .nav {
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      .rating-area {
+        flex-direction: column;
+      }
+
+      .cta-top {
+        min-width: unset;
+        width: 100%;
+      }
+
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .brand {
+        margin-top: -28px;
+        transform: translateY(-6px);
+      }
+    }
+
+
+    /* ===== JCD: About / Facebook + Right Text match reference (white, square, centered) ===== */
+    #about,
+    #about * {
+      box-sizing: border-box;
+    }
+
+    #about {
+      background: #fff !important;
+    }
+
+    #about .wrap {
+      width: min(var(--max), calc(100% - 120px));
+    }
+
+    @media (max-width: 900px) {
+      #about .wrap {
+        width: calc(100% - 40px);
+      }
+    }
+
+    /* Layout */
+    #about .two-col {
+      gap: 48px;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      #about .two-col {
+        gap: 32px;
+      }
+    }
+
+    /* LEFT: Facebook embed must be SQUARE + no white rounded card */
+    #about .card,
+    #about .fb-embed {
+      background: transparent !important;
+      border: 0 !important;
+      box-shadow: none !important;
+      border-radius: 0 !important;
+      padding: 0 !important;
+    }
+
+    #about .fb-embed {
+      overflow: hidden;
+    }
+
+    #about iframe {
+      border-radius: 0 !important;
+    }
+
+    /* Remove any accidental top/bottom rectangles around the iframe */
+    #about .fb-embed::before,
+    #about .fb-embed::after {
+      content: none !important;
+    }
+
+    /* RIGHT: match Aubrey reference (clean, centered, link line) */
+    #about .reveal.right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    #about .about-icon {
+      width: 86px;
+      height: 86px;
+      margin: 0 auto 14px;
+    }
+
+    #about h2,
+    #about .section-title {
+      text-align: center !important;
+      color: var(--green-800) !important;
+      max-width: 720px;
+      margin: 0 auto 12px;
+    }
+
+    #about .p {
+      text-align: center !important;
+      max-width: 760px;
+      margin: 0 auto;
+      color: #1f2937 !important;
+      line-height: 1.75;
+    }
+
+    #about .services-list {
+      margin: 18px auto 0 !important;
+      padding: 0 !important;
+      border: 0 !important;
+      max-width: 760px;
+      display: block;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    #about .services-list a,
+    #about .services-list .service {
+      display: inline-flex;
+      background: transparent !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      text-decoration: underline !important;
+      text-underline-offset: 4px;
+      text-decoration-thickness: 2px;
+      color: var(--green-800) !important;
+    }
+
+    #about .services-list a+a::before {
+      content: ", ";
+      color: #1f2937;
+    }
+
+    #about .services-list i {
+      display: none !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="gsap-preloader"
+    style="z-index: 99999; background-color: #000; pointer-events: none; width: 100%; height: 100svh; display: flex; position: fixed; inset: 0;">
+  </div>
+
+  <header class="site-header" aria-label="Site Header">
+    <div class="topbar">
+      <div class="brand-left">
+        <img src="Nueva%20carpeta%20con%20elementos%202/JCD-LOGO-HEAD.png"
+          alt="JCD Tree Service &amp; Landscaping Logo">
+        <span class="name"><strong>JCD</strong> Tree Service &amp; Landscaping</span>
+      </div>
+      <div class="topbar-right">
+        <div class="music-player" aria-label="Music Player">
+          <span class="eq" aria-hidden="true"><span></span><span></span><span></span></span>
+          <button type="button" class="play-toggle" aria-label="Play" id="playPauseBtn">
+            <i class="fa-solid fa-play"></i>
+          </button>
+          <div class="track">
+            <input class="progress" type="range" min="0" max="100" value="0" aria-label="Audio progress"
+              id="volumeSlider">
+            <div class="time"><span class="current" id="timeDisplay">0:00</span> / <span class="duration">0:00</span>
+            </div>
+          </div>
+          <audio class="audio" preload="metadata" loop id="bgMusic">
+            <source src="Nueva%20carpeta%20con%20elementos%202/JCD-MUSIC.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Floating -->
+  <div class="side-actions" aria-label="Quick Actions">
+    <div class="phone-container">
+      <a href="tel:+14754345969" id="phoneBtn" title="Call (475) 434-5969"><i class="fa-solid fa-phone"></i></a>
+      <div class="phone-tooltip" id="phoneTooltip">Call us</div>
+    </div>
+    <a href="#" id="addToFavorites" title="Add to Favorites"><i class="fa-solid fa-star"></i></a>
+    <a href="#" id="copyLink" title="Copy Link"><i class="fa-solid fa-copy"></i></a>
+    <div class="share-container">
+      <a href="#" id="shareBtn" title="Share"><i class="fa-solid fa-share-nodes"></i></a>
+      <div class="share-menu" id="shareMenu">
+        <div class="share-header">Compartir en:</div>
+        <div class="share-options-grid">
+          <a href="#" class="share-option" data-platform="facebook" title="Share on Facebook">
+            <i class="fa-brands fa-facebook"></i>
+            <span>Facebook</span>
+          </a>
+          <a href="#" class="share-option" data-platform="instagram" title="Share on Instagram">
+            <i class="fa-brands fa-instagram"></i>
+            <span>Instagram</span>
+          </a>
+          <a href="#" class="share-option" data-platform="whatsapp" title="Share on WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>WhatsApp</span>
+          </a>
+        </div>
+        <div class="share-link-section">
+          <input type="text" id="shareLinkInput" readonly value="" />
+          <button id="copyShareLink" title="Copy Link">
+            <i class="fa-solid fa-copy"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a class="access" href="#accessibility" title="Accessibility">
+    <i class="fa-solid fa-universal-access"></i>
+  </a>
+
+  <!-- HERO -->
+  <div id="page-container">
+    <header class="hero" id="top">
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="https://pub-45dbfe14f92441f39e4e12859502fd03.r2.dev/test2.mp4" type="video/mp4">
+      </video>
+      <div class="hero-top">
+        <div class="rating-area">
+          <div class="rating">
+            <div class="score">5.0</div>
+            <div>
+              <div class="stars" aria-label="Stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                  class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <div class="reviews">
+                <span class="pill">(5 Ratings &amp; Reviews)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="top-actions">
+          <a class="cta-top" href="#estimate">Request Estimate</a>
+        </div>
+
+        <div class="service-area">Serving Fairfield County Areas</div>
+        <div class="phone">(475) 434-5969</div>
+      </div>
+
+      <div class="brand reveal">
+        <a href="index.html" class="logo">
+          <img src="Nueva%20carpeta%20con%20elementos%202/JCD-Logo.png" alt="JCD Tree Services &amp; Landscaping Logo">
+        </a>
+        <h1 class="name">JCD Tree Service &amp; Landscaping</h1>
+      </div>
+
+      <nav class="nav reveal" aria-label="Primary">
+        <a class="active" href="#top">Home</a>
+
+        <div class="dropdown-item">
+          <a href="#services">Landscaping Services <span class="caret">˅</span></a>
+          <div class="sub-menu">
+            <a href="landscape-design.html">Landscape Design and Installation</a>
+            <a href="drainage.html">Drainage</a>
+            <a href="hardscape.html">Hardscape Design and Installation</a>
+            <a href="commercial-landscaping.html">Commercial Landscaping Services</a>
+            <a href="sod-installation.html">Sod Installation</a>
+            <a href="seasonal-maintenance.html">Seasonal Maintenance</a>
+            <a href="irrigation.html">Irrigation and Ponds</a>
+          </div>
+        </div>
+
+        <div class="dropdown-item">
+          <a href="#tree">Tree Services <span class="caret">˅</span></a>
+          <div class="sub-menu">
+            <a href="emergency-tree-service.html">Emergency Tree Service</a>
+            <a href="tree-removal.html">Tree Removal</a>
+            <a href="tree-trimming-and-pruning.html">Tree Trimming and Pruning</a>
+            <a href="stump-grinding.html">Stump Grinding</a>
+            <a href="commercial-tree-services.html">Commercial Tree Services</a>
+            <a href="lot-clearing.html">Lot Clearing</a>
+            <a href="tree-maintenance-and-care.html">Tree Maintenance and Care</a>
+          </div>
+        </div>
+
+
+        <a href="#reviews">Reviews</a>
+        <a href="#about">About <span class="caret">˅</span></a>
+        <a href="#contact">Contact <span class="caret">˅</span></a>
+      </nav>
+
+      <div class="hero-main">
+        <div class="hero-copy reveal left">
+          <h1>
+            Top Choice Tree Landscaping
+            <span class="line">Service Company in</span>
+            <span class="line">Fairfield County, CT and</span>
+            <span class="line">Surrounding Areas</span>
+          </h1>
+          <div class="subline">24/7 Emergency Service<br>Fully Licensed and Insured<br>OSHA- and ISA-Certified<br>(475)
+            434-5969</div>
+        </div>
+
+        <section class="estimate reveal right" id="estimate" aria-label="Request Estimate Form">
+          <h3>Request Estimate</h3>
+
+          <form class="estimate" id="estimateForm" action="https://formsubmit.co/cristianemilmedranogarcia@gmail.com"
+            method="POST">
+            <input type="hidden" name="_subject" value="Nuevo Presupuesto Solicitado - JCD Tree Service">
+            <input type="hidden" name="_captcha" value="false">
+            <div class="field">
+              <label for="fullName">Full Name*</label>
+              <input id="fullName" name="full_name" placeholder="Full Name*" required />
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone*</label>
+              <input id="phone" name="phone" placeholder="Phone*" required />
+            </div>
+
+            <div class="field">
+              <label for="email">Email*</label>
+              <input id="email" name="email" placeholder="Email*" required />
+            </div>
+
+            <div class="field">
+              <label for="service">Tree and Landscaping Services*</label>
+              <select id="service" name="service" required>
+                <option value="" selected disabled hidden></option>
+                <option>Tree Removal</option>
+                <option>Tree Trimming & Pruning</option>
+                <option>Stump Grinding</option>
+                <option>Commercial Landscaping Services</option>
+                <option>Landscaping Design</option>
+                <option>Hardscaping</option>
+                <option>Drainage Systems</option>
+                <option>Mulch / Planting</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="details">Project Details</label>
+              <textarea id="details" name="details" placeholder="Tell us what you need…"></textarea>
+            </div>
+
+            <button class="btn" type="submit">Submit Request</button>
+          </form>
+        </section>
+      </div>
+    </header>
+
+    <section class="big-green-section">
+      <div class="green-content">
+
+        <h2>From Concept to Creation: Your Vision, Our Design</h2>
+
+        <p>
+          Whether you're looking to transform your yard with custom landscape design, add value with professional
+          hardscaping, or maintain your property with expert tree care, JCD Tree Service & Landscaping has you covered.
+          From elegant patios and walkways to vibrant gardens and functional outdoor living spaces, our team brings
+          creativity and craftsmanship to every project. We also provide reliable tree trimming and 24/7 emergency tree
+          services to keep your property safe and beautiful year-round. With competitive pricing and free estimates, we
+          are the trusted choice in Fairfield County, CT for landscaping, hardscaping, and tree services. Let us help
+          you
+          design and build the outdoor space you've always envisioned with our expertise and dedication.
+        </p>
+
+        <a href="#contact" class="green-btn">Contact Us for Service</a>
+
+        <div class="green-icons">
+          <div>
+            <img src="Nueva%20carpeta%20con%20elementos%202/icons/24:7 Emergency Service.png" />
+            <span>24/7 Emergency Service</span>
+          </div>
+          <div>
+            <img src="Nueva%20carpeta%20con%20elementos%202/icons/Fully Licensed &amp; Insured.png" />
+            <span>Fully Licensed &amp; Insured</span>
+          </div>
+          <div>
+            <img src="Nueva%20carpeta%20con%20elementos%202/icons/Competitive Pricing.png" />
+            <span>Competitive Pricing</span>
+          </div>
+          <div>
+            <img src="Nueva%20carpeta%20con%20elementos%202/icons/OSHA-CERIFIED.png" />
+            <span>OSHA-Certified</span>
+          </div>
+          <div>
+            <img src="Nueva%20carpeta%20con%20elementos%202/icons/farm.png" />
+            <span>ISA-Certified</span>
+          </div>
+          <div>
+            <img src="Nueva%20carpeta%20con%20elementos%202/icons/10+ Years in Business.png" />
+            <span>25+ Years in Business</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Alternating service sections (like your video) -->
+    <section class="feature white" id="services">
+      <div class="wrap grid">
+        <div class="reveal left">
+          <h3 class="title">Landscape Design &amp; Installation</h3>
+          <p class="desc">
+            Custom landscape design, planting, and full installations that enhance curb appeal and create functional,
+            beautiful outdoor spaces tailored to your property.
+          </p>
+          <style>
+            .tag-grid-landscape {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 12px;
+              margin-top: 24px;
+            }
+
+            .tag-grid-landscape a {
+              background: #1f4c35;
+              color: #ffffff;
+              padding: 12px 24px;
+              border-radius: 8px;
+              text-decoration: none;
+              font-size: 16px;
+              font-weight: 500;
+              transition: transform 0., opacity 0.2s;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .tag-grid-landscape a:hover {
+              background: #2a6044;
+              transform: translateY(-2px);
+            }
+          </style>
+          <div class="tag-grid-landscape">
+            <a href="landscape-design.html">Landscape Design</a>
+          </div>
+        </div>
+
+        <div class="media carousel reveal right">
+          <button class="carousel-btn prev" type="button" aria-label="Previous image"><i
+              class="fa-solid fa-chevron-left"></i></button>
+          <button class="carousel-btn next" type="button" aria-label="Next image"><i
+              class="fa-solid fa-chevron-right"></i></button>
+          <div class="carousel-track">
+            <div class="carousel-slide"><img alt="Landscape design" src="Landscaping-imagenes/IMG_0662.JPG"></div>
+            <div class="carousel-slide"><img alt="Landscape design" src="Landscaping-imagenes/IMG_0680.JPG"></div>
+            <div class="carousel-slide"><img alt="Landscape design" src="Landscaping-imagenes/IMG_0750.JPG"></div>
+            <div class="carousel-slide"><img alt="Landscape design" src="Landscaping-imagenes/IMG_0777.JPG"></div>
+            <div class="carousel-slide"><img alt="Landscape design" src="Landscaping-imagenes/IMG_0778.JPG"></div>
+            <div class="carousel-slide"><img alt="Landscape design" src="Landscaping-imagenes/IMG_0830.JPG"></div>
+            <div class="carousel-slide"><img alt="Landscape design" src="Landscaping-imagenes/IMG_0870.JPG"></div>
+            <div class="carousel-slide"><img alt="Landscape design" src="Landscaping-imagenes/IMG_0889.JPG"></div>
+            <div class="carousel-slide"><img alt="Landscape design" src="Landscaping-imagenes/IMG_0899.JPG"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature green" id="tree">
+      <div class="wrap grid">
+        <div class="media carousel reveal left emergency-media">
+          <button class="carousel-btn prev" type="button" aria-label="Previous image"><i
+              class="fa-solid fa-chevron-left"></i></button>
+          <button class="carousel-btn next" type="button" aria-label="Next image"><i
+              class="fa-solid fa-chevron-right"></i></button>
+          <div class="carousel-track">
+            <!-- Tree Removal & Maintenance Images -->
+            <div class="carousel-slide"><img alt="Tree removal services" src="Tree%20removal/IMG_0677.JPG"></div>
+            <div class="carousel-slide"><img alt="Tree removal services" src="Tree%20removal/IMG_0719.JPG"></div>
+            <div class="carousel-slide"><img alt="Tree removal services" src="Tree%20removal/IMG_0720.JPG"></div>
+            <div class="carousel-slide"><img alt="Tree removal services" src="Tree%20removal/IMG_0754.JPG"></div>
+            <div class="carousel-slide"><img alt="Tree removal services" src="Tree%20removal/IMG_0796.JPG"></div>
+            <div class="carousel-slide"><img alt="Tree removal services" src="Tree%20removal/IMG_0861.JPG"></div>
+          </div>
+        </div>
+
+        <div class="reveal right">
+          <h3 class="title">Tree Removal, Trimming, Maintenance &amp; 24/7 Emergency</h3>
+          <p class="desc">
+            Expert tree care and 24/7 emergency storm response. We handle everything from precision trimming and
+            maintenance plans to hazardous tree removal and storm cleanup. Whether for health, aesthetics, or safety,
+            our
+            certified team is ready to help.
+          </p>
+          <style>
+            .tag-grid {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 12px;
+              margin-top: 24px;
+            }
+
+            .tag-grid a {
+              background: #e3eaaa;
+              color: #163b2a;
+              padding: 12px 24px;
+              border-radius: 8px;
+              text-decoration: none;
+              font-size: 16px;
+              font-weight: 500;
+              transition: transform 0., opacity 0.2s;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .tag-grid a:hover {
+              background: #d4de8e;
+              transform: translateY(-2px);
+            }
+          </style>
+          <div class="tag-grid">
+            <a href="tree-removal.html">Tree Removal</a>
+            <a href="tree-trimming-and-pruning.html">Tree Trimming and Pruning</a>
+            <a href="emergency-tree-service.html">24/7 Emergency Tree Service</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature white">
+      <div class="wrap grid">
+        <div class="reveal left">
+          <h3 class="title">Commercial Tree &amp; Landscaping Services</h3>
+          <p class="desc">
+            Reliable tree and landscaping services for commercial properties, HOAs, and businesses with clear scheduling
+            and professional results.
+          </p>
+          <style>
+            .tag-grid-green {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 12px;
+              margin-top: 24px;
+            }
+
+            .tag-grid-green a {
+              background: #1f4c35;
+              color: #ffffff;
+              padding: 12px 24px;
+              border-radius: 8px;
+              text-decoration: none;
+              font-size: 16px;
+              font-weight: 500;
+              transition: transform 0., opacity 0.2s;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .tag-grid-green a:hover {
+              background: #2a6044;
+              transform: translateY(-2px);
+            }
+          </style>
+          <div class="tag-grid-green">
+            <a href="commercial-tree-services.html">Commercial Tree Services</a>
+            <a href="commercial-landscaping.html">Commercial Landscaping Services</a>
+          </div>
+        </div>
+
+        <div class="media carousel reveal right">
+          <button class="carousel-btn prev" type="button" aria-label="Previous image"><i
+              class="fa-solid fa-chevron-left"></i></button>
+          <button class="carousel-btn next" type="button" aria-label="Next image"><i
+              class="fa-solid fa-chevron-right"></i></button>
+          <div class="carousel-track">
+            <div class="carousel-slide"><img alt="Commercial tree services"
+                src="Commercial%20Tree%20Services/IMG_0694.JPG"></div>
+            <div class="carousel-slide"><img alt="Commercial tree services"
+                src="Commercial%20Tree%20Services/IMG_0695.JPG"></div>
+            <div class="carousel-slide"><img alt="Commercial tree services"
+                src="Commercial%20Tree%20Services/IMG_0744.JPG"></div>
+            <div class="carousel-slide"><img alt="Commercial tree services"
+                src="Commercial%20Tree%20Services/IMG_0745.JPG"></div>
+            <div class="carousel-slide"><img alt="Commercial tree services"
+                src="Commercial%20Tree%20Services/IMG_0792.JPG"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature green">
+      <div class="wrap grid">
+        <div class="media carousel reveal left emergency-media">
+          <button class="carousel-btn prev" type="button" aria-label="Previous image"><i
+              class="fa-solid fa-chevron-left"></i></button>
+          <button class="carousel-btn next" type="button" aria-label="Next image"><i
+              class="fa-solid fa-chevron-right"></i></button>
+          <div class="carousel-track">
+            <div class="carousel-slide"><img alt="Mulching and planting"
+                src="Mulching%20&%20Planting%20Services/IMG_0630.JPG"></div>
+            <div class="carousel-slide"><img alt="Mulching and planting"
+                src="Mulching%20&%20Planting%20Services/IMG_0639.JPG"></div>
+            <div class="carousel-slide"><img alt="Mulching and planting"
+                src="Mulching%20&%20Planting%20Services/IMG_0679.JPG"></div>
+            <div class="carousel-slide"><img alt="Mulching and planting"
+                src="Mulching%20&%20Planting%20Services/IMG_0703.JPG"></div>
+            <div class="carousel-slide"><img alt="Mulching and planting"
+                src="Mulching%20&%20Planting%20Services/IMG_0773.JPG"></div>
+            <div class="carousel-slide"><img alt="Mulching and planting"
+                src="Mulching%20&%20Planting%20Services/IMG_0798.JPG"></div>
+            <div class="carousel-slide"><img alt="Mulching and planting"
+                src="Mulching%20&%20Planting%20Services/IMG_0836.JPG"></div>
+            <div class="carousel-slide"><img alt="Mulching and planting"
+                src="Mulching%20&%20Planting%20Services/IMG_0912.JPG"></div>
+            <div class="carousel-slide"><img alt="Mulching and planting"
+                src="Mulching%20&%20Planting%20Services/IMG_0915.JPG"></div>
+          </div>
+        </div>
+
+        <div class="reveal right">
+          <h3 class="title">Mulching &amp; Planting Services</h3>
+          <p class="desc">
+            Professional mulching and planting services to improve soil health, protect plants, and give your landscape
+            a
+            clean, polished look year-round.
+          </p>
+          <button class="learn" type="button">Learn More</button>
+          <div class="service-tags">Mulching · Planting · Garden beds</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature white">
+      <div class="wrap grid">
+        <div class="reveal left">
+          <h3 class="title">Stump Grinding Services</h3>
+          <p class="desc">
+            Low-impact stump grinding services that remove unsightly stumps and open space for new landscaping features.
+          </p>
+          <style>
+            .tag-grid-stump {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 12px;
+              margin-top: 24px;
+            }
+
+            .tag-grid-stump a {
+              background: #1f4c35;
+              color: #ffffff;
+              padding: 12px 24px;
+              border-radius: 8px;
+              text-decoration: none;
+              font-size: 16px;
+              font-weight: 500;
+              transition: transform 0., opacity 0.2s;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .tag-grid-stump a:hover {
+              background: #2a6044;
+              transform: translateY(-2px);
+            }
+          </style>
+          <div class="tag-grid-stump">
+            <a href="stump-grinding.html">Stump Grinding</a>
+          </div>
+        </div>
+
+        <div class="media carousel reveal right">
+          <button class="carousel-btn prev" type="button" aria-label="Previous image"><i
+              class="fa-solid fa-chevron-left"></i></button>
+          <button class="carousel-btn next" type="button" aria-label="Next image"><i
+              class="fa-solid fa-chevron-right"></i></button>
+          <div class="carousel-track">
+            <div class="carousel-slide"><img alt="Stump grinding"
+                src="Nueva%20carpeta%20con%20elementos%202/IMG_0631.JPG"></div>
+            <div class="carousel-slide"><img alt="Stump grinding"
+                src="Nueva%20carpeta%20con%20elementos%202/IMG_0627.JPG"></div>
+            <div class="carousel-slide"><img alt="Stump grinding"
+                src="Nueva%20carpeta%20con%20elementos%202/IMG_0628.JPG"></div>
+            <div class="carousel-slide"><img alt="Stump grinding"
+                src="Nueva%20carpeta%20con%20elementos%202/IMG_0629.JPG"></div>
+            <div class="carousel-slide"><img alt="Stump grinding"
+                src="Nueva%20carpeta%20con%20elementos%202/IMG_0630.JPG"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature green">
+      <div class="wrap grid">
+        <div class="media carousel reveal left">
+          <button class="carousel-btn prev" type="button" aria-label="Previous image"><i
+              class="fa-solid fa-chevron-left"></i></button>
+          <button class="carousel-btn next" type="button" aria-label="Next image"><i
+              class="fa-solid fa-chevron-right"></i></button>
+          <div class="carousel-track">
+            <div class="carousel-slide"><img alt="Drainage systems"
+                src="Nueva%20carpeta%20con%20elementos%202/IMG_0629.JPG"></div>
+            <div class="carousel-slide"><img alt="Drainage systems"
+                src="Nueva%20carpeta%20con%20elementos%202/IMG_0630.JPG"></div>
+            <div class="carousel-slide"><img alt="Drainage systems"
+                src="Nueva%20carpeta%20con%20elementos%202/IMG_0631.JPG"></div>
+            <div class="carousel-slide"><img alt="Drainage systems"
+                src="Nueva%20carpeta%20con%20elementos%202/IMG_0632.JPG"></div>
+            <div class="carousel-slide"><img alt="Drainage systems"
+                src="Nueva%20carpeta%20con%20elementos%202/IMG_0633.JPG"></div>
+          </div>
+        </div>
+
+        <div class="reveal right">
+          <h3 class="title">Drainage System Installations</h3>
+          <p class="desc">
+            Custom drainage solutions to prevent water damage, control erosion, and protect your landscape from standing
+            water issues.
+          </p>
+          <style>
+            .tag-grid-drainage {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 12px;
+              margin-top: 24px;
+            }
+
+            .tag-grid-drainage a {
+              background: #e3eaaa;
+              color: #163b2a;
+              padding: 12px 24px;
+              border-radius: 8px;
+              text-decoration: none;
+              font-size: 16px;
+              font-weight: 500;
+              transition: transform 0., opacity 0.2s;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .tag-grid-drainage a:hover {
+              background: #d4de8e;
+              transform: translateY(-2px);
+            }
+          </style>
+          <div class="tag-grid-drainage">
+            <a href="drainage.html">Drainage Services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature white">
+      <div class="wrap grid">
+        <div class="reveal left">
+          <h3 class="title">Lawn Care &amp; Seasonal Cleanups</h3>
+          <p class="desc">
+            Complete lawn maintenance and seasonal cleanups including leaf removal, trimming, and property refreshes to
+            keep your yard looking its best.
+          </p>
+          <style>
+            .tag-grid-seasonal {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 12px;
+              margin-top: 24px;
+            }
+
+            .tag-grid-seasonal a {
+              background: #1f4c35;
+              color: #ffffff;
+              padding: 12px 24px;
+              border-radius: 8px;
+              text-decoration: none;
+              font-size: 16px;
+              font-weight: 500;
+              transition: transform 0., opacity 0.2s;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .tag-grid-seasonal a:hover {
+              background: #2a6044;
+              transform: translateY(-2px);
+            }
+          </style>
+          <div class="tag-grid-seasonal">
+            <a href="seasonal-maintenance.html">Seasonal Maintenance</a>
+          </div>
+        </div>
+
+        <div class="media carousel reveal right">
+          <button class="carousel-btn prev" type="button" aria-label="Previous image"><i
+              class="fa-solid fa-chevron-left"></i></button>
+          <button class="carousel-btn next" type="button" aria-label="Next image"><i
+              class="fa-solid fa-chevron-right"></i></button>
+          <div class="carousel-track">
+            <div class="carousel-slide"><img alt="Lawn care" src="Nueva%20carpeta%20con%20elementos%202/IMG_0630.JPG">
+            </div>
+            <div class="carousel-slide"><img alt="Lawn care" src="Nueva%20carpeta%20con%20elementos%202/IMG_0631.JPG">
+            </div>
+            <div class="carousel-slide"><img alt="Lawn care" src="Nueva%20carpeta%20con%20elementos%202/IMG_0632.JPG">
+            </div>
+            <div class="carousel-slide"><img alt="Lawn care" src="Nueva%20carpeta%20con%20elementos%202/IMG_0633.JPG">
+            </div>
+            <div class="carousel-slide"><img alt="Lawn care" src="Nueva%20carpeta%20con%20elementos%202/IMG_0627.JPG">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section reviews-section" id="reviews" style="padding: 60px 0 20px 0;">
+      <div class="wrap">
+        <!-- CUSTOM GOOGLE REVIEWS HEADER -->
+        <div class="custom-google-reviews reveal"
+          style="text-align: center; margin-bottom: 40px; display: flex; flex-direction: column; align-items: center;">
+          <h2 style="font-family: inherit; font-weight: 800; font-size: 2.2rem; margin-bottom: 30px; color: #111;">What
+            Our Customers Say</h2>
+
+          <div
+            style="background: #fff; border: 1px solid rgba(0,0,0,0.06); border-radius: 20px; padding: 25px 40px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; max-width: 600px; width: 100%;">
+
+            <div style="display: flex; align-items: center; justify-content: center; gap: 20px;">
+              <div
+                style="font-family: inherit; font-size: 4rem; font-weight: 900; line-height: 1; letter-spacing: -1px; color: #202124;">
+                5.0
+              </div>
+
+              <div style="text-align: left; display: flex; flex-direction: column; justify-content: center; gap: 2px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google"
+                    style="height: 20px; display: block;">
+                  <span
+                    style="font-family: inherit; font-weight: 700; font-size: 1.1rem; color: #202124; margin-top: 1px;">Reviews</span>
+                </div>
+                <div
+                  style="color: #fbbc04; font-size: 1.25rem; display: flex; align-items: center; gap: 3px; margin-top: 2px;">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <div style="color: #5f6368; font-size: 0.9rem; font-weight: 500; margin-top: 2px;">Based on 5 reviews
+                </div>
+              </div>
+            </div>
+
+            <a href="https://share.google/PdiQcNfA908xEMNp1" target="_blank" rel="noopener"
+              style="background-color: #1a73e8; color: white; padding: 12px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: transform 0., opacity 0.2s; font-size: 1rem; box-shadow: 0 4px 12px rgba(26, 115, 232, 0.25);">
+              <i class="fa-solid fa-pen" style="font-size: 0.9rem;"></i> Write a Review
+            </a>
+          </div>
+        </div>
+
+        <!-- CUSTOM GOOGLE REVIEWS CARDS -->
+        <style>
+          .custom-review-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+          }
+
+          @media (max-width: 1100px) {
+            .custom-review-grid {
+              grid-template-columns: repeat(2, 1fr);
+            }
+          }
+
+          @media (max-width: 650px) {
+            .custom-review-grid {
+              grid-template-columns: 1fr;
+            }
+          }
+
+          .custom-review-card {
+            background: #fff;
+            padding: 24px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+          }
+
+          .custom-review-card .stars {
+            color: #fbbc04;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            display: flex;
+            gap: 2px;
+          }
+
+          .custom-review-card .text {
+            font-size: 1.05rem;
+            color: #202124;
+            margin-bottom: 24px;
+            font-weight: 500;
+            line-height: 1.5;
+          }
+
+          .custom-review-card .author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+          }
+
+          .custom-review-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+            flex-shrink: 0;
+            overflow: hidden;
+          }
+
+          .custom-review-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+          .custom-review-name {
+            font-weight: 700;
+            color: #202124;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-transform: capitalize;
+          }
+
+          .custom-review-time {
+            font-size: 0.85rem;
+            color: #5f6368;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 3px;
+          }
+        </style>
+
+        <div class="custom-review-grid">
+          <!-- Review 1 -->
+          <div class="custom-review-card reveal">
+            <div>
+              <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                  class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <p class="text">"Great service! The crew arrived on time and removed a large dead tree near our house
+                safely
+                and efficiently. Left the yard spotless."</p>
+            </div>
+            <div class="author">
+              <div class="custom-review-avatar"><img
+                  src="https://ui-avatars.com/api/?name=Jennifer+Garcia&background=111&color=fff" alt="Jennifer Garcia">
+              </div>
+              <div>
+                <div class="custom-review-name">Jennifer Garcia <i class="fa-solid fa-circle-check"
+                    style="color: #0f9d58; font-size: 0.8rem;"></i></div>
+                <div class="custom-review-time">10 days ago on <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google"
+                    style="height: 14px;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="custom-review-card reveal">
+            <div>
+              <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                  class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <p class="text">"We hired them for a major landscaping project and stump grinding. Absolute professionals
+                with very competitive pricing. Highly recommend!"</p>
+            </div>
+            <div class="author">
+              <div class="custom-review-avatar" style="background: #33691e; color: white;">J</div>
+              <div>
+                <div class="custom-review-name">Jonathan Davis <i class="fa-solid fa-circle-check"
+                    style="color: #0f9d58; font-size: 0.8rem;"></i></div>
+                <div class="custom-review-time">12 days ago on <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google"
+                    style="height: 14px;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="custom-review-card reveal">
+            <div>
+              <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                  class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <p class="text">"Needed an emergency tree removal after a storm. They responded immediately, handled
+                everything professionally, and the cleanup was perfect."</p>
+            </div>
+            <div class="author">
+              <div class="custom-review-avatar" style="background: #004d40; color: white;">A</div>
+              <div>
+                <div class="custom-review-name">Alexia Reyes <i class="fa-solid fa-circle-check"
+                    style="color: #0f9d58; font-size: 0.8rem;"></i></div>
+                <div class="custom-review-time">13 days ago on <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google"
+                    style="height: 14px;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 4 -->
+          <div class="custom-review-card reveal">
+            <div>
+              <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                  class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <p class="text">"Excellent experience from start to finish. They trimmed several overgrown trees on our
+                property and laid new mulch. Everything looks amazing."</p>
+            </div>
+            <div class="author">
+              <div class="custom-review-avatar"
+                style="border: 1px solid #e0e0e0; background: white; color: #333; font-size: 0.8rem;">SMP</div>
+              <div>
+                <div class="custom-review-name">Studio Mark &amp; Print <i class="fa-solid fa-circle-check"
+                    style="color: #0f9d58; font-size: 0.8rem;"></i></div>
+                <div class="custom-review-time">13 days ago on <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google"
+                    style="height: 14px;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="wrap">
+        <div class="two-col">
+          <div class="card reveal left">
+            <div class="fb-embed"
+              style="background-color: #000; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+              <img alt="JCD Tree Services &amp; Landscaping Logo" src="Logo-Hero.png"
+                style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+          </div>
+          <div class="reveal right">
+            <h2 class="section-title">About</h2>
+            <p class="p">
+              JCD Tree Service &amp; Landscaping serves Fairfield County, CT with a
+              professional, safety-first approach. From emergency tree work to landscape upgrades,
+              we focus on clear estimates, clean job sites, and results that last.
+            </p>
+            <div class="about-values">
+              <span>Licensed &amp; Insured</span>
+              <span>Transparent Estimates</span>
+              <span>Skilled Crews</span>
+              <span>On-Time Service</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Learn more about (like the bottom of the real site) -->
+    <section class="about-band" id="contact">
+      <div class="wrap">
+        <div class="about-band grid">
+          <div class="reveal left">
+            <h3>Learn More About<br>JCD Tree Service &amp; Landscaping</h3>
+            <p>
+              Serving the Fairfield County, CT area, we provide tree care, stump grinding,
+              landscape, and hardscape services. 24/7 emergency service. Fully licensed and insured.
+              Call for competitive pricing.
+            </p>
+            <button class="watch" type="button"><i class="fa-solid fa-play" style="margin-right:10px;"></i> Watch
+              Video</button>
+          </div>
+
+          <div class="media reveal right" aria-label="Video preview">
+            <img alt="Video preview"
+              src="https://images.unsplash.com/photo-1597262975002-c5c3b14bbd62?auto=format&fit=crop&w=1800&q=80">
+            <div class="play"><span><i class="fa-solid fa-play"></i></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="social-section">
+      <div class="social-card instagram-card">
+        <div class="instagram-embed-wrapper" aria-label="Open Instagram">
+          <iframe src="https://www.instagram.com/jcd.treeservices/embed" frameborder="0" scrolling="no"
+            allowtransparency="true" allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+      <div class="social-card facebook-card">
+        <div class="fb-embed">
+          <iframe title="Facebook Page - JC Four Seasons"
+            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FJCfourseasons&tabs=timeline&width=500&height=520&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
+            width="100%" height="420" style="border:none;overflow:hidden;" scrolling="no" frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen="true">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer columns like video -->
+    <footer class="footer">
+      <div class="wrap">
+        <div class="footer-grid reveal">
+          <div>
+            <h4>SERVING AREA</h4>
+            <div class="line"></div>
+            <p>Fairfield County, CT</p>
+            <p>Surrounding Areas</p>
+          </div>
+
+          <div id="share">
+            <h4>CONTACT US</h4>
+            <div class="line"></div>
+            <p><strong>(475) 434-5969</strong></p>
+            <a href="mailto:office@jcdtreeservice.com">Email: office@jcdtreeservice.com</a>
+            <p>Office Number: (475) 434-5969 (text or call)</p>
+            <div class="social" aria-label="Social">
+              <i class="fa-brands fa-facebook-f"></i>
+              <i class="fa-brands fa-google"></i>
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+          </div>
+
+          <div>
+            <h4>BUSINESS HOURS</h4>
+            <div class="line"></div>
+            <p>Mon - Fri &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8:00 am - 5:00 pm</p>
+            <p>Sat - Sun &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Closed</p>
+            <p style="margin-top:10px;"><strong>24/7 Emergency Service</strong></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="legal" id="accessibility">
+      Privacy Policy | Manage Consent Preferences | Website Accessibility Policy<br>
+      © <span id="year"></span> JCD Tree Service &amp; Landscaping. All rights reserved.
+    </div>
+
+  </div><!-- #page-container -->
+  <div id="ig-modal" class="ig-modal" aria-hidden="true">
+    <div class="ig-modal-content">
+      <span class="ig-close" aria-label="Close">&times;</span>
+      <iframe src="https://www.instagram.com/jcd.treeservices/embed" frameborder="0" scrolling="no"
+        allowtransparency="true" allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="js/audio-player.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/common.js"></script>
+</body>
+
+</html>
