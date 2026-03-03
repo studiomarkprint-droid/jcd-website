@@ -2415,6 +2415,110 @@
     #about .services-list i {
       display: none !important;
     }
+
+    /* ========== MOBILE RESPONSIVENESS ========== */
+    .mobile-nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: var(--green-900);
+      cursor: pointer;
+      padding: 8px;
+      z-index: 10001;
+    }
+
+    @media (max-width: 768px) {
+      .mobile-nav-toggle {
+        display: block;
+      }
+
+      .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: var(--green-900);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 80px 40px;
+        gap: 30px;
+        transition: right 0.3s ease;
+        z-index: 10000;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+      }
+
+      .nav.active {
+        right: 0;
+      }
+
+      .nav a {
+        font-size: 20px;
+        width: 100%;
+      }
+
+      .nav .dropdown-item {
+        width: 100%;
+      }
+
+      .nav .sub-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border-top: none;
+        padding-left: 20px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+
+      .nav .dropdown-item.active .sub-menu {
+        max-height: 500px;
+      }
+
+      .hero-top {
+        grid-template-columns: 1fr;
+        text-align: center;
+        width: calc(100% - 20px);
+      }
+
+      .top-actions,
+      .phone {
+        text-align: center;
+        align-items: center;
+      }
+
+      .brand .name {
+        font-size: 28px;
+      }
+
+      .hero-main {
+        padding: 40px 20px;
+      }
+
+      .hero-copy {
+        margin-left: 0;
+        text-align: center;
+      }
+
+      .hero-copy h1 {
+        font-size: 28px;
+      }
+
+      .hero-copy .subline {
+        margin-left: 0;
+        text-align: center;
+      }
+
+      .estimate {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
   </style>
 </head>
 
@@ -2446,6 +2550,9 @@
             <source src="Nueva%20carpeta%20con%20elementos%202/JCD-MUSIC.mp3" type="audio/mpeg">
           </audio>
         </div>
+        <button class="mobile-nav-toggle" aria-label="Toggle Menu" id="mobileNavToggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
     </div>
   </header>

@@ -15,6 +15,7 @@ window.JCD = {
         this.initCarousels();
         this.initInstagramModal();
         this.initQuickActions();
+        this.initMobileMenu();
     },
 
     removePreloader() {
@@ -342,6 +343,47 @@ window.JCD = {
                 };
             }
         }
+    },
+
+    initMobileMenu() {
+        const toggle = document.getElementById('mobileNavToggle');
+        const nav = document.querySelector('.nav');
+        const dropdownItems = document.querySelectorAll('.nav .dropdown-item');
+
+        if (toggle && nav) {
+            toggle.onclick = () => {
+                nav.classList.toggle('active');
+                const icon = toggle.querySelector('i');
+                if (nav.classList.contains('active')) {
+                    icon.className = 'fa-solid fa-xmark';
+                } else {
+                    icon.className = 'fa-solid fa-bars';
+                }
+            };
+
+            // Close menu when clicking a link (for AJAX navigation)
+            nav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (!link.closest('.dropdown-item')) {
+                        nav.classList.remove('active');
+                        toggle.querySelector('i').className = 'fa-solid fa-bars';
+                    }
+                });
+            });
+        }
+
+        // Handle mobile dropdowns
+        dropdownItems.forEach(item => {
+            const link = item.querySelector('a');
+            if (link) {
+                link.onclick = (e) => {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        item.classList.toggle('active');
+                    }
+                };
+            }
+        });
     }
 };
 
