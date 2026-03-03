@@ -57,7 +57,7 @@
       color: var(--color_2);
       background: var(--color_1);
       overflow-x: hidden;
-      
+
     }
 
     h1,
@@ -93,7 +93,7 @@
       padding-top: 20px;
     }
 
-        .site-header {
+    .site-header {
       position: fixed;
       top: 0;
       left: 0;
@@ -107,13 +107,13 @@
       padding: 10px 24px;
       box-sizing: border-box;
       transition: background-color 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
-    
-      }
+
+    }
 
     \.site-header.scrolled {
       background: #ffffff !important;
       padding: 2px 24px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
     }
 
     header,
@@ -130,7 +130,7 @@
       align-items: center;
       gap: 12px;
       height: 36px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease;
     }
 
@@ -176,7 +176,7 @@
       align-items: center;
       gap: 12px;
       height: 36px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease;
     }
 
@@ -232,7 +232,7 @@
       align-items: center;
       gap: 12px;
       height: 36px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease;
     }
 
@@ -273,31 +273,32 @@
       white-space: nowrap;
     }
 
-        .brand-left img {
+    .brand-left img {
       height: 66px;
       max-height: 100%;
       width: auto;
       object-fit: contain;
       display: block;
       transform: translateY(10px);
-      
+
     }
 
-    
 
-        .brand-left .name {
+
+    .brand-left .name {
       font-family: Inter, "Inter Fallback", sans-serif;
-      color: #1f2937;font-size: 17px;
+      color: #1f2937;
+      font-size: 17px;
       font-weight: 400;
       letter-spacing: .4px;
       text-transform: none;
       white-space: nowrap;
       margin-left: -38px;
       margin-top: 26px;
-      
+
     }
 
-    
+
 
     .topbar-right {
       display: flex;
@@ -307,7 +308,7 @@
       max-width: 420px;
     }
 
-    
+
 
     .hero .hero-video {
       position: absolute;
@@ -342,10 +343,10 @@
     /* Top overlay grid like Aubrey */
     .hero-top {
       padding-top: 100px;
-      
+
       width: min(1200px, calc(100% - 80px));
       margin: 0 auto;
-      
+
       display: grid;
       grid-template-columns: 1fr auto;
       grid-template-rows: auto auto;
@@ -2079,7 +2080,7 @@
 
     @media (prefers-reduced-motion: reduce) {
       .reveal {
-      will-change: transform, opacity;
+        will-change: transform, opacity;
         transition: none;
         opacity: 1;
         transform: none;
@@ -2133,14 +2134,75 @@
     }
 
     @media (max-width: 768px) {
-      .hero-copy h1 {
-        font-size: 34px;
-        line-height: 1.12;
+      .site-header {
+        padding: 4px 12px;
+        height: 52px;
       }
 
-      .hero-copy .subline {
-        font-size: 14px;
-        line-height: 1.6;
+      .brand-left {
+        gap: 8px;
+        flex: 1;
+      }
+
+      .brand-left img {
+        height: 38px;
+        transform: translateY(2px);
+      }
+
+      .brand-left .name {
+        display: block !important;
+        font-size: 13px;
+        margin-left: 0;
+        margin-top: 0;
+        letter-spacing: 0;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      .topbar-right {
+        width: auto;
+        max-width: none;
+        gap: 8px;
+        flex: 1;
+        justify-content: flex-end;
+      }
+
+      .music-player {
+        width: auto;
+        flex: 1;
+        max-width: 180px;
+        margin-top: 0;
+        padding: 0 4px;
+        height: 32px;
+        background: transparent !important;
+        gap: 6px;
+      }
+
+      .music-player .track {
+        display: flex;
+        flex: 1;
+      }
+
+      .music-player .time {
+        display: none;
+      }
+
+      .music-player button {
+        width: 24px;
+        height: 24px;
+        box-shadow: 0 0 0 2px rgba(227, 234, 170, .9), 0 5px 10px rgba(0, 0, 0, .15);
+      }
+
+      .music-player .eq {
+        display: none;
+      }
+
+      .mobile-nav-toggle {
+        display: block;
+        order: 2;
+        margin-left: 2px;
+        color: var(--green-800);
+        font-size: 22px;
       }
     }
 
@@ -2185,8 +2247,8 @@
       }
 
       .hero-top {
-      padding-top: 100px;
-      
+        padding-top: 100px;
+
         grid-template-columns: 1fr;
       }
 
@@ -2353,12 +2415,12 @@
   <div id="gsap-preloader"
     style="z-index: 99999; background-color: #000; pointer-events: none; width: 100%; height: 100svh; display: flex; position: fixed; inset: 0;">
   </div>
-  <header class="site-header" aria-label="Site Header" >
+  <header class="site-header" aria-label="Site Header">
     <div class="topbar">
       <div class="brand-left">
         <img src="Nueva%20carpeta%20con%20elementos%202/JCD-LOGO-HEAD.png"
           alt="JCD Tree Service &amp; Landscaping Logo">
-        
+
         <span class="name"><strong>JCD</strong> Tree Service &amp; Landscaping</span>
       </div>
       <div class="topbar-right">
@@ -2368,8 +2430,10 @@
             <i class="fa-solid fa-play"></i>
           </button>
           <div class="track">
-            <input class="progress" type="range" min="0" max="100" value="0" aria-label="Audio progress" id="volumeSlider">
-            <div class="time"><span class="current" id="timeDisplay">0:00</span> / <span class="duration">0:00</span></div>
+            <input class="progress" type="range" min="0" max="100" value="0" aria-label="Audio progress"
+              id="volumeSlider">
+            <div class="time"><span class="current" id="timeDisplay">0:00</span> / <span class="duration">0:00</span>
+            </div>
           </div>
           <audio class="audio" preload="metadata" loop id="bgMusic">
             <source src="Nueva%20carpeta%20con%20elementos%202/JCD-MUSIC.mp3" type="audio/mpeg">
@@ -2420,93 +2484,351 @@
 
   <!-- HERO -->
   <style>
-    .service-hero { background: #808080;
-    .service-hero .hero-main { grid-template-columns: 60% 40%; }
+    .service-hero {
+      background: #808080;
+    }
+
+    .service-hero .hero-main {
+      grid-template-columns: 60% 40%;
+    }
+
     .service-hero .hero-copy {
-      will-change: transform, opacity; max-width: 760px; margin-top: 24px; margin-left: 0; }
-    .service-hero .hero-copy h1 { font-size: clamp(34px, 4.2vw, 60px); line-height: 1.08; text-align: center; }
-    .hero-facts { margin: 22px auto 0; max-width: 460px; text-align: center; }
-    .hero-facts p { margin: 6px 0; font-size: 20px; font-weight: 700; color: #fff; }
-    .hero-facts .hero-phone { margin-top: 12px; font-size: 19px; }
-    .inner-service { background: #fff; padding: 56px 0 70px; }
-    .service-layout { width: min(1200px, calc(100% - 60px)); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 2.1fr) minmax(300px, 1fr); gap: 34px; align-items: start; }
-    .service-main { color: #111827; font-size: 18px; line-height: 1.65; }
-    .service-main h2 { color: #163b2a; font-size: clamp(26px, 2.4vw, 38px); line-height: 1.2; margin: 10px 0 14px; }
-    .service-main h3 { color: #163b2a; font-size: clamp(24px, 2.2vw, 32px); line-height: 1.25; margin: 30px 0 10px; }
-    .service-main ul { margin: 12px 0 20px; padding-left: 22px; }
-    .service-main li { margin-bottom: 8px; }
-    .service-aside { display: grid; gap: 18px; position: sticky; top: 90px; }
-    .aside-panel { background: #1f4c35; color: #fff; border-radius: 6px; padding: 24px 22px; box-shadow: 0 12px 24px rgba(0,0,0,.2); }
-    .aside-panel h4 { margin: 0; color: #fff; text-transform: uppercase; letter-spacing: .06em; font-size: 15px; }
-    .aside-divider { height: 2px; background: rgba(255,255,255,.35); margin: 12px 0 14px; }
-    .aside-panel p { margin: 8px 0; color: rgba(255,255,255,.95); }
-    .aside-panel ul { margin: 0; padding-left: 18px; }
-    .aside-panel li { margin: 8px 0; }
-    .aside-panel a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
-    .cta-box { margin-top: 20px; background: #2a6044; border-left: 4px solid #e3eaaa; border-radius: 8px; padding: 16px; color: #fff; font-weight: 700; }
-    @media (max-width: 980px) { .service-hero .hero-main { grid-template-columns: 1fr; gap: 20px; } .hero-facts p, .hero-facts .hero-phone { font-size: 18px; } .service-layout { grid-template-columns: 1fr; gap: 24px; width: min(1200px, calc(100% - 32px)); } .service-aside { position: static; } }
+      will-change: transform, opacity;
+      max-width: 760px;
+      margin-top: 24px;
+      margin-left: 0;
+    }
+
+    .service-hero .hero-copy h1 {
+      font-size: clamp(34px, 4.2vw, 60px);
+      line-height: 1.08;
+      text-align: center;
+    }
+
+    .hero-facts {
+      margin: 22px auto 0;
+      max-width: 460px;
+      text-align: center;
+    }
+
+    .hero-facts p {
+      margin: 6px 0;
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .hero-facts .hero-phone {
+      margin-top: 12px;
+      font-size: 19px;
+    }
+
+    .inner-service {
+      background: #fff;
+      padding: 56px 0 70px;
+    }
+
+    .service-layout {
+      width: min(1200px, calc(100% - 60px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 2.1fr) minmax(300px, 1fr);
+      gap: 34px;
+      align-items: start;
+    }
+
+    .service-main {
+      color: #111827;
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    .service-main h2 {
+      color: #163b2a;
+      font-size: clamp(26px, 2.4vw, 38px);
+      line-height: 1.2;
+      margin: 10px 0 14px;
+    }
+
+    .service-main h3 {
+      color: #163b2a;
+      font-size: clamp(24px, 2.2vw, 32px);
+      line-height: 1.25;
+      margin: 30px 0 10px;
+    }
+
+    .service-main ul {
+      margin: 12px 0 20px;
+      padding-left: 22px;
+    }
+
+    .service-main li {
+      margin-bottom: 8px;
+    }
+
+    .service-aside {
+      display: grid;
+      gap: 18px;
+      position: sticky;
+      top: 90px;
+    }
+
+    .aside-panel {
+      background: #1f4c35;
+      color: #fff;
+      border-radius: 6px;
+      padding: 24px 22px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, .2);
+    }
+
+    .aside-panel h4 {
+      margin: 0;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      font-size: 15px;
+    }
+
+    .aside-divider {
+      height: 2px;
+      background: rgba(255, 255, 255, .35);
+      margin: 12px 0 14px;
+    }
+
+    .aside-panel p {
+      margin: 8px 0;
+      color: rgba(255, 255, 255, .95);
+    }
+
+    .aside-panel ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .aside-panel li {
+      margin: 8px 0;
+    }
+
+    .aside-panel a {
+      color: #fff;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .cta-box {
+      margin-top: 20px;
+      background: #2a6044;
+      border-left: 4px solid #e3eaaa;
+      border-radius: 8px;
+      padding: 16px;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    @media (max-width: 980px) {
+      .service-hero .hero-main {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .hero-facts p,
+      .hero-facts .hero-phone {
+        font-size: 18px;
+      }
+
+      .service-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        width: min(1200px, calc(100% - 32px));
+      }
+
+      .service-aside {
+        position: static;
+      }
+    }
   </style>
   <div id="page-container">
-<header class="hero service-hero" id="top">
-    <img class="hero-video" src="Tree%20Services-Hero.png" alt="Landscape Design" style="object-fit: cover; filter: brightness(0.6);"><div class="hero-top"><div class="rating-area"><div class="rating">
-          <div class="score">5.0</div>
-          <div>
-            <div class="stars" aria-label="Stars">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+    <header class="hero service-hero" id="top">
+      <img class="hero-video" src="Tree%20Services-Hero.png" alt="Landscape Design"
+        style="object-fit: cover; filter: brightness(0.6);">
+      <div class="hero-top">
+        <div class="rating-area">
+          <div class="rating">
+            <div class="score">5.0</div>
+            <div>
+              <div class="stars" aria-label="Stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                  class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <div class="reviews"><span class="pill">(5 Ratings &amp; Reviews)</span></div>
             </div>
-            <div class="reviews"><span class="pill">(5 Ratings &amp; Reviews)</span></div>
-          </div>
-        </div></div><div class="top-actions"><a class="cta-top" href="#estimate">Request Estimate</a></div>
-
-        <div class="service-area">Serving Fairfield County Areas</div><div class="phone">(475) 434-5969</div></div>
-  <div class="brand reveal">
-      <a href="index.html" class="logo"><img src="Nueva%20carpeta%20con%20elementos%202/JCD-Logo.png"
-          alt="JCD Tree Services &amp; Landscaping Logo"></a><h1 class="name">JCD Tree Service &amp; Landscaping</h1></div>
-  <nav class="nav reveal" aria-label="Primary"><a href="index.html">Home</a><div class="dropdown-item"><a href="#">Landscaping Services <span class="caret">˅</span></a><div class="sub-menu"><a href="landscape-design.html">Landscape Design and Installation</a><a href="drainage.html">Drainage</a><a href="hardscape.html">Hardscape Design and Installation</a><a href="sod-installation.html">Sod Installation</a><a href="seasonal-maintenance.html">Seasonal Maintenance</a><a href="irrigation.html">Irrigation and Ponds</a></div></div><div class="dropdown-item"><a href="#">Tree Services <span class="caret">˅</span></a><div class="sub-menu"><a href="emergency-tree-service.html">Emergency Tree Service</a><a href="tree-removal.html">Tree Removal</a><a href="tree-trimming-and-pruning.html">Tree Trimming and Pruning</a><a href="stump-grinding.html">Stump Grinding</a><a href="commercial-tree-services.html">Commercial Tree Services</a><a href="lot-clearing.html">Lot Clearing</a><a href="tree-maintenance-and-care.html">Tree Maintenance and Care</a></div></div><a href="index.html#reviews">Reviews</a><a href="index.html#about">About <span class="caret">˅</span></a><a href="#contact">Contact <span class="caret">˅</span></a></nav>
-  <div class="hero-main"><div class="hero-copy reveal left"><h1>Tree Maintenance and Tree Pruning in Fairfield County, CT</h1><div class="hero-facts"><p>24/7 Emergency Service</p><p>Fully Licensed and Insured</p><p>OSHA- and ISA-Certified</p><p class="hero-phone">(475) 434-5969</p></div></div>
-  <section class="estimate reveal right" id="estimate" aria-label="Request Estimate Form"><h3>Request Estimate</h3><div class="field"><label for="fullName">Full Name*</label><input id="fullName" placeholder="Full Name*" /></div><div class="field"><label for="phoneInput">Phone*</label><input id="phoneInput" placeholder="Phone*" /></div><div class="field"><label for="email">Email*</label><input id="email" placeholder="Email*" /></div><div class="field"><label for="service">Tree and Landscaping Services*</label><select id="service"><option value="" selected disabled hidden></option><option>Emergency Tree Service</option><option>Tree Removal</option><option>Tree Trimming and Pruning</option><option>Stump Grinding</option><option>Lot Clearing</option><option>Tree Maintenance and Care</option><option>Commercial Tree Services</option><option>Landscape Design and Installation</option><option>Drainage</option><option>Hardscape Design and Installation</option><option>Sod Installation</option><option>Seasonal Maintenance</option><option>Irrigation and Ponds</option></select></div><button class="btn" type="button">Request Estimate</button></section></div></header>
-  <section class="inner-service"><div class="service-layout"><article class="service-main"><h2>Comprehensive Tree Maintenance and Care in the Fairfield County, CT Area</h2><p>Our tree care team helps keep your trees healthy, safe, and visually strong with proactive maintenance and seasonal support.</p><ul><li>Aerial tree inspections</li><li>Canopy elevating</li><li>Deadwood reduction</li><li>Crown reduction</li><li>Fruit tree pruning</li><li>Seasonal tree care</li><li>Tree health monitoring</li><li>Maintenance and upkeep</li><li>Pest evaluation and treatment</li></ul><h3>Why You Need Tree Maintenance and Care</h3><ul><li>Improves tree health</li><li>Prevents pest infestations</li><li>Promotes safety by reducing deadwood</li><li>Enhances the appearance of your landscape</li><li>Ensures seasonal care for optimal growth</li><li>Monitors and treats potential issues early</li></ul><h3>What Sets JCD Tree Service &amp; Landscaping Apart</h3><ul><li>24/7 emergency service</li><li>Fully licensed and insured</li><li>Locally and family-owned</li><li>Competitive pricing</li><li>25+ years in business</li><li>OSHA- and ISA-certified</li><li>Free estimates/quotes</li><li>300+ years of combined professional experience</li></ul><div class="cta-box">Call for Tree Care</div></article><aside class="service-aside"><div class="aside-panel"><h4>Business Hours</h4><div class="aside-divider"></div><p>Mon - Fri &nbsp;&nbsp; 8:00 am - 5:00 pm</p><p>Sat - Sun &nbsp;&nbsp; Closed</p><p><strong>24/7 Emergency Service</strong></p></div><div class="aside-panel"><h4>Related Tree Services</h4><div class="aside-divider"></div><ul><li><a href="emergency-tree-service.html">Emergency Tree Service</a></li><li><a href="tree-removal.html">Tree Removal</a></li><li><a href="tree-trimming-and-pruning.html">Tree Trimming and Pruning</a></li><li><a href="stump-grinding.html">Stump Grinding</a></li><li><a href="lot-clearing.html">Lot Clearing</a></li><li><a href="tree-maintenance-and-care.html">Tree Maintenance and Care</a></li><li><a href="commercial-tree-services.html">Commercial Tree Services</a></li></ul></div></aside></div></section>
-  <footer class="footer" id="contact">
-    <div class="wrap">
-      <div class="footer-grid reveal">
-        <div>
-          <h4>SERVING AREA</h4>
-          <div class="line"></div>
-          <p>Fairfield County, CT</p>
-          <p>Surrounding Areas</p>
-        </div>
-
-        <div id="share">
-          <h4>CONTACT US</h4>
-          <div class="line"></div>
-          <p><strong>(475) 434-5969</strong></p>
-          <a href="mailto:office@jcdtreeservice.com">Email: office@jcdtreeservice.com</a>
-          <p>Office Number: (475) 434-5969 (text or call)</p>
-          <div class="social" aria-label="Social">
-            <i class="fa-brands fa-facebook-f"></i>
-            <i class="fa-brands fa-google"></i>
-            <i class="fa-brands fa-instagram"></i>
           </div>
         </div>
+        <div class="top-actions"><a class="cta-top" href="#estimate">Request Estimate</a></div>
 
-        <div>
-          <h4>BUSINESS HOURS</h4>
-          <div class="line"></div>
-          <p>Mon - Fri &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8:00 am - 5:00 pm</p>
-          <p>Sat - Sun &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Closed</p>
-          <p style="margin-top:10px;"><strong>24/7 Emergency Service</strong></p>
+        <div class="service-area">Serving Fairfield County Areas</div>
+        <div class="phone">(475) 434-5969</div>
+      </div>
+      <div class="brand reveal">
+        <a href="index.html" class="logo"><img src="Nueva%20carpeta%20con%20elementos%202/JCD-Logo.png"
+            alt="JCD Tree Services &amp; Landscaping Logo"></a>
+        <h1 class="name">JCD Tree Service &amp; Landscaping</h1>
+      </div>
+      <nav class="nav reveal" aria-label="Primary"><a href="index.html">Home</a>
+        <div class="dropdown-item"><a href="#">Landscaping Services <span class="caret">˅</span></a>
+          <div class="sub-menu"><a href="landscape-design.html">Landscape Design and Installation</a><a
+              href="drainage.html">Drainage</a><a href="hardscape.html">Hardscape Design and Installation</a><a
+              href="sod-installation.html">Sod Installation</a><a href="seasonal-maintenance.html">Seasonal
+              Maintenance</a><a href="irrigation.html">Irrigation and Ponds</a></div>
+        </div>
+        <div class="dropdown-item"><a href="#">Tree Services <span class="caret">˅</span></a>
+          <div class="sub-menu"><a href="emergency-tree-service.html">Emergency Tree Service</a><a
+              href="tree-removal.html">Tree Removal</a><a href="tree-trimming-and-pruning.html">Tree Trimming and
+              Pruning</a><a href="stump-grinding.html">Stump Grinding</a><a
+              href="commercial-tree-services.html">Commercial Tree Services</a><a href="lot-clearing.html">Lot
+              Clearing</a><a href="tree-maintenance-and-care.html">Tree Maintenance and Care</a></div>
+        </div><a href="index.html#reviews">Reviews</a><a href="index.html#about">About <span
+            class="caret">˅</span></a><a href="#contact">Contact <span class="caret">˅</span></a>
+      </nav>
+      <div class="hero-main">
+        <div class="hero-copy reveal left">
+          <h1>Tree Maintenance and Tree Pruning in Fairfield County, CT</h1>
+          <div class="hero-facts">
+            <p>24/7 Emergency Service</p>
+            <p>Fully Licensed and Insured</p>
+            <p>OSHA- and ISA-Certified</p>
+            <p class="hero-phone">(475) 434-5969</p>
+          </div>
+        </div>
+        <section class="estimate reveal right" id="estimate" aria-label="Request Estimate Form">
+          <h3>Request Estimate</h3>
+          <div class="field"><label for="fullName">Full Name*</label><input id="fullName" placeholder="Full Name*" />
+          </div>
+          <div class="field"><label for="phoneInput">Phone*</label><input id="phoneInput" placeholder="Phone*" /></div>
+          <div class="field"><label for="email">Email*</label><input id="email" placeholder="Email*" /></div>
+          <div class="field"><label for="service">Tree and Landscaping Services*</label><select id="service">
+              <option value="" selected disabled hidden></option>
+              <option>Emergency Tree Service</option>
+              <option>Tree Removal</option>
+              <option>Tree Trimming and Pruning</option>
+              <option>Stump Grinding</option>
+              <option>Lot Clearing</option>
+              <option>Tree Maintenance and Care</option>
+              <option>Commercial Tree Services</option>
+              <option>Landscape Design and Installation</option>
+              <option>Drainage</option>
+              <option>Hardscape Design and Installation</option>
+              <option>Sod Installation</option>
+              <option>Seasonal Maintenance</option>
+              <option>Irrigation and Ponds</option>
+            </select></div><button class="btn" type="button">Request Estimate</button>
+        </section>
+      </div>
+    </header>
+    <section class="inner-service">
+      <div class="service-layout">
+        <article class="service-main">
+          <h2>Comprehensive Tree Maintenance and Care in the Fairfield County, CT Area</h2>
+          <p>Our tree care team helps keep your trees healthy, safe, and visually strong with proactive maintenance and
+            seasonal support.</p>
+          <ul>
+            <li>Aerial tree inspections</li>
+            <li>Canopy elevating</li>
+            <li>Deadwood reduction</li>
+            <li>Crown reduction</li>
+            <li>Fruit tree pruning</li>
+            <li>Seasonal tree care</li>
+            <li>Tree health monitoring</li>
+            <li>Maintenance and upkeep</li>
+            <li>Pest evaluation and treatment</li>
+          </ul>
+          <h3>Why You Need Tree Maintenance and Care</h3>
+          <ul>
+            <li>Improves tree health</li>
+            <li>Prevents pest infestations</li>
+            <li>Promotes safety by reducing deadwood</li>
+            <li>Enhances the appearance of your landscape</li>
+            <li>Ensures seasonal care for optimal growth</li>
+            <li>Monitors and treats potential issues early</li>
+          </ul>
+          <h3>What Sets JCD Tree Service &amp; Landscaping Apart</h3>
+          <ul>
+            <li>24/7 emergency service</li>
+            <li>Fully licensed and insured</li>
+            <li>Locally and family-owned</li>
+            <li>Competitive pricing</li>
+            <li>25+ years in business</li>
+            <li>OSHA- and ISA-certified</li>
+            <li>Free estimates/quotes</li>
+            <li>300+ years of combined professional experience</li>
+          </ul>
+          <div class="cta-box">Call for Tree Care</div>
+        </article>
+        <aside class="service-aside">
+          <div class="aside-panel">
+            <h4>Business Hours</h4>
+            <div class="aside-divider"></div>
+            <p>Mon - Fri &nbsp;&nbsp; 8:00 am - 5:00 pm</p>
+            <p>Sat - Sun &nbsp;&nbsp; Closed</p>
+            <p><strong>24/7 Emergency Service</strong></p>
+          </div>
+          <div class="aside-panel">
+            <h4>Related Tree Services</h4>
+            <div class="aside-divider"></div>
+            <ul>
+              <li><a href="emergency-tree-service.html">Emergency Tree Service</a></li>
+              <li><a href="tree-removal.html">Tree Removal</a></li>
+              <li><a href="tree-trimming-and-pruning.html">Tree Trimming and Pruning</a></li>
+              <li><a href="stump-grinding.html">Stump Grinding</a></li>
+              <li><a href="lot-clearing.html">Lot Clearing</a></li>
+              <li><a href="tree-maintenance-and-care.html">Tree Maintenance and Care</a></li>
+              <li><a href="commercial-tree-services.html">Commercial Tree Services</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <footer class="footer" id="contact">
+      <div class="wrap">
+        <div class="footer-grid reveal">
+          <div>
+            <h4>SERVING AREA</h4>
+            <div class="line"></div>
+            <p>Fairfield County, CT</p>
+            <p>Surrounding Areas</p>
+          </div>
+
+          <div id="share">
+            <h4>CONTACT US</h4>
+            <div class="line"></div>
+            <p><strong>(475) 434-5969</strong></p>
+            <a href="mailto:office@jcdtreeservice.com">Email: office@jcdtreeservice.com</a>
+            <p>Office Number: (475) 434-5969 (text or call)</p>
+            <div class="social" aria-label="Social">
+              <i class="fa-brands fa-facebook-f"></i>
+              <i class="fa-brands fa-google"></i>
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+          </div>
+
+          <div>
+            <h4>BUSINESS HOURS</h4>
+            <div class="line"></div>
+            <p>Mon - Fri &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8:00 am - 5:00 pm</p>
+            <p>Sat - Sun &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Closed</p>
+            <p style="margin-top:10px;"><strong>24/7 Emergency Service</strong></p>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  <div class="legal" id="accessibility">
-    Privacy Policy | Manage Consent Preferences | Website Accessibility Policy<br>
-    © <span id="year"></span> JCD Tree Service &amp; Landscaping. All rights reserved.
-  </div>
+    <div class="legal" id="accessibility">
+      Privacy Policy | Manage Consent Preferences | Website Accessibility Policy<br>
+      © <span id="year"></span> JCD Tree Service &amp; Landscaping. All rights reserved.
+    </div>
 
   </div><!-- #page-container -->
-<div id="ig-modal" class="ig-modal" aria-hidden="true">
+  <div id="ig-modal" class="ig-modal" aria-hidden="true">
     <div class="ig-modal-content">
       <span class="ig-close" aria-label="Close">&times;</span>
       <iframe src="https://www.instagram.com/jcd.treeservices/embed" frameborder="0" scrolling="no"
@@ -2516,9 +2838,9 @@
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="js/navigation.js"></script>
-<script src="js/audio-player.js"></script>
-    <script src="js/common.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/audio-player.js"></script>
+  <script src="js/common.js"></script>
 </body>
 
 </html>
