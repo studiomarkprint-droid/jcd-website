@@ -768,8 +768,8 @@
       box-shadow: none;
       padding: 0 0 20px;
       backdrop-filter: none;
-      width: 340px;
-      max-width: 100%;
+      width: 100%;
+      max-width: 340px;
       margin-left: auto;
       margin-top: 24px;
       justify-self: end;
@@ -1661,7 +1661,8 @@
 
     .instagram-card {
       flex: 1.15;
-      min-width: 420px;
+      min-width: unset;
+      width: 100%;
       min-height: unset;
       height: auto;
       padding-bottom: 0;
@@ -1890,7 +1891,8 @@
     }
 
     .feature .media {
-      width: 100%; max-width: 701px;
+      width: 100%;
+      max-width: 701px;
       height: 416px;
     }
 
@@ -2363,126 +2365,136 @@
         justify-content: flex-start;
         align-items: flex-start;
         padding: 80px 30px;
-        gap: 20px;
+        z-index: 1000;
         transition: right 0.3s ease;
-        z-index: 10000;
-        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+        visibility: hidden;
       }
 
       .nav.active {
         right: 0;
-      }
-
-      .nav a {
-        font-size: 18px;
-        width: 100%;
-        padding: 10px 0;
-        text-align: left;
-      }
-
-      .nav a::after {
-        display: none;
-      }
-
-      .nav .dropdown-item {
-        width: 100%;
-      }
-
-      .nav .sub-menu {
-        position: static;
-        opacity: 1;
         visibility: visible;
-        transform: none;
-        box-shadow: none;
-        border-top: none;
-        padding-left: 15px;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
       }
 
-      .nav .dropdown-item.active .sub-menu {
-        max-height: 500px;
+      gap: 20px;
+      transition: right 0.3s ease;
+      z-index: 10000;
+      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav.active {
+      right: 0;
+    }
+
+    .nav a {
+      font-size: 18px;
+      width: 100%;
+      padding: 10px 0;
+      text-align: left;
+    }
+
+    .nav a::after {
+      display: none;
+    }
+
+    .nav .dropdown-item {
+      width: 100%;
+    }
+
+    .nav .sub-menu {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      box-shadow: none;
+      border-top: none;
+      padding-left: 15px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .nav .dropdown-item.active .sub-menu {
+      max-height: 500px;
+    }
+
+    .hero-main {
+      padding: 20px;
+      grid-template-columns: 1fr;
+    }
+
+    .hero-copy {
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-copy h1 {
+      font-size: 24px;
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    .hero-copy .subline {
+      font-size: 15px;
+      margin-left: 0;
+      text-align: center;
+    }
+
+    .estimate {
+      width: 100%;
+      margin: 30px auto 0;
+      padding: 10px;
+    }
+
+    .side-actions {
+      width: 50px;
+      right: 10px;
+      bottom: 80px;
+    }
+
+    .side-actions a {
+      width: 40px;
+      height: 40px;
+      font-size: 18px;
+    }
+
+    h2 {
+      font-size: 26px !important;
+    }
+
+    h3 {
+      font-size: 22px !important;
+    }
+
+    .feature .grid {
+      gap: 20px;
+    }
+
+    .feature .media {
+      width: 100% !important;
+      height: auto !important;
+      min-height: auto;
+    }
+
+    .reveal {
+      transform: translateY(30px) !important;
+      margin-bottom: 20px !important;
+    }
+
+    /* Extreme mobile scaling */
+    @media (max-width: 480px) {
+      .brand-left .name {
+        font-size: 11px;
+        max-width: 110px;
       }
 
-      .hero-main {
-        padding: 20px;
-        grid-template-columns: 1fr;
+      .music-player {
+        max-width: 130px;
       }
 
-      .hero-copy {
-        margin: 0 auto;
-        text-align: center;
+      .music-player .track-slider {
+        min-width: 30px;
       }
-
-      .hero-copy h1 {
-        font-size: 24px;
-        line-height: 1.2;
-        text-align: center;
-      }
-
-      .hero-copy .subline {
-        font-size: 15px;
-        margin-left: 0;
-        text-align: center;
-      }
-
-      .estimate {
-        width: 100%;
-        margin: 30px auto 0;
-        padding: 10px;
-      }
-
-      .side-actions {
-        width: 50px;
-        right: 10px;
-        bottom: 80px;
-      }
-
-      .side-actions a {
-        width: 40px;
-        height: 40px;
-        font-size: 18px;
-      }
-
-      h2 {
-        font-size: 26px !important;
-      }
-
-      h3 {
-        font-size: 22px !important;
-      }
-
-      .feature .grid {
-        gap: 20px;
-      }
-
-      .feature .media {
-        width: 100% !important;
-        height: auto !important;
-        min-height: auto;
-      }
-
-      .reveal {
-        transform: translateY(30px) !important;
-        margin-bottom: 20px !important;
-      }
-
-      /* Extreme mobile scaling */
-      @media (max-width: 480px) {
-        .brand-left .name {
-          font-size: 11px;
-          max-width: 110px;
-        }
-
-        .music-player {
-          max-width: 130px;
-        }
-
-        .music-player .track-slider {
-          min-width: 30px;
-        }
-      }
+    }
     }
 
     @media (max-width: 1024px) {
