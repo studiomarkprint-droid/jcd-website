@@ -3958,11 +3958,18 @@
 
           toggle.onclick = () => nav.classList.contains('active') ? closeMenu() : openMenu();
           backdrop.onclick = closeMenu;
-          nav.querySelectorAll('a').forEach(l => { if (!l.closest('.dropdown-item')) l.onclick = closeMenu; });
+          // Close menu on ALL nav links (including submenu links)
+          nav.querySelectorAll('a').forEach(l => {
+            l.addEventListener('click', () => {
+              closeMenu();
+              window.scrollTo({ top: 0, behavior: 'instant' });
+            });
+          });
         }
+        // Dropdown parent links toggle submenu, they don't navigate
         document.querySelectorAll('.nav .dropdown-item').forEach(item => {
-          const link = item.querySelector('a');
-          if (link) link.onclick = (e) => { if (window.innerWidth <= 768) { e.preventDefault(); item.classList.toggle('active'); } };
+          const link = item.querySelector(':scope > a');
+          if (link) link.onclick = (e) => { if (window.matchMedia('(max-width: 768px)').matches) { e.preventDefault(); item.classList.toggle('active'); } };
         });
       }
     };
