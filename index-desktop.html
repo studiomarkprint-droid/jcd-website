@@ -768,8 +768,8 @@
       box-shadow: none;
       padding: 0 0 20px;
       backdrop-filter: none;
-      width: 100%;
-      max-width: 340px;
+      width: 340px;
+      max-width: 100%;
       margin-left: auto;
       margin-top: 24px;
       justify-self: end;
@@ -1661,8 +1661,7 @@
 
     .instagram-card {
       flex: 1.15;
-      min-width: unset;
-      width: 100%;
+      min-width: 420px;
       min-height: unset;
       height: auto;
       padding-bottom: 0;
@@ -1891,8 +1890,7 @@
     }
 
     .feature .media {
-      width: 100%;
-      max-width: 701px;
+      width: 701px;
       height: 416px;
     }
 
@@ -2206,285 +2204,14 @@
     }
 
     @media (max-width: 768px) {
-
-      html,
-      body {
-        overflow-x: hidden;
-        width: 100%;
-        position: relative;
-      }
-
-      body {
-        padding-top: 52px;
-      }
-
-      .site-header {
-        padding: 4px 12px;
-        height: 52px;
-      }
-
-      .brand-left {
-        gap: 8px;
-        flex: 1;
-      }
-
-      .brand-left img {
-        height: 38px;
-        transform: translateY(2px);
-      }
-
-      .brand-left .name {
-        display: block !important;
-        font-size: 13px;
-        margin-left: 0;
-        margin-top: 0;
-        letter-spacing: 0;
-        font-weight: 700;
-        white-space: nowrap;
-        max-width: 140px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-
-      .topbar-right {
-        width: auto;
-        max-width: none;
-        gap: 8px;
-        flex: 1;
-        justify-content: flex-end;
-      }
-
-      .music-player {
-        width: auto;
-        flex: 0 1 auto;
-        min-width: 0;
-        max-width: 150px;
-        margin-top: 0;
-        padding: 0 4px;
-        height: 32px;
-        background: transparent !important;
-        gap: 6px;
-      }
-
-      .music-player .track {
-        display: flex;
-        flex: 1;
-      }
-
-      .music-player .time {
-        display: none;
-      }
-
-      .music-player button {
-        width: 24px;
-        height: 24px;
-        box-shadow: 0 0 0 2px rgba(227, 234, 170, .9), 0 5px 10px rgba(0, 0, 0, .15);
-      }
-
-      .music-player .eq {
-        display: none;
-      }
-
-      .mobile-nav-toggle {
-        display: block;
-        order: 2;
-        margin-left: 2px;
-        color: var(--green-800);
-        font-size: 22px;
-      }
-
-      .hero {
-        min-height: auto;
-        padding-bottom: 40px;
-      }
-
-      .hero-top {
-        width: 100%;
-        padding: 20px 15px 0;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        gap: 15px;
-        text-align: center;
-      }
-
-      .rating-area,
-      .top-actions,
-      .service-area,
-      .phone {
-        grid-column: 1;
-        grid-row: auto;
-        justify-self: center;
-        align-items: center;
-        text-align: center;
-      }
-
-      .rating {
-        justify-content: center;
-      }
-
-      .cta-top {
-        min-width: 100%;
-      }
-
-      .phone {
-        font-size: 16px;
-        margin-top: 0;
-      }
-
-      .brand {
-        margin: 20px auto;
-        transform: none;
-        width: 100%;
-      }
-
-      .brand .logo {
-        width: 120px;
-        height: 120px;
-        margin-top: 0;
-      }
-
-      .brand .logo img {
-        height: 120px;
-      }
-
-      .brand .name {
-        font-size: 22px;
-        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7);
-        margin-top: 0;
-        margin-bottom: 10px;
-      }
-
-      .nav {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 85%;
-        height: 100vh;
-        background: var(--green-900);
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        padding: 80px 30px;
-        gap: 20px;
-        transition: right 0.3s ease;
-        z-index: 10000;
-        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
-        visibility: hidden;
-      }
-
-      .nav.active {
-        right: 0;
-        visibility: visible;
-      }
-
-      .nav a {
-        font-size: 18px;
-        width: 100%;
-        padding: 10px 0;
-        text-align: left;
-      }
-
-      .nav a::after {
-        display: none;
-      }
-
-      .nav .dropdown-item {
-        width: 100%;
-      }
-
-      .nav .sub-menu {
-        position: static;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        box-shadow: none;
-        border-top: none;
-        padding-left: 15px;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-      }
-
-      .nav .dropdown-item.active .sub-menu {
-        max-height: 500px;
-      }
-
-      .hero-main {
-        padding: 20px;
-        grid-template-columns: 1fr;
-      }
-
-      .hero-copy {
-        margin: 0 auto;
-        text-align: center;
-      }
-
       .hero-copy h1 {
-        font-size: 24px;
-        line-height: 1.2;
-        text-align: center;
+        font-size: 34px;
+        line-height: 1.12;
       }
 
       .hero-copy .subline {
-        font-size: 15px;
-        margin-left: 0;
-        text-align: center;
-      }
-
-      .estimate {
-        width: 100%;
-        margin: 30px auto 0;
-        padding: 10px;
-      }
-
-      .side-actions {
-        width: 50px;
-        right: 10px;
-        bottom: 80px;
-      }
-
-      .side-actions a {
-        width: 40px;
-        height: 40px;
-        font-size: 18px;
-      }
-
-      h2 {
-        font-size: 26px !important;
-      }
-
-      h3 {
-        font-size: 22px !important;
-      }
-
-      .feature .grid {
-        gap: 20px;
-      }
-
-      .feature .media {
-        width: 100% !important;
-        height: auto !important;
-        min-height: auto;
-      }
-
-      .reveal {
-        transform: translateY(30px) !important;
-        margin-bottom: 20px !important;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .brand-left .name {
-        font-size: 11px;
-        max-width: 110px;
-      }
-
-      .music-player {
-        max-width: 130px;
-      }
-
-      .music-player .track-slider {
-        min-width: 30px;
+        font-size: 14px;
+        line-height: 1.6;
       }
     }
 
@@ -2519,21 +2246,53 @@
     }
 
     @media (max-width: 640px) {
-      .rating .score {
-        font-size: 32px;
+
+      .hero-top,
+      .brand,
+      .nav,
+      .hero-main,
+      .wrap {
+        width: calc(100% - 40px);
       }
 
-      .brand .logo {
-        width: 100px;
-        height: 100px;
+      .hero-top {
+        grid-template-columns: 1fr;
       }
 
-      .brand .logo img {
-        height: 100px;
+      .rating-area,
+      .top-actions,
+      .service-area,
+      .phone {
+        grid-column: 1;
       }
 
-      .brand .name {
-        font-size: 18px;
+      .phone {
+        text-align: left;
+      }
+
+      .nav {
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      .rating-area {
+        flex-direction: column;
+      }
+
+      .cta-top {
+        min-width: unset;
+        width: 100%;
+      }
+
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .brand {
+        margin-top: -28px;
+        transform: translateY(-6px);
       }
     }
 
@@ -2656,18 +2415,6 @@
     #about .services-list i {
       display: none !important;
     }
-
-    /* ========== MOBILE RESPONSIVENESS ========== */
-    .mobile-nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 24px;
-      color: var(--green-900);
-      cursor: pointer;
-      padding: 8px;
-      z-index: 10001;
-    }
   </style>
 </head>
 
@@ -2690,18 +2437,13 @@
             <i class="fa-solid fa-play"></i>
           </button>
           <div class="track">
-            <input class="progress" type="range" min="0" max="100" value="0" aria-label="Audio progress"
-              id="volumeSlider">
-            <div class="time"><span class="current" id="timeDisplay">0:00</span> / <span class="duration">0:00</span>
-            </div>
+            <input class="progress" type="range" min="0" max="100" value="0" aria-label="Audio progress" id="volumeSlider">
+            <div class="time"><span class="current" id="timeDisplay">0:00</span> / <span class="duration">0:00</span></div>
           </div>
           <audio class="audio" preload="metadata" loop id="bgMusic">
-            <source src="https://pub-45dbfe14f92441f39e4e12859502fd03.r2.dev/JCD-Music.mp3" type="audio/mpeg">
+            <source src="Nueva%20carpeta%20con%20elementos%202/JCD-MUSIC.mp3" type="audio/mpeg">
           </audio>
         </div>
-        <button class="mobile-nav-toggle" aria-label="Toggle Menu" id="mobileNavToggle">
-          <i class="fa-solid fa-bars"></i>
-        </button>
       </div>
     </div>
   </header>
@@ -2749,7 +2491,7 @@
   <div id="page-container">
     <header class="hero" id="top">
       <video class="hero-video" autoplay muted loop playsinline>
-        <source src="https://pub-45dbfe14f92441f39e4e12859502fd03.r2.dev/test2.mp4" type="video/mp4">
+        <source src="Nueva%20carpeta%20con%20elementos%202/test2.mp4" type="video/mp4">
       </video>
       <div class="hero-top">
         <div class="rating-area">
@@ -2832,8 +2574,7 @@
         <section class="estimate reveal right" id="estimate" aria-label="Request Estimate Form">
           <h3>Request Estimate</h3>
 
-          <form class="estimate" id="estimateForm" action="https://formsubmit.co/cristianemilmedranogarcia@gmail.com"
-            method="POST">
+          <form class="estimate" id="estimateForm" action="https://formsubmit.co/cristianemilmedranogarcia@gmail.com" method="POST">
             <input type="hidden" name="_subject" value="Nuevo Presupuesto Solicitado - JCD Tree Service">
             <input type="hidden" name="_captcha" value="false">
             <div class="field">
@@ -3679,295 +3420,9 @@
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script>
-    /* JCD Navigation (v2 Prefetch) */
-    var JCDNav = {
-      containerId: 'page-container',
-      cache: new Map(),
-      init() {
-        try {
-          this.interceptLinks();
-          this.handlePopState();
-          this.initPrefetch();
-          console.log("JCD Navigation Initialized");
-        } catch (e) { console.error("Nav init failed", e); }
-      },
-      interceptLinks() {
-        document.addEventListener('click', (e) => {
-          const link = e.target.closest('a');
-          if (!link) return;
-          const href = link.getAttribute('href');
-          if (this.isInternal(href)) {
-            e.preventDefault();
-            this.navigateTo(href);
-          }
-        });
-      },
-      initPrefetch() {
-        document.addEventListener('mouseover', (e) => {
-          const link = e.target.closest('a');
-          if (link && this.isInternal(link.getAttribute('href'))) {
-            this.prefetch(link.getAttribute('href'));
-          }
-        }, { passive: true });
-      },
-      isInternal(href) {
-        return href && !href.startsWith('http') && !href.startsWith('tel:') && !href.startsWith('mailto:') && !href.startsWith('#') && href.endsWith('.html');
-      },
-      async prefetch(url) {
-        if (this.cache.has(url)) return;
-        try {
-          const response = await fetch(url);
-          const html = await response.text();
-          this.cache.set(url, html);
-        } catch (err) { }
-      },
-      async navigateTo(url) {
-        try {
-          let html = this.cache.has(url) ? this.cache.get(url) : await (await fetch(url)).text();
-          const doc = new DOMParser().parseFromString(html, 'text/html');
-          const newContent = doc.getElementById(this.containerId);
-          if (newContent) {
-            document.getElementById(this.containerId).innerHTML = newContent.innerHTML;
-            document.title = doc.title;
-            window.history.pushState({ url }, doc.title, url);
-            if (window.JCD && typeof window.JCD.init === 'function') window.JCD.init();
-            const hash = url.split('#')[1];
-            if (hash) {
-              const el = document.getElementById(hash);
-              if (el) el.scrollIntoView();
-            } else { window.scrollTo(0, 0); }
-          }
-        } catch (err) {
-          window.location.href = url;
-        }
-      },
-      handlePopState(e) {
-        const url = (e.state && e.state.url) ? e.state.url : window.location.pathname;
-        this.navigateTo(url);
-      }
-    };
-
-    /* JCD Common Scripts */
-    window.JCD = {
-      revealObserver: null,
-      init() {
-        try {
-          this.removePreloader();
-          this.updateYear();
-          this.initSmoothScroll();
-          this.initRevealObservers();
-          this.initSideActions();
-          this.initCarousels();
-          this.initInstagramModal();
-          this.initQuickActions();
-          this.initMobileMenu();
-        } catch (e) {
-          console.error("JCD Init failed:", e);
-          this.removePreloader(); // Fallback removal
-        }
-      },
-      removePreloader() {
-        const preloader = document.getElementById('gsap-preloader');
-        if (!preloader) return;
-
-        const forceRemove = () => {
-          preloader.style.opacity = '0';
-          preloader.style.pointerEvents = 'none';
-          document.body.style.overflow = 'auto';
-          setTimeout(() => { if (preloader.parentNode) preloader.remove(); }, 800);
-        };
-
-        const safetyTimeout = setTimeout(forceRemove, 3000);
-
-        const heroBrand = document.querySelector('.brand');
-        if (!window.gsap || !heroBrand) {
-          forceRemove();
-          clearTimeout(safetyTimeout);
-          return;
-        }
-
-        try {
-          let brandClone = heroBrand.cloneNode(true);
-          brandClone.id = 'preloader-branding';
-          brandClone.classList.remove('reveal', 'in', 'left', 'right');
-          Object.assign(brandClone.style, { position: 'fixed', margin: '0', transform: 'none', transformOrigin: '50% 50%', willChange: 'transform, opacity', pointerEvents: 'none', zIndex: '100000' });
-
-          const cloneLogoLink = brandClone.querySelector('.logo');
-          let overlay, textOverlay;
-          if (cloneLogoLink) {
-            cloneLogoLink.style.position = 'relative';
-            overlay = document.createElement('div');
-            Object.assign(overlay.style, { backgroundColor: '#000', opacity: '0.9', transformOrigin: '100% 50%', width: '100%', height: '100%', position: 'absolute', inset: '0', zIndex: '10' });
-            cloneLogoLink.appendChild(overlay);
-          }
-          const cloneBrandText = brandClone.querySelector('.name');
-          if (cloneBrandText) {
-            cloneBrandText.style.position = 'relative';
-            textOverlay = document.createElement('div');
-            Object.assign(textOverlay.style, { backgroundColor: '#000', opacity: '0.9', transformOrigin: '100% 50%', width: '100%', height: '100%', position: 'absolute', inset: '0', zIndex: '10' });
-            cloneBrandText.appendChild(textOverlay);
-          }
-
-          preloader.appendChild(brandClone);
-
-          let centerOffsetX = 0, centerOffsetY = 0;
-          const sync = () => {
-            const rect = heroBrand.getBoundingClientRect();
-            brandClone.style.left = `${rect.left}px`; brandClone.style.top = `${rect.top}px`;
-            brandClone.style.width = `${rect.width}px`; brandClone.style.height = `${rect.height}px`;
-            const logoEl = brandClone.querySelector('.logo'), nameEl = brandClone.querySelector('.name');
-            let visualCenterY = rect.top + (rect.height / 2);
-            if (logoEl && nameEl) {
-              const lRect = logoEl.getBoundingClientRect(), nRect = nameEl.getBoundingClientRect();
-              visualCenterY = lRect.top + ((nRect.bottom - lRect.top) / 2);
-            }
-            centerOffsetX = (window.innerWidth / 2) - (rect.left + (rect.width / 2));
-            centerOffsetY = (window.innerHeight / 2) - visualCenterY;
-          };
-          sync();
-
-          const tl = gsap.timeline({
-            onComplete: () => {
-              forceRemove();
-              clearTimeout(safetyTimeout);
-            }
-          });
-
-          if (overlay && textOverlay) {
-            tl.set('#preloader-branding', { x: centerOffsetX, y: centerOffsetY, scale: 1.15 })
-              .to(overlay, { scaleX: 0, duration: 0.8, ease: 'power4.out', delay: 0.1 })
-              .to(textOverlay, { scaleX: 0, duration: 0.8, ease: 'power4.out' }, '<0.1')
-              .to('#preloader-branding', { x: 0, y: 0, scale: 1, duration: 0.9, ease: 'power3.inOut' }, '>-0.05')
-              .to('#gsap-preloader', { opacity: 0, duration: 0.35, ease: 'power2.inOut' }, '>-0.1');
-          } else {
-            tl.set('#preloader-branding', { x: centerOffsetX, y: centerOffsetY, scale: 1.15 })
-              .to('#preloader-branding', { x: 0, y: 0, scale: 1, duration: 0.8, ease: 'power3.inOut', delay: 0.2 })
-              .to('#gsap-preloader', { opacity: 0, duration: 0.35, ease: 'power2.inOut' }, '>-0.1');
-          }
-
-        } catch (e) {
-          console.warn("Preloader animation failed", e);
-          forceRemove();
-          clearTimeout(safetyTimeout);
-        }
-      },
-      updateYear() { const yearEl = document.getElementById('year'); if (yearEl) yearEl.textContent = new Date().getFullYear(); },
-      initSmoothScroll() {
-        document.querySelectorAll('a[href^="#"]').forEach(a => {
-          a.onclick = (e) => {
-            const id = a.getAttribute('href');
-            if (!id || id === "#" || id === "#contact" || id === "#about") return;
-            const el = document.querySelector(id);
-            if (!el) return;
-            e.preventDefault();
-            el.scrollIntoView({ behavior: 'smooth' });
-          };
-        });
-      },
-      initRevealObservers() {
-        if (this.revealObserver) this.revealObserver.disconnect();
-        this.revealObserver = new IntersectionObserver((entries) => {
-          entries.forEach(ent => {
-            if (!ent.isIntersecting) return;
-            const reveals = Array.from(ent.target.querySelectorAll('.reveal'));
-            reveals.forEach((el, index) => {
-              el.style.transitionDelay = `${index * 80}ms`;
-              el.classList.add('in');
-            });
-            this.revealObserver.unobserve(ent.target);
-          });
-        }, { threshold: 0.12 });
-        document.querySelectorAll('header:not(.site-header), section, footer').forEach(s => {
-          if (s.querySelector('.reveal')) this.revealObserver.observe(s);
-        });
-      },
-      initSideActions() {
-        const sa = document.querySelector('.side-actions'), rev = document.querySelector('#reviews'), bg = document.querySelector('.big-green-section');
-        if (!sa || !rev || !bg) return;
-        const up = () => {
-          const y = window.scrollY + window.innerHeight * 0.2;
-          if (y >= bg.offsetTop + (bg.offsetHeight / 2) && y < rev.offsetTop) sa.classList.add('is-hidden');
-          else sa.classList.remove('is-hidden');
-        };
-        window.addEventListener('scroll', up, { passive: true });
-      },
-      initCarousels() {
-        document.querySelectorAll('.carousel').forEach(c => {
-          const track = c.querySelector('.carousel-track'), pre = c.querySelector('.carousel-btn.prev'), nxt = c.querySelector('.carousel-btn.next');
-          if (!track || !pre || !nxt) return;
-          let idx = 0, slides = c.querySelectorAll('.carousel-slide');
-          pre.onclick = () => { idx = (idx - 1 + slides.length) % slides.length; track.style.transform = `translate3d(-${idx * 100}%, 0, 0)`; };
-          nxt.onclick = () => { idx = (idx + 1) % slides.length; track.style.transform = `translate3d(-${idx * 100}%, 0, 0)`; };
-        });
-      },
-      initInstagramModal() {
-        const wrapper = document.querySelector('.instagram-embed-wrapper'), modal = document.getElementById('ig-modal'), close = document.querySelector('.ig-close');
-        if (!modal) return;
-        if (wrapper) wrapper.onclick = () => { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; };
-        if (close) close.onclick = () => { modal.style.display = 'none'; document.body.style.overflow = ''; };
-        window.addEventListener('click', (e) => { if (e.target === modal) { modal.style.display = 'none'; document.body.style.overflow = ''; } });
-      },
-      initQuickActions() {
-        const fav = document.getElementById('addToFavorites'), copy = document.getElementById('copyLink');
-        if (fav) fav.onclick = (e) => { e.preventDefault(); alert('Favoritos: Mac(Cmd+D), PC(Ctrl+D)'); };
-        if (copy) copy.onclick = async (e) => {
-          e.preventDefault();
-          try {
-            await navigator.clipboard.writeText(window.location.href);
-            const icon = copy.querySelector('i'); icon.className = 'fa-solid fa-check';
-            setTimeout(() => { icon.className = 'fa-solid fa-copy'; }, 1500);
-          } catch (err) { }
-        };
-      },
-      initMobileMenu() {
-        const toggle = document.getElementById('mobileNavToggle'), nav = document.querySelector('.nav');
-        if (toggle && nav) {
-          toggle.onclick = () => {
-            nav.classList.toggle('active');
-            toggle.querySelector('i').className = nav.classList.contains('active') ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
-          };
-          nav.querySelectorAll('a').forEach(l => { if (!l.closest('.dropdown-item')) l.onclick = () => { nav.classList.remove('active'); toggle.querySelector('i').className = 'fa-solid fa-bars'; } });
-        }
-        document.querySelectorAll('.nav .dropdown-item').forEach(item => {
-          const link = item.querySelector('a');
-          if (link) link.onclick = (e) => { if (window.innerWidth <= 768) { e.preventDefault(); item.classList.toggle('active'); } };
-        });
-      }
-    };
-
-    /* Audio Player Logic */
-    document.addEventListener("DOMContentLoaded", () => {
-      const b = document.getElementById("bgMusic"), pB = document.getElementById("playPauseBtn"), mP = document.querySelector(".music-player"), vS = document.getElementById("volumeSlider"), tD = document.getElementById("timeDisplay"), durD = document.querySelector(".music-player .duration");
-      if (!b || !pB || !mP || !vS) return;
-      let isP = false;
-      const fmt = (s) => { const m = Math.floor(s / 60), rS = Math.floor(s % 60); return `${m}:${rS.toString().padStart(2, '0')}`; };
-      const updDur = () => { if (durD && b.duration) durD.textContent = fmt(b.duration); };
-      b.addEventListener("loadedmetadata", updDur);
-      if (b.readyState >= 1) updDur();
-      const t = () => {
-        if (isP) { b.pause(); pB.innerHTML = '<i class="fa-solid fa-play"></i>'; mP.classList.remove("playing"); }
-        else { b.play().catch(() => { }); pB.innerHTML = '<i class="fa-solid fa-pause"></i>'; mP.classList.add("playing"); }
-        isP = !isP;
-      };
-      pB.onclick = () => { t(); localStorage.setItem("jcd_playing", isP); };
-      vS.oninput = () => { b.currentTime = (vS.value / 100) * b.duration; };
-      if (localStorage.getItem("jcd_playing") === "true") {
-        b.play().then(() => { isP = true; pB.innerHTML = '<i class="fa-solid fa-pause"></i>'; mP.classList.add("playing"); }).catch(() => { isP = false; });
-      }
-      b.addEventListener("timeupdate", () => {
-        if (tD) tD.textContent = fmt(b.currentTime);
-        if (vS && b.duration) vS.value = (b.currentTime / b.duration) * 100;
-        if (durD && !durD.textContent.includes(':') && b.duration) updDur();
-      });
-    });
-
-    // Auto-init
-    document.addEventListener('DOMContentLoaded', () => {
-      if (window.JCDNav && typeof window.JCDNav.init === 'function') window.JCDNav.init();
-      if (window.JCD && typeof window.JCD.init === 'function') window.JCD.init();
-    });
-  </script>
+  <script src="js/audio-player.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/common.js"></script>
 </body>
 
 </html>
