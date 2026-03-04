@@ -2981,10 +2981,8 @@
     document.addEventListener('DOMContentLoaded', () => {
       const toggle = document.getElementById('mobileNavToggle');
       const nav = document.querySelector('.nav');
-      if (toggle && nav && window.innerWidth <= 768) {
-        // Move nav to body to escape ancestor transform stacking context
-        const navPlaceholder = document.createComment('nav-placeholder');
-        nav.parentNode.insertBefore(navPlaceholder, nav);
+      if (toggle && nav) {
+        // Move nav to body to escape ancestor CSS transform stacking context
         document.body.appendChild(nav);
 
         // Create backdrop
