@@ -3958,12 +3958,14 @@
 
           toggle.onclick = () => nav.classList.contains('active') ? closeMenu() : openMenu();
           backdrop.onclick = closeMenu;
-          // Close menu on ALL nav links (including submenu links)
+          // Close menu only on navigation links, NOT on dropdown parent toggles
           nav.querySelectorAll('a').forEach(l => {
-            l.addEventListener('click', () => {
-              closeMenu();
-              window.scrollTo({ top: 0, behavior: 'instant' });
-            });
+            if (!l.parentElement.classList.contains('dropdown-item')) {
+              l.addEventListener('click', () => {
+                closeMenu();
+                window.scrollTo({ top: 0, behavior: 'instant' });
+              });
+            }
           });
         }
         // Dropdown parent links toggle submenu, they don't navigate
