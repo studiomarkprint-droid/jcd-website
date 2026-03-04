@@ -2351,6 +2351,288 @@
       display: none !important;
     }
   </style>
+<style id="header-parity-index">.site-header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: auto !important;
+  background: #ffffff !important;
+  border-bottom: none !important;
+  z-index: 10000 !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 10px 24px !important;
+  box-sizing: border-box !important;
+}
+
+header,
+.site-header,
+.topbar {
+  background: #ffffff !important;
+}
+
+.site-header * {
+  box-shadow: none !important;
+}
+
+.topbar {
+  width: min(1200px, calc(100% - 24px)) !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 12px !important;
+  height: 100% !important;
+}
+
+.brand-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  white-space: nowrap !important;
+}
+
+.brand-left img {
+  height: 66px !important;
+  max-height: 100% !important;
+  width: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+  transform: translateY(10px) !important;
+}
+
+.brand-left .name {
+  font-family: Inter, "Inter Fallback", sans-serif !important;
+  color: #1f2937 !important;
+  font-size: 17px !important;
+  font-weight: 400 !important;
+  letter-spacing: .4px !important;
+  text-transform: none !important;
+  white-space: nowrap !important;
+  margin-left: -38px !important;
+  margin-top: 26px !important;
+}
+
+.topbar-right {
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  width: min(420px, 42vw) !important;
+  max-width: 420px !important;
+}
+
+.music-player {
+  position: static !important;
+  background: #ffffff !important;
+  border: none !important;
+  border-radius: 16px !important;
+  box-shadow: none !important;
+  padding: 0 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  width: 100% !important;
+  height: 32px !important;
+  overflow: hidden !important;
+  margin-top: 16px !important;
+}
+
+.music-player button {
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(255, 255, 255, .65) !important;
+  background: var(--green-800) !important;
+  color: #fff !important;
+  display: grid !important;
+  place-items: center !important;
+  cursor: pointer !important;
+  transition: transform .18s ease, opacity .18s ease !important;
+  box-shadow: 0 0 0 3px rgba(227, 234, 170, .9), 0 10px 18px rgba(0, 0, 0, .18) !important;
+}
+
+.music-player .track {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 8px !important;
+  min-width: 0 !important;
+  flex: 1 !important;
+}
+
+.music-player .progress {
+  width: 100% !important;
+}
+
+.music-player .time {
+  font-size: 12px !important;
+  color: #374151 !important;
+  text-align: right !important;
+  letter-spacing: .2px !important;
+  white-space: nowrap !important;
+  padding-left: 4px !important;
+}
+
+.music-player input[type="range"] {
+  -webkit-appearance: none !important;
+  width: 100% !important;
+  height: 4px !important;
+  background: rgba(15, 23, 42, .12) !important;
+  border-radius: 999px !important;
+  outline: none !important;
+}
+
+.music-player input[type="range"]::-webkit-slider-runnable-track {
+  height: 4px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(90deg, #1f4d36, #6fb07d) !important;
+}
+
+.music-player input[type="range"]::-moz-range-track {
+  height: 4px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(90deg, #1f4d36, #6fb07d) !important;
+}
+
+.music-player input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  width: 12px !important;
+  height: 12px !important;
+  border-radius: 50% !important;
+  background: #1f4d36 !important;
+  cursor: pointer !important;
+  border: 2px solid #fff !important;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .25) !important;
+}
+
+.music-player input[type="range"]::-moz-range-thumb {
+  width: 12px !important;
+  height: 12px !important;
+  border-radius: 50% !important;
+  background: #1f4d36 !important;
+  cursor: pointer !important;
+  border: 2px solid #fff !important;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .25) !important;
+}
+
+.music-player .eq {
+  width: 16px !important;
+  height: 16px !important;
+  display: inline-grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 2px !important;
+  margin-left: 2px !important;
+}
+
+.music-player .eq span {
+  width: 100% !important;
+  height: 100% !important;
+  background: #1f4d36 !important;
+  border-radius: 2px !important;
+  transform-origin: bottom !important;
+  opacity: .75 !important;
+}
+
+.mobile-nav-toggle {
+  display: none !important;
+  background: none !important;
+  border: none !important;
+  font-size: 24px !important;
+  color: var(--green-900) !important;
+  cursor: pointer !important;
+  padding: 8px !important;
+  z-index: 10001 !important;
+}
+
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    position: relative !important;
+  }
+
+  body {
+    padding-top: 52px !important;
+  }
+
+  .site-header {
+    padding: 4px 12px !important;
+    height: 52px !important;
+    z-index: 9999999 !important;
+  }
+
+  .brand-left {
+    gap: 4px !important;
+    flex: 1 !important;
+  }
+
+  .brand-left img {
+    height: 38px !important;
+    transform: translateY(2px) !important;
+  }
+
+  .brand-left .name {
+    display: block !important;
+    font-size: 11px !important;
+    margin-left: -8px !important;
+    margin-top: 0 !important;
+    letter-spacing: 0 !important;
+    font-weight: 700 !important;
+    white-space: normal !important;
+    line-height: 1.3 !important;
+  }
+
+  .topbar-right {
+    width: auto !important;
+    max-width: none !important;
+    gap: 8px !important;
+    flex: 1 !important;
+    justify-content: flex-end !important;
+  }
+
+  .music-player {
+    width: auto !important;
+    flex: 0 1 auto !important;
+    min-width: 0 !important;
+    max-width: 150px !important;
+    margin-top: 0 !important;
+    padding: 0 4px !important;
+    height: 32px !important;
+    background: transparent !important;
+    gap: 6px !important;
+  }
+
+  .music-player .track {
+    display: flex !important;
+    flex: 1 !important;
+  }
+
+  .music-player .time {
+    display: none !important;
+  }
+
+  .music-player button {
+    width: 24px !important;
+    height: 24px !important;
+    box-shadow: 0 0 0 2px rgba(227, 234, 170, .9), 0 5px 10px rgba(0, 0, 0, .15) !important;
+  }
+
+  .music-player .eq {
+    display: none !important;
+  }
+
+  .mobile-nav-toggle {
+    display: block !important;
+    order: 2 !important;
+    margin-left: 2px !important;
+    color: var(--green-800) !important;
+    font-size: 22px !important;
+  }
+}
+</style>
+
 </head>
 
 <body>
@@ -2781,9 +3063,434 @@
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="js/navigation.js"></script>
-  <script src="js/audio-player.js"></script>
-  <script src="js/common.js"></script>
+  <script>
+/**
+ * JCD Navigation System
+ * Handles mobile menu robustly by moving .nav to body and managing states.
+ */
+document.addEventListener('DOMContentLoaded', () => {
+    initMobileMenu();
+});
+
+function initMobileMenu() {
+    const toggle = document.getElementById('mobileNavToggle');
+    const nav = document.querySelector('.nav');
+
+    if (toggle && nav) {
+        const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
+        const dropdownItems = Array.from(nav.querySelectorAll('.dropdown-item'));
+        const originalParent = nav.parentNode;
+        const originalNextSibling = nav.nextElementSibling;
+
+        const ensureNavRuntimeStyles = () => {
+            if (document.getElementById("jcd-nav-runtime")) return;
+            const style = document.createElement("style");
+            style.id = "jcd-nav-runtime";
+            style.textContent =
+                ".nav-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;visibility:hidden;transition:opacity .25s ease;z-index:999998;}" +
+                ".nav-backdrop.active{opacity:1;visibility:visible;}" +
+                "@media (max-width: 768px){" +
+                " .site-header .brand-left .name{white-space:normal !important;max-width:none !important;overflow:visible !important;text-overflow:clip !important;line-height:1.2 !important;font-size:clamp(11px,3.5vw,14px) !important;}" +
+                " .nav{position:fixed !important;top:0 !important;right:-100% !important;width:min(88vw,360px) !important;height:100dvh !important;background:#163b2a !important;display:flex !important;flex-direction:column !important;justify-content:flex-start !important;align-items:flex-start !important;padding:80px 22px 24px !important;gap:18px !important;transition:right .3s ease !important;z-index:999999 !important;visibility:hidden !important;opacity:1 !important;overflow-y:auto !important;overflow-x:hidden !important;margin:0 !important;}" +
+                " .nav.active{right:0 !important;visibility:visible !important;}" +
+                " .nav a{width:100% !important;text-align:left !important;padding:10px 0 !important;font-size:18px !important;}" +
+                " .nav a::after{display:none !important;}" +
+                " .nav .dropdown-item{width:100% !important;position:relative !important;}" +
+                " .nav .sub-menu{position:static !important;left:auto !important;top:auto !important;opacity:1 !important;visibility:visible !important;transform:none !important;box-shadow:none !important;border-top:none !important;min-width:0 !important;width:100% !important;padding-left:15px !important;max-height:0;overflow:hidden;transition:max-height .3s ease;}" +
+                " .nav .dropdown-item.active .sub-menu{max-height:520px;}" +
+                "}";
+            document.head.appendChild(style);
+        };
+
+        // Some pages miss desktop CSS for this button; enforce visibility by viewport.
+        const syncToggleVisibility = () => {
+            toggle.style.display = isMobile() ? 'block' : 'none';
+        };
+
+        const collapseSubmenu = (item) => {
+            const submenu = item.querySelector(':scope > .sub-menu');
+            if (!submenu) return;
+            item.classList.remove('active');
+            submenu.style.maxHeight = '0px';
+            submenu.style.opacity = '0';
+            submenu.style.visibility = 'hidden';
+            submenu.style.overflow = 'hidden';
+        };
+
+        const expandSubmenu = (item) => {
+            const submenu = item.querySelector(':scope > .sub-menu');
+            if (!submenu) return;
+            item.classList.add('active');
+            submenu.style.position = 'static';
+            submenu.style.transform = 'none';
+            submenu.style.boxShadow = 'none';
+            submenu.style.borderTop = 'none';
+            submenu.style.opacity = '1';
+            submenu.style.visibility = 'visible';
+            submenu.style.overflow = 'hidden';
+            submenu.style.maxHeight = `${submenu.scrollHeight}px`;
+        };
+
+        const resetSubmenuStyles = () => {
+            dropdownItems.forEach(item => {
+                item.classList.remove('active');
+                const submenu = item.querySelector(':scope > .sub-menu');
+                if (!submenu) return;
+                submenu.style.maxHeight = '';
+                submenu.style.opacity = '';
+                submenu.style.visibility = '';
+                submenu.style.overflow = '';
+                submenu.style.position = '';
+                submenu.style.transform = '';
+                submenu.style.boxShadow = '';
+                submenu.style.borderTop = '';
+            });
+        };
+
+        const placeNavForViewport = () => {
+            if (isMobile()) {
+                // On mobile, keep nav outside hero stacking contexts.
+                nav.classList.remove('reveal');
+                if (nav.parentNode !== document.body) {
+                    document.body.appendChild(nav);
+                }
+                return;
+            }
+
+            // On desktop, nav must stay below logo/name in its original place.
+            if (nav.parentNode !== originalParent) {
+                if (originalNextSibling && originalNextSibling.parentNode === originalParent) {
+                    originalParent.insertBefore(nav, originalNextSibling);
+                } else {
+                    originalParent.appendChild(nav);
+                }
+            }
+            nav.classList.add('reveal');
+        };
+
+        ensureNavRuntimeStyles();
+        placeNavForViewport();
+        syncToggleVisibility();
+
+        // Ensure backdrop exists
+        let backdrop = document.querySelector('.nav-backdrop');
+        if (!backdrop) {
+            backdrop = document.createElement('div');
+            backdrop.className = 'nav-backdrop';
+            document.body.appendChild(backdrop);
+        }
+
+        const openMenu = () => {
+            nav.classList.add('active');
+            nav.style.right = '0';
+            nav.style.visibility = 'visible';
+            backdrop.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            const icon = toggle.querySelector('i');
+            if (icon) icon.className = 'fa-solid fa-xmark';
+        };
+        const closeMenu = () => {
+            nav.classList.remove('active');
+            if (isMobile()) {
+                nav.style.right = '-100%';
+                nav.style.visibility = 'hidden';
+            } else {
+                nav.style.right = '';
+                nav.style.visibility = '';
+            }
+            backdrop.classList.remove('active');
+            document.body.style.overflow = '';
+            resetSubmenuStyles();
+            const icon = toggle.querySelector('i');
+            if (icon) icon.className = 'fa-solid fa-bars';
+        };
+
+        toggle.onclick = () => nav.classList.contains('active') ? closeMenu() : openMenu();
+        backdrop.onclick = closeMenu;
+
+        // Close menu only on navigation links, NOT on dropdown parent toggles
+        nav.querySelectorAll('a').forEach(link => {
+            if (!link.parentElement.classList.contains('dropdown-item')) {
+                link.addEventListener('click', (e) => {
+                    const href = (link.getAttribute('href') || '').trim();
+                    const isHtmlPage = /\.html(?:#.*)?$/i.test(href);
+
+                    // On mobile, force full-page navigation for service pages
+                    // so destination always starts at the hero/top.
+                    if (isMobile() && isHtmlPage) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        closeMenu();
+                        document.body.style.overflow = '';
+                        window.location.href = href.split('#')[0];
+                        return;
+                    }
+
+                    closeMenu();
+                    window.scrollTo({ top: 0, behavior: 'instant' });
+                });
+            }
+        });
+
+        // Dropdown parent links toggle submenu, they don't navigate
+        dropdownItems.forEach(item => {
+            const link = item.querySelector(':scope > a');
+            if (link) {
+                link.onclick = (e) => {
+                    if (isMobile()) {
+                        e.preventDefault();
+                        const isOpen = item.classList.contains('active');
+                        dropdownItems.forEach(otherItem => {
+                            if (otherItem !== item) collapseSubmenu(otherItem);
+                        });
+                        if (isOpen) {
+                            collapseSubmenu(item);
+                        } else {
+                            expandSubmenu(item);
+                        }
+                    }
+                };
+            }
+            // Also handle submenu link click closing menu
+            item.querySelectorAll('.sub-menu a').forEach(subLink => {
+                subLink.addEventListener('click', (e) => {
+                    const href = (subLink.getAttribute('href') || '').trim();
+                    const isHtmlPage = /\.html(?:#.*)?$/i.test(href);
+
+                    if (isMobile() && isHtmlPage) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        closeMenu();
+                        document.body.style.overflow = '';
+                        window.location.href = href.split('#')[0];
+                        return;
+                    }
+
+                    closeMenu();
+                    window.scrollTo({ top: 0, behavior: 'instant' });
+                });
+            });
+        });
+
+        window.addEventListener('resize', () => {
+            ensureNavRuntimeStyles();
+        placeNavForViewport();
+        syncToggleVisibility();
+            if (!isMobile()) {
+                resetSubmenuStyles();
+                closeMenu();
+            } else {
+                dropdownItems.forEach(item => {
+                    if (item.classList.contains('active')) {
+                        expandSubmenu(item);
+                    } else {
+                        collapseSubmenu(item);
+                    }
+                });
+            }
+        });
+    }
+}
+
+</script>
+  <script>
+(function () {
+  'use strict';
+
+  function formatTime(seconds) {
+    if (!Number.isFinite(seconds) || seconds < 0) return '0:00';
+    var mins = Math.floor(seconds / 60);
+    var secs = Math.floor(seconds % 60);
+    return mins + ':' + String(secs).padStart(2, '0');
+  }
+
+  function initAudioPlayer() {
+    var audio = document.getElementById('bgMusic');
+    var button = document.getElementById('playPauseBtn');
+    var slider = document.getElementById('volumeSlider');
+    var currentTimeEl = document.getElementById('timeDisplay');
+    var durationEl = document.querySelector('.music-player .duration');
+
+    if (!audio || !button) return;
+
+    var icon = button.querySelector('i');
+
+    function setIcon(isPlaying) {
+      if (!icon) return;
+      icon.className = isPlaying ? 'fa-solid fa-pause' : 'fa-solid fa-play';
+    }
+
+    function updateProgress() {
+      if (currentTimeEl) currentTimeEl.textContent = formatTime(audio.currentTime || 0);
+      if (durationEl && audio.duration && Number.isFinite(audio.duration)) durationEl.textContent = formatTime(audio.duration);
+      if (!slider) return;
+      if (!audio.duration || !Number.isFinite(audio.duration)) {
+        slider.value = '0';
+        return;
+      }
+      slider.value = String((audio.currentTime / audio.duration) * 100);
+    }
+
+    button.addEventListener('click', function () {
+      if (audio.paused) {
+        audio.play().then(function () {
+          setIcon(true);
+        }).catch(function () {
+          setIcon(false);
+        });
+      } else {
+        audio.pause();
+        setIcon(false);
+      }
+    });
+
+    if (slider) {
+      slider.addEventListener('input', function () {
+        if (!audio.duration || !Number.isFinite(audio.duration)) return;
+        var pct = Number(slider.value) / 100;
+        audio.currentTime = pct * audio.duration;
+      });
+    }
+
+    audio.addEventListener('play', function () { setIcon(true); });
+    audio.addEventListener('pause', function () { setIcon(false); });
+    audio.addEventListener('timeupdate', updateProgress);
+    audio.addEventListener('loadedmetadata', updateProgress);
+
+    setIcon(false);
+    updateProgress();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAudioPlayer);
+  } else {
+    initAudioPlayer();
+  }
+})();
+
+</script>
+  <script>
+(function () {
+  'use strict';
+
+  function hidePreloader() {
+    var preloader = document.getElementById('gsap-preloader');
+    if (!preloader) return;
+
+    preloader.style.opacity = '0';
+    preloader.style.transition = 'opacity 0.35s ease';
+
+    window.setTimeout(function () {
+      preloader.style.display = 'none';
+    }, 380);
+  }
+
+  function updateYear() {
+    var yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+  }
+
+  function initReveal() {
+    var items = document.querySelectorAll('.reveal');
+    if (!items.length) return;
+
+    if (!('IntersectionObserver' in window)) {
+      items.forEach(function (el) { el.classList.add('in'); });
+      return;
+    }
+
+    var observer = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('in');
+        obs.unobserve(entry.target);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+    items.forEach(function (el) { observer.observe(el); });
+
+    // Safety fallback: if any reveal didn't intersect for any reason, show it.
+    window.setTimeout(function () {
+      document.querySelectorAll('.reveal:not(.in)').forEach(function (el) {
+        el.classList.add('in');
+      });
+    }, 1200);
+  }
+
+  function initQuickActions() {
+    var copyBtn = document.getElementById('copyLink');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        var href = window.location.href;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(href).catch(function () {});
+        }
+      });
+    }
+  }
+
+  function applyServiceMobileFixes() {
+    var isServicePage = !!document.querySelector('.service-hero');
+    if (!isServicePage) return;
+
+    if (document.getElementById('service-mobile-fixes')) return;
+    var style = document.createElement('style');
+    style.id = 'service-mobile-fixes';
+    style.textContent =
+      '.site-header{z-index:10000 !important;padding:10px 24px !important;}'+
+      '.topbar{width:min(1200px,calc(100% - 24px)) !important;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:12px;height:100%;}'+
+      '.brand-left{display:flex;align-items:center;gap:12px;white-space:nowrap;}'+
+      '.brand-left img{height:66px;max-height:100%;width:auto;object-fit:contain;display:block;transform:translateY(10px);}'+
+      '.brand-left .name{font-family:Inter,"Inter Fallback",sans-serif;color:#1f2937;font-size:17px;font-weight:400;letter-spacing:.4px;text-transform:none;white-space:nowrap;margin-left:-38px;margin-top:26px;}'+
+      '.topbar-right{display:flex;justify-content:flex-end;align-items:center;width:min(420px,42vw);max-width:420px;}'+
+      '.music-player{position:static;background:#fff !important;border:none !important;border-radius:16px;box-shadow:none !important;padding:0 10px;display:flex;align-items:center;gap:10px;width:100%;height:32px;overflow:hidden;margin-top:16px;}'+
+      '.music-player .track{display:flex;flex-direction:row;align-items:center;gap:8px;min-width:0;flex:1;}'+
+      '.music-player .progress{width:100%;}'+
+      '.music-player .time{font-size:12px;color:#374151;text-align:right;letter-spacing:.2px;white-space:nowrap;padding-left:4px;}'+
+      '@media (max-width: 768px) {' +
+      '  .service-hero{min-height:auto;padding-bottom:24px;}' +
+      '  .service-hero .hero-top{width:100%;padding:94px 16px 0;display:grid !important;grid-template-columns:1fr !important;grid-template-rows:auto;gap:14px;text-align:center;}' +
+      '  .service-hero .rating-area,.service-hero .top-actions,.service-hero .service-area,.service-hero .phone{grid-column:1;grid-row:auto;justify-self:center;align-items:center;text-align:center;}' +
+      '  .service-hero .rating{justify-content:center;}' +
+      '  .service-hero .top-actions{display:flex !important;justify-content:center;width:100%;margin-top:2px;}' +
+      '  .service-hero .cta-top{display:inline-flex !important;min-width:min(100%,420px) !important;width:min(100%,420px) !important;}' +
+      '  .service-hero .brand{margin:18px auto 8px !important;transform:none !important;width:100% !important;}' +
+      '  .service-hero .brand .logo{width:120px !important;height:120px !important;margin-top:0 !important;}' +
+      '  .service-hero .brand .logo img{height:120px !important;}' +
+      '  .service-hero .brand .name{font-size:22px !important;-webkit-text-stroke:1px rgba(255,255,255,.7) !important;margin-top:0 !important;margin-bottom:10px !important;}' +
+      '  .service-hero .hero-main{padding:20px 16px !important;grid-template-columns:1fr !important;gap:20px;}' +
+      '  .service-hero .hero-copy{margin-top:0 !important;max-width:100%;text-align:center;}' +
+      '  .service-hero .hero-copy h1{font-size:clamp(24px,8.2vw,34px) !important;line-height:1.12;text-align:center;}' +
+      '  .service-hero .hero-facts{margin-top:14px;}' +
+      '  .service-hero .hero-facts p{font-size:16px !important;}' +
+      '  .service-hero .hero-facts .hero-phone{font-size:17px !important;}' +
+      '  .service-hero .estimate{width:100%;margin:8px auto 0 !important;}' +
+      '  .side-actions{right:8px !important;bottom:16px !important;width:46px !important;z-index:2000;}' +
+      '  .side-actions a{width:46px !important;height:46px !important;font-size:18px !important;}' +
+      '}';
+    document.head.appendChild(style);
+  }
+
+  function init() {
+    updateYear();
+    applyServiceMobileFixes();
+    initReveal();
+    initQuickActions();
+    hidePreloader();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  window.addEventListener('load', hidePreloader);
+  window.setTimeout(hidePreloader, 1200);
+})();
+
+</script>
 </body>
 
 </html>
