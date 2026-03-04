@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <script>if(history.scrollRestoration)history.scrollRestoration="manual";window.scrollTo(0,0);window.addEventListener("load",function(){window.scrollTo(0,0);});</script>
+  <script>if (history.scrollRestoration) history.scrollRestoration = "manual"; window.scrollTo(0, 0); window.addEventListener("load", function () { window.scrollTo(0, 0); });</script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>JCD Tree Service & Landscaping</title>
@@ -1592,7 +1592,8 @@
 
     .instagram-card {
       flex: 1.15;
-      min-width: unset; width: 100%;
+      min-width: unset;
+      width: 100%;
       min-height: unset;
       height: auto;
       padding-bottom: 0;
@@ -1853,7 +1854,8 @@
 
     .feature .media {
       width: 100%;
-      max-width: 100%; max-width: 701px;
+      max-width: 100%;
+      max-width: 701px;
       height: 416px;
     }
 
@@ -2472,9 +2474,6 @@
 
         <span class="name"><strong>JCD</strong> Tree Service &amp; Landscaping</span>
       </div>
-      <button id="mobileNavToggle" class="mobile-nav-toggle" aria-label="Toggle Menu">
-        <i class="fa-solid fa-bars"></i>
-      </button>
       <div class="topbar-right">
         <div class="music-player" aria-label="Music Player">
           <span class="eq" aria-hidden="true"><span></span><span></span><span></span></span>
@@ -2491,6 +2490,9 @@
             <source src="https://pub-45dbfe14f92441f39e4e12859502fd03.r2.dev/JCD-Music.mp3" type="audio/mpeg">
           </audio>
         </div>
+        <button id="mobileNavToggle" class="mobile-nav-toggle" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
     </div>
   </header>
@@ -3149,6 +3151,7 @@
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="js/navigation.js"></script>
   <script>
     /* JCD Navigation (v2 Prefetch) */
     /* JCD Navigation (v2 Prefetch) */
@@ -3391,20 +3394,7 @@
           } catch (err) { }
         };
       },
-      initMobileMenu() {
-        const toggle = document.getElementById('mobileNavToggle'), nav = document.querySelector('.nav');
-        if (toggle && nav) {
-          toggle.onclick = () => {
-            nav.classList.toggle('active');
-            toggle.querySelector('i').className = nav.classList.contains('active') ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
-          };
-          nav.querySelectorAll('a').forEach(l => { if (!l.closest('.dropdown-item')) l.onclick = () => { nav.classList.remove('active'); toggle.querySelector('i').className = 'fa-solid fa-bars'; } });
-        }
-        document.querySelectorAll('.nav .dropdown-item').forEach(item => {
-          const link = item.querySelector('a');
-          if (link) link.onclick = (e) => { if (window.innerWidth <= 768) { e.preventDefault(); item.classList.toggle('active'); } };
-        });
-      }
+      /* Mobile menu initialized via navigation.js */
     };
 
     /* Audio Player Logic */

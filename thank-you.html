@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <script>if(history.scrollRestoration)history.scrollRestoration="manual";window.scrollTo(0,0);window.addEventListener("load",function(){window.scrollTo(0,0);});</script>
+  <script>if (history.scrollRestoration) history.scrollRestoration = "manual"; window.scrollTo(0, 0); window.addEventListener("load", function () { window.scrollTo(0, 0); });</script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>JCD Tree Service & Landscaping</title>
@@ -1593,7 +1593,8 @@
 
     .instagram-card {
       flex: 1.15;
-      min-width: unset; width: 100%;
+      min-width: unset;
+      width: 100%;
       min-height: unset;
       height: auto;
       padding-bottom: 0;
@@ -2383,6 +2384,9 @@
             <source src="Nueva%20carpeta%20con%20elementos%202/JCD-MUSIC.mp3" type="audio/mpeg">
           </audio>
         </div>
+        <button class="mobile-nav-toggle" aria-label="Toggle Menu" id="mobileNavToggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
       <input class="progress" type="range" min="0" max="100" value="0" aria-label="Audio progress" id="volumeSlider">
       <div class="time"><span class="current" id="timeDisplay">0:00</span> / <span class="duration">0:00</span>
@@ -3119,6 +3123,7 @@
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="js/navigation.js"></script>
   <script>
     document.body.style.overflow = 'hidden';
 
