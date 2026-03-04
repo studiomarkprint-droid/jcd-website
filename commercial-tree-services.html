@@ -2221,6 +2221,76 @@
         font-size: 22px;
       }
 
+      .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 85%;
+        height: 100vh;
+        background: var(--green-900);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 80px 30px;
+        gap: 20px;
+        transition: right 0.3s ease;
+        z-index: 10001;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+        visibility: hidden;
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+
+      .nav.active {
+        right: 0;
+        visibility: visible;
+      }
+
+      .nav-backdrop {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        z-index: 10000;
+        transition: opacity 0.3s ease;
+      }
+
+      .nav-backdrop.active {
+        display: block;
+      }
+
+      .nav a {
+        font-size: 18px;
+        width: 100%;
+        padding: 10px 0;
+        text-align: left;
+      }
+
+      .nav a::after {
+        display: none;
+      }
+
+      .nav .dropdown-item {
+        width: 100%;
+      }
+
+      .nav .sub-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border-top: none;
+        padding-left: 15px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+
+      .nav .dropdown-item.active .sub-menu {
+        max-height: 500px;
+      }
+
       /* Extreme mobile scaling */
       @media (max-width: 480px) {
         .brand-left .name {
@@ -2918,21 +2988,32 @@
       const toggle = document.getElementById('mobileNavToggle');
       const nav = document.querySelector('.nav');
       if (toggle && nav) {
-        toggle.onclick = () => {
-          nav.classList.toggle('active');
-          toggle.querySelector('i').className = nav.classList.contains('active')
-            ? 'fa-solid fa-xmark'
-            : 'fa-solid fa-bars';
+        // Create backdrop
+        const backdrop = document.createElement('div');
+        backdrop.className = 'nav-backdrop';
+        document.body.appendChild(backdrop);
+
+        const openMenu = () => {
+          nav.classList.add('active');
+          backdrop.classList.add('active');
+          document.body.style.overflow = 'hidden';
+          toggle.querySelector('i').className = 'fa-solid fa-xmark';
         };
+        const closeMenu = () => {
+          nav.classList.remove('active');
+          backdrop.classList.remove('active');
+          document.body.style.overflow = '';
+          toggle.querySelector('i').className = 'fa-solid fa-bars';
+        };
+
+        toggle.onclick = () => nav.classList.contains('active') ? closeMenu() : openMenu();
+        backdrop.onclick = closeMenu;
+
         // Close menu when a regular link is clicked
         nav.querySelectorAll('a').forEach(link => {
-          if (!link.closest('.dropdown-item')) {
-            link.onclick = () => {
-              nav.classList.remove('active');
-              toggle.querySelector('i').className = 'fa-solid fa-bars';
-            };
-          }
+          if (!link.closest('.dropdown-item')) link.onclick = closeMenu;
         });
+
         // Toggle submenus on mobile
         document.querySelectorAll('.nav .dropdown-item').forEach(item => {
           const link = item.querySelector('a');

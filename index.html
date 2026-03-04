@@ -2377,14 +2377,29 @@
         padding: 80px 30px;
         gap: 20px;
         transition: right 0.3s ease;
-        z-index: 10000;
+        z-index: 10001;
         box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
         visibility: hidden;
+        overflow-y: auto;
+        overflow-x: hidden;
       }
 
       .nav.active {
         right: 0;
         visibility: visible;
+      }
+
+      .nav-backdrop {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        z-index: 10000;
+        transition: opacity 0.3s ease;
+      }
+
+      .nav-backdrop.active {
+        display: block;
       }
 
       .nav a {
@@ -3921,11 +3936,27 @@
       initMobileMenu() {
         const toggle = document.getElementById('mobileNavToggle'), nav = document.querySelector('.nav');
         if (toggle && nav) {
-          toggle.onclick = () => {
-            nav.classList.toggle('active');
-            toggle.querySelector('i').className = nav.classList.contains('active') ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+          // Create backdrop
+          const backdrop = document.createElement('div');
+          backdrop.className = 'nav-backdrop';
+          document.body.appendChild(backdrop);
+
+          const openMenu = () => {
+            nav.classList.add('active');
+            backdrop.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            toggle.querySelector('i').className = 'fa-solid fa-xmark';
           };
-          nav.querySelectorAll('a').forEach(l => { if (!l.closest('.dropdown-item')) l.onclick = () => { nav.classList.remove('active'); toggle.querySelector('i').className = 'fa-solid fa-bars'; } });
+          const closeMenu = () => {
+            nav.classList.remove('active');
+            backdrop.classList.remove('active');
+            document.body.style.overflow = '';
+            toggle.querySelector('i').className = 'fa-solid fa-bars';
+          };
+
+          toggle.onclick = () => nav.classList.contains('active') ? closeMenu() : openMenu();
+          backdrop.onclick = closeMenu;
+          nav.querySelectorAll('a').forEach(l => { if (!l.closest('.dropdown-item')) l.onclick = closeMenu; });
         }
         document.querySelectorAll('.nav .dropdown-item').forEach(item => {
           const link = item.querySelector('a');
