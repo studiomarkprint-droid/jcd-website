@@ -3929,7 +3929,12 @@
       },
       initMobileMenu() {
         const toggle = document.getElementById('mobileNavToggle'), nav = document.querySelector('.nav');
-        if (toggle && nav) {
+        if (toggle && nav && window.innerWidth <= 768) {
+          // Move nav to body to escape ancestor transform stacking context
+          const navPlaceholder = document.createComment('nav-placeholder');
+          nav.parentNode.insertBefore(navPlaceholder, nav);
+          document.body.appendChild(nav);
+
           // Create backdrop
           const backdrop = document.createElement('div');
           backdrop.className = 'nav-backdrop';
