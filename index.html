@@ -2403,15 +2403,21 @@
 
       .nav .dropdown-item {
         width: 100%;
+        min-width: 0;
+        position: relative;
       }
 
       .nav .sub-menu {
-        position: static;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        box-shadow: none;
-        border-top: none;
+        position: static !important;
+        left: auto !important;
+        top: auto !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        box-shadow: none !important;
+        border-top: none !important;
+        min-width: 0 !important;
+        width: 100% !important;
         padding-left: 15px;
         max-height: 0;
         overflow: hidden;
