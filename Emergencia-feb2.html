@@ -2663,7 +2663,7 @@ header,
             <source src="Nueva%20carpeta%20con%20elementos%202/JCD-MUSIC.mp3" type="audio/mpeg">
           </audio>
         </div>
-        <button class="mobile-nav-toggle" aria-label="Toggle Menu" id="mobileNavToggle">
+        <button type="button" class="mobile-nav-toggle" aria-label="Toggle Menu" aria-expanded="false" id="mobileNavToggle">
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
@@ -3116,6 +3116,7 @@ function initMobileMenu() {
                 ".nav-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;visibility:hidden;transition:opacity .25s ease;z-index:999998;}" +
                 ".nav-backdrop.active{opacity:1;visibility:visible;}" +
                 "@media (max-width: 768px){" +
+                " .mobile-nav-toggle{position:relative !important;z-index:10000001 !important;pointer-events:auto !important;touch-action:manipulation !important;}" +
                 " .site-header .brand-left .name{white-space:normal !important;max-width:none !important;overflow:visible !important;text-overflow:clip !important;line-height:1.2 !important;font-size:clamp(11px,3.5vw,14px) !important;}" +
                 " .nav{position:fixed !important;top:0 !important;right:-100% !important;width:min(88vw,360px) !important;height:100dvh !important;background:#163b2a !important;display:flex !important;flex-direction:column !important;justify-content:flex-start !important;align-items:flex-start !important;padding:80px 22px 24px !important;gap:18px !important;transition:right .3s ease !important;z-index:999999 !important;visibility:hidden !important;opacity:1 !important;overflow-y:auto !important;overflow-x:hidden !important;margin:0 !important;}" +
                 " .nav.active{right:0 !important;visibility:visible !important;}" +
@@ -3210,8 +3211,10 @@ function initMobileMenu() {
             nav.classList.add('active');
             nav.style.right = '0';
             nav.style.visibility = 'visible';
+            nav.setAttribute('aria-hidden', 'false');
             backdrop.classList.add('active');
             document.body.style.overflow = 'hidden';
+            toggle.setAttribute('aria-expanded', 'true');
             const icon = toggle.querySelector('i');
             if (icon) icon.className = 'fa-solid fa-xmark';
         };
@@ -3224,14 +3227,28 @@ function initMobileMenu() {
                 nav.style.right = '';
                 nav.style.visibility = '';
             }
+            nav.setAttribute('aria-hidden', 'true');
             backdrop.classList.remove('active');
             document.body.style.overflow = '';
             resetSubmenuStyles();
+            toggle.setAttribute('aria-expanded', 'false');
             const icon = toggle.querySelector('i');
             if (icon) icon.className = 'fa-solid fa-bars';
         };
 
-        toggle.onclick = () => nav.classList.contains('active') ? closeMenu() : openMenu();
+        nav.setAttribute('aria-hidden', isMobile() ? 'true' : 'false');
+
+        const onTogglePress = (e) => {
+            if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            nav.classList.contains('active') ? closeMenu() : openMenu();
+        };
+
+        toggle.onclick = null;
+        toggle.addEventListener('click', onTogglePress, { passive: false });
+        toggle.addEventListener('touchend', onTogglePress, { passive: false });
         backdrop.onclick = closeMenu;
 
         // Close menu only on navigation links, NOT on dropdown parent toggles
