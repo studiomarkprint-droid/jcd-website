@@ -3933,8 +3933,10 @@
       initMobileMenu() {
         const toggle = document.getElementById('mobileNavToggle'), nav = document.querySelector('.nav');
         if (toggle && nav) {
-          // Move nav to body to escape ancestor CSS transform stacking context
-          document.body.appendChild(nav);
+          // Move nav to body ONLY on mobile to escape ancestor CSS transform stacking context
+          if (window.matchMedia('(max-width: 768px)').matches) {
+            document.body.appendChild(nav);
+          }
 
           // Create backdrop
           const backdrop = document.createElement('div');

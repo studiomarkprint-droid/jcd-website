@@ -2984,11 +2984,11 @@
     document.addEventListener('DOMContentLoaded', () => {
       const toggle = document.getElementById('mobileNavToggle');
       const nav = document.querySelector('.nav');
-      if (toggle && nav && window.innerWidth <= 768) {
-        // Move nav to body to escape ancestor transform stacking context
-        const navPlaceholder = document.createComment('nav-placeholder');
-        nav.parentNode.insertBefore(navPlaceholder, nav);
-        document.body.appendChild(nav);
+      if (toggle && nav) {
+        // Move nav to body ONLY on mobile to escape ancestor CSS transform stacking context
+        if (window.matchMedia('(max-width: 768px)').matches) {
+          document.body.appendChild(nav);
+        }
 
         // Create backdrop
         const backdrop = document.createElement('div');
