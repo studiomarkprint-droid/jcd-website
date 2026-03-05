@@ -3042,13 +3042,17 @@ header,
 
         <section class="estimate reveal right" id="estimate" aria-label="Request Estimate Form">
           <h3>Request Estimate</h3>
-          <div class="field"><label for="fullName">Full Name*</label><input id="fullName" placeholder="Full Name*" />
+          
+          <form class="estimate" id="estimateForm" action="https://formsubmit.co/jcdtreeservice@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="Nuevo Presupuesto Solicitado - JCD Tree Service">
+            <input type="hidden" name="_captcha" value="false">
+<div class="field"><label for="fullName">Full Name*</label><input id="fullName" name="full_name" placeholder="Full Name*" required />
           </div>
-          <div class="field"><label for="phoneInput">Phone*</label><input id="phoneInput" placeholder="Phone*" /></div>
-          <div class="field"><label for="email">Email*</label><input id="email" placeholder="Email*" /></div>
+          <div class="field"><label for="phoneInput">Phone*</label><input id="phoneInput" name="phone" placeholder="Phone*" required /></div>
+          <div class="field"><label for="email">Email*</label><input id="email" name="email" type="email" placeholder="Email*" required /></div>
           <div class="field">
             <label for="service">Tree and Landscaping Services*</label>
-            <select id="service">
+            <select id="service" name="service" required>
               <option value="" selected disabled hidden></option>
               <option>Emergency Tree Service</option>
               <option>Tree Removal</option>
@@ -3066,7 +3070,13 @@ header,
 
             </select>
           </div>
-          <button class="btn" type="button">Request Estimate</button>
+          <div class="field">
+              <label for="details">Project Details</label>
+              <textarea id="details" name="details" placeholder="Tell us what you need…"></textarea>
+            </div>
+
+            <button class="btn" type="submit">Submit Request</button>
+          </form>
         </section>
       </div>
     </header>
@@ -3575,7 +3585,7 @@ function initMobileMenu() {
     var style = document.createElement('style');
     style.id = 'service-mobile-fixes';
     style.textContent =
-      '.site-header{z-index:10000 !important;padding:10px 24px !important;}'+
+      '.site-header{z-index:9999999 !important;padding:10px 24px !important;}'+
       '.topbar{width:min(1200px,calc(100% - 24px)) !important;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:12px;height:100%;}'+
       '.brand-left{display:flex;align-items:center;gap:12px;white-space:nowrap;}'+
       '.brand-left img{height:66px;max-height:100%;width:auto;object-fit:contain;display:block;transform:translateY(10px);}'+
@@ -3628,6 +3638,118 @@ function initMobileMenu() {
 })();
 
 </script>
+<script id="formsubmit-client-flow-v1">
+document.addEventListener("DOMContentLoaded", function () {
+  function ensureSuccessModal() {
+    var existing = document.getElementById("jcd-form-success-modal");
+    if (existing) return existing;
+
+    var modal = document.createElement("div");
+    modal.id = "jcd-form-success-modal";
+    modal.setAttribute("aria-hidden", "true");
+    modal.innerHTML =
+      '<div class="jcd-modal-backdrop"></div>' +
+      '<div class="jcd-modal-card" role="dialog" aria-modal="true" aria-labelledby="jcd-modal-title">' +
+      '<h3 id="jcd-modal-title">Request Sent Successfully</h3>' +
+      '<p>Your request has been submitted successfully. Would you like to continue browsing?</p>' +
+      '<div class="jcd-modal-actions">' +
+      '<button type="button" id="jcd-modal-continue">Continue</button>' +
+      "</div></div>";
+
+    var style = document.createElement("style");
+    style.textContent =
+      "#jcd-form-success-modal{position:fixed;inset:0;display:none;z-index:10000020;}" +
+      "#jcd-form-success-modal.active{display:block;}" +
+      "#jcd-form-success-modal .jcd-modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.45);}" +
+      "#jcd-form-success-modal .jcd-modal-card{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(92vw,460px);background:#fff;border-radius:14px;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,.25);font-family:Lexend,Arial,sans-serif;color:#0f172a;text-align:center;}" +
+      "#jcd-form-success-modal h3{margin:0 0 10px;font-size:28px;line-height:1.2;}" +
+      "#jcd-form-success-modal p{margin:0 0 18px;font-size:15px;line-height:1.55;color:#334155;}" +
+      "#jcd-form-success-modal .jcd-modal-actions{display:flex;justify-content:center;}" +
+      "#jcd-form-success-modal button{border:0;border-radius:10px;padding:11px 20px;background:#1f4c35;color:#fff;font-weight:700;font-size:14px;cursor:pointer;}" +
+      "#jcd-form-success-modal button:hover{filter:brightness(1.06);}";
+
+    document.head.appendChild(style);
+    document.body.appendChild(modal);
+
+    function closeModal() {
+      modal.classList.remove("active");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    modal.querySelector("#jcd-modal-continue").addEventListener("click", closeModal);
+    modal.querySelector(".jcd-modal-backdrop").addEventListener("click", closeModal);
+    return modal;
+  }
+
+  function openSuccessModal() {
+    var modal = ensureSuccessModal();
+    modal.classList.add("active");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  document.querySelectorAll('form[action*="formsubmit.co"]').forEach(function (form) {
+    var emailField = form.querySelector('input[name="email"], input[name="Correo"]');
+    if (emailField) {
+      emailField.setAttribute("type", "email");
+      emailField.setAttribute("required", "required");
+    }
+
+    var nextInput = form.querySelector('input[name="_next"]');
+    if (nextInput) nextInput.remove();
+
+    var templateInput = form.querySelector('input[name="_template"]');
+    if (!templateInput) {
+      templateInput = document.createElement("input");
+      templateInput.type = "hidden";
+      templateInput.name = "_template";
+      form.appendChild(templateInput);
+    }
+    templateInput.value = "table";
+
+    if (form.dataset.ajaxBound === "1") return;
+    form.dataset.ajaxBound = "1";
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      var submitBtn = form.querySelector('button[type="submit"]');
+      var originalLabel = submitBtn ? submitBtn.textContent : "";
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending...";
+      }
+
+      try {
+        var fd = new FormData(form);
+        var ajaxAction = form.action.replace("formsubmit.co/", "formsubmit.co/ajax/");
+        var response = await fetch(ajaxAction, {
+          method: "POST",
+          body: fd,
+          headers: { "Accept": "application/json" }
+        });
+
+        if (!response.ok) throw new Error("Request failed");
+        form.reset();
+        openSuccessModal();
+      } catch (err) {
+        alert("We could not send your request right now. Please try again.");
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalLabel || "Submit Request";
+        }
+      }
+    });
+  });
+});
+</script>
+
 </body>
 
 </html>
