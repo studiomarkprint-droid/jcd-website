@@ -1644,12 +1644,42 @@
     }
 
     .social-section {
-      display: flex;
-      gap: 40px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
       align-items: flex-start;
       max-width: 1200px;
       margin: 120px auto 0;
       padding-bottom: 0;
+    }
+
+    .social-section-head {
+      grid-column: 1 / -1;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .social-section-head .kicker {
+      margin: 0 0 8px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #1f4c35;
+    }
+
+    .social-section-head h2 {
+      margin: 0;
+      font-size: 34px;
+      line-height: 1.1;
+      color: #0f172a;
+      font-weight: 800;
+    }
+
+    .social-section-head .sub {
+      margin: 10px 0 0;
+      font-size: 15px;
+      color: #4b5563;
     }
 
     .social-card {
@@ -1671,6 +1701,25 @@
 
     .facebook-card {
       flex: 1.35;
+    }
+
+    .social-card-title {
+      margin: 0 0 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 22px;
+      color: #0f172a;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .social-card-title .fa-facebook {
+      color: #1877f2;
+    }
+
+    .social-card-title .fa-instagram {
+      color: #d62976;
     }
 
     .social-card iframe {
@@ -1804,6 +1853,18 @@
         align-items: stretch;
       }
 
+      .social-section-head {
+        margin-bottom: 2px;
+      }
+
+      .social-section-head h2 {
+        font-size: 28px;
+      }
+
+      .social-section-head .sub {
+        font-size: 14px;
+      }
+
       .social-card,
       .instagram-card,
       .facebook-card {
@@ -1816,6 +1877,11 @@
       .social-card {
         padding: 12px;
         border-radius: 12px;
+      }
+
+      .social-card-title {
+        font-size: 20px;
+        margin-bottom: 10px;
       }
 
       .instagram-embed-wrapper,
@@ -3676,7 +3742,13 @@
     </section>
 
     <section class="social-section">
+      <div class="social-section-head">
+        <p class="kicker">Stay Connected</p>
+        <h2>Nuestras Redes Sociales</h2>
+        <p class="sub">Síguenos en Facebook e Instagram para ver trabajos recientes y novedades.</p>
+      </div>
       <div class="social-card facebook-card">
+        <h3 class="social-card-title"><i class="fa-brands fa-facebook"></i> Facebook</h3>
         <div class="fb-embed">
           <iframe title="Facebook Page - JC Four Seasons"
             src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FJCfourseasons&tabs=timeline&width=500&height=520&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
@@ -3686,6 +3758,7 @@
         </div>
       </div>
       <div class="social-card instagram-card">
+        <h3 class="social-card-title"><i class="fa-brands fa-instagram"></i> Instagram</h3>
         <div class="instagram-embed-wrapper" aria-label="Open Instagram">
           <iframe src="https://www.instagram.com/jcd.treeservices/embed" frameborder="0" scrolling="no"
             allowtransparency="true" allowfullscreen>
