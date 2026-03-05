@@ -4182,11 +4182,10 @@
         if (!preloader) return;
 
         const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const isSmallScreen = window.matchMedia('(max-width: 768px)').matches;
         const saveData = !!(navigator.connection && navigator.connection.saveData);
         const lowCpu = typeof navigator.hardwareConcurrency === 'number' && navigator.hardwareConcurrency <= 4;
         const lowMemory = typeof navigator.deviceMemory === 'number' && navigator.deviceMemory <= 4;
-        const useLitePreloader = prefersReducedMotion || isSmallScreen || saveData || lowCpu || lowMemory;
+        const useLitePreloader = prefersReducedMotion || saveData || (lowCpu && lowMemory);
 
         const forceRemove = () => {
           preloader.style.opacity = '0';
@@ -4196,7 +4195,8 @@
         };
 
         if (useLitePreloader) {
-          forceRemove();
+          // Keep a short visible preloader on constrained devices without heavy GSAP animation.
+          setTimeout(forceRemove, 220);
           return;
         }
 
