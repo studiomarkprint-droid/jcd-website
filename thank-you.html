@@ -96,6 +96,7 @@
     }
 
     .site-header {
+      will-change: transform;
       position: fixed;
       top: 0;
       left: 0;
@@ -560,14 +561,14 @@
       -webkit-text-stroke: 2px rgba(255, 255, 255, .70);
       paint-order: stroke fill;
       line-height: 1.05;
-      margin-top: -18px;
-      margin-bottom: 20px;
+      margin-top: -25px;
+      margin-bottom: 10px;
     }
 
     /* Navigation bar */
     .nav {
       width: min(var(--hero-max), calc(100% - 80px));
-      margin: -4px auto 0;
+      margin: -16px auto 0;
       padding: 6px 0 6.8px;
       display: flex;
       justify-content: center;
@@ -2353,6 +2354,7 @@
     }
   </style>
 <style id="header-parity-index">.site-header {
+      will-change: transform;
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
@@ -2559,6 +2561,7 @@ header,
   }
 
   .site-header {
+      will-change: transform;
     padding: 4px 12px !important;
     height: 52px !important;
     z-index: 9999999 !important;
@@ -2634,6 +2637,14 @@ header,
 }
 </style>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18016426896"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18016426896');
+</script>
 </head>
 
 <body>
