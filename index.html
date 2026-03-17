@@ -95,7 +95,8 @@
       padding-top: 20px;
     }
 
-    .site-header {
+    header.site-header {
+      will-change: transform;
       position: fixed;
       top: 0;
       left: 0;
@@ -106,8 +107,41 @@
       z-index: 9999;
       display: flex;
       align-items: center;
-      padding: 2px 24px;
+      padding: 16px 24px;
       box-sizing: border-box;
+      transition: padding 0.3s ease, box-shadow 0.3s ease;
+      will-change: transform;
+    }
+
+    header.site-header.scrolled {
+      padding: 8px 24px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    header.site-header .brand-left img {
+      transition: height 0.3s ease, transform 0.3s ease;
+    }
+
+    header.site-header.scrolled .brand-left img {
+      height: 52px;
+      transform: translateY(2px);
+    }
+
+    header.site-header .brand-left .name {
+      transition: margin 0.3s ease, font-size 0.3s ease;
+    }
+
+    header.site-header.scrolled .brand-left .name {
+      margin-top: 14px;
+      font-size: 15px;
+    }
+
+    header.site-header .music-player {
+      transition: margin 0.3s ease;
+    }
+
+    header.site-header.scrolled .music-player {
+      margin-top: 12px;
     }
 
     header,
@@ -143,7 +177,7 @@
       width: auto;
       object-fit: contain;
       display: block;
-      transform: translateY(10px);
+      transform: translateY(5px);
     }
 
     .brand-left .name {
@@ -155,7 +189,7 @@
       text-transform: none;
       white-space: nowrap;
       margin-left: -38px;
-      margin-top: 26px;
+      margin-top: 20px;
     }
 
     .topbar-right {
@@ -357,7 +391,7 @@
     .hero-top {
       width: min(1200px, calc(100% - 80px));
       margin: 0 auto;
-      padding: 28px 0 0;
+      padding: 55px 0 0;
       display: grid;
       grid-template-columns: 1fr auto;
       grid-template-rows: auto auto;
@@ -502,7 +536,7 @@
     /* Center logo + name like Aubrey */
     .brand {
       width: min(var(--hero-max), 100%);
-      margin: -35px auto 10px;
+      margin: -45px auto 5px;
       padding-top: 0;
       display: flex;
       justify-content: center;
@@ -510,7 +544,6 @@
       flex-direction: column;
       gap: 6px;
       text-align: center;
-      transform: translateY(-12px);
     }
 
     .brand .logo {
@@ -520,7 +553,7 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      margin-top: -55px;
+      margin-top: 0;
     }
 
     .brand .logo {
@@ -569,14 +602,14 @@
       -webkit-text-stroke: 2px rgba(255, 255, 255, .70);
       paint-order: stroke fill;
       line-height: 1.05;
-      margin-top: -18px;
-      margin-bottom: 20px;
+      margin-top: -25px;
+      margin-bottom: 10px;
     }
 
     /* Navigation bar */
     .nav {
       width: min(var(--hero-max), calc(100% - 80px));
-      margin: -4px auto 0;
+      margin: -16px auto 0;
       padding: 6px 0 6.8px;
       display: flex;
       justify-content: center;
@@ -712,7 +745,7 @@
     .hero-main {
       width: min(var(--hero-max), 100%);
       margin: 0 auto;
-      padding: 60px 40px;
+      padding: 30px 40px;
       display: grid;
       grid-template-columns: 62% 38%;
       gap: 0;
@@ -726,7 +759,7 @@
       margin: 42px auto 0;
       padding: 0;
       text-align: left;
-      margin-left: -40px;
+      margin-left: 20px;
       font-family: Lexend, "Lexend Fallback", sans-serif;
       font-weight: 700;
     }
@@ -763,11 +796,7 @@
 
     /* Estimate form panel (right) */
     .estimate {
-      background: rgba(43, 92, 52, .8);
-      border: 1px solid rgba(255, 255, 255, .3);
-      border-radius: var(--radius);
       box-shadow: none;
-      padding: 0 0 20px;
       backdrop-filter: none;
       width: 100%;
       max-width: 340px;
@@ -777,6 +806,13 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+    }
+
+    section.estimate {
+      background: rgba(43, 92, 52, .8);
+      border: 1px solid rgba(255, 255, 255, .3);
+      border-radius: var(--radius);
+      padding: 0 0 20px;
     }
 
     .estimate h3 {
@@ -1283,7 +1319,7 @@
       display: flex;
       align-items: center;
       gap: 16px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
     .review-avatar {
@@ -2375,6 +2411,7 @@
       }
 
       .site-header {
+      will-change: transform;
         padding: 4px 12px;
         height: 52px;
         z-index: 9999999;
@@ -2636,7 +2673,7 @@
 
       .reveal {
         transform: translateY(30px) !important;
-        margin-bottom: 20px !important;
+        margin-bottom: 10px !important;
       }
     }
 
@@ -2824,6 +2861,14 @@
       display: none !important;
     }
   </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18016426896"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18016426896');
+</script>
 </head>
 
 <body>
@@ -4085,6 +4130,22 @@
             });
           }
         });
+        let scrollScheduled = false;
+        let scrollScheduled = false; window.addEventListener('scroll', () => { if (scrollScheduled) return; scrollScheduled = true; requestAnimationFrame(() => {
+          if (scrollScheduled) return;
+          scrollScheduled = true;
+          requestAnimationFrame(() => {
+            const header = document.querySelector('.site-header');
+            if (header) {
+              if (window.scrollY > 40) {
+                header.classList.add('scrolled');
+              } else {
+                header.classList.remove('scrolled');
+              }
+            }
+            scrollScheduled = false;
+          });
+        }, { passive: true });
       }
     }
 
@@ -4341,11 +4402,21 @@
           sa.classList.toggle('is-hidden', hideNow);
         };
 
-        window.addEventListener('scroll', updateVisibility, { passive: true });
-        document.addEventListener('scroll', updateVisibility, { passive: true });
-        window.addEventListener('resize', updateVisibility, { passive: true });
-        window.addEventListener('orientationchange', updateVisibility);
-        const intervalId = window.setInterval(updateVisibility, 250);
+        let sideScheduled = false;
+        const throttledUpdate = () => {
+          if (sideScheduled) return;
+          sideScheduled = true;
+          requestAnimationFrame(() => {
+            updateVisibility();
+            sideScheduled = false;
+          });
+        };
+
+        window.addEventListener('scroll', throttledUpdate, { passive: true });
+        document.addEventListener('scroll', throttledUpdate, { passive: true });
+        window.addEventListener('resize', throttledUpdate, { passive: true });
+        window.addEventListener('orientationchange', throttledUpdate);
+        const intervalId = window.setInterval(throttledUpdate, 400);
         updateVisibility();
 
         this.sideActionsCleanup = () => {
@@ -4427,117 +4498,117 @@
       if (window.JCD && typeof window.JCD.init === 'function') window.JCD.init();
     });
   </script>
-<script id="formsubmit-client-flow-v1">
-document.addEventListener("DOMContentLoaded", function () {
-  function ensureSuccessModal() {
-    var existing = document.getElementById("jcd-form-success-modal");
-    if (existing) return existing;
+  <script id="formsubmit-client-flow-v1">
+    document.addEventListener("DOMContentLoaded", function () {
+      function ensureSuccessModal() {
+        var existing = document.getElementById("jcd-form-success-modal");
+        if (existing) return existing;
 
-    var modal = document.createElement("div");
-    modal.id = "jcd-form-success-modal";
-    modal.setAttribute("aria-hidden", "true");
-    modal.innerHTML =
-      '<div class="jcd-modal-backdrop"></div>' +
-      '<div class="jcd-modal-card" role="dialog" aria-modal="true" aria-labelledby="jcd-modal-title">' +
-      '<h3 id="jcd-modal-title">Request Sent Successfully</h3>' +
-      '<p>Your request has been submitted successfully. Would you like to continue browsing?</p>' +
-      '<div class="jcd-modal-actions">' +
-      '<button type="button" id="jcd-modal-continue">Continue</button>' +
-      "</div></div>";
+        var modal = document.createElement("div");
+        modal.id = "jcd-form-success-modal";
+        modal.setAttribute("aria-hidden", "true");
+        modal.innerHTML =
+          '<div class="jcd-modal-backdrop"></div>' +
+          '<div class="jcd-modal-card" role="dialog" aria-modal="true" aria-labelledby="jcd-modal-title">' +
+          '<h3 id="jcd-modal-title">Request Sent Successfully</h3>' +
+          '<p>Your request has been submitted successfully. Would you like to continue browsing?</p>' +
+          '<div class="jcd-modal-actions">' +
+          '<button type="button" id="jcd-modal-continue">Continue</button>' +
+          "</div></div>";
 
-    var style = document.createElement("style");
-    style.textContent =
-      "#jcd-form-success-modal{position:fixed;inset:0;display:none;z-index:10000020;}" +
-      "#jcd-form-success-modal.active{display:block;}" +
-      "#jcd-form-success-modal .jcd-modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.45);}" +
-      "#jcd-form-success-modal .jcd-modal-card{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(92vw,460px);background:#fff;border-radius:14px;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,.25);font-family:Lexend,Arial,sans-serif;color:#0f172a;text-align:center;}" +
-      "#jcd-form-success-modal h3{margin:0 0 10px;font-size:28px;line-height:1.2;}" +
-      "#jcd-form-success-modal p{margin:0 0 18px;font-size:15px;line-height:1.55;color:#334155;}" +
-      "#jcd-form-success-modal .jcd-modal-actions{display:flex;justify-content:center;}" +
-      "#jcd-form-success-modal button{border:0;border-radius:10px;padding:11px 20px;background:#1f4c35;color:#fff;font-weight:700;font-size:14px;cursor:pointer;}" +
-      "#jcd-form-success-modal button:hover{filter:brightness(1.06);}";
+        var style = document.createElement("style");
+        style.textContent =
+          "#jcd-form-success-modal{position:fixed;inset:0;display:none;z-index:10000020;}" +
+          "#jcd-form-success-modal.active{display:block;}" +
+          "#jcd-form-success-modal .jcd-modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.45);}" +
+          "#jcd-form-success-modal .jcd-modal-card{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(92vw,460px);background:#fff;border-radius:14px;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,.25);font-family:Lexend,Arial,sans-serif;color:#0f172a;text-align:center;}" +
+          "#jcd-form-success-modal h3{margin:0 0 10px;font-size:28px;line-height:1.2;}" +
+          "#jcd-form-success-modal p{margin:0 0 18px;font-size:15px;line-height:1.55;color:#334155;}" +
+          "#jcd-form-success-modal .jcd-modal-actions{display:flex;justify-content:center;}" +
+          "#jcd-form-success-modal button{border:0;border-radius:10px;padding:11px 20px;background:#1f4c35;color:#fff;font-weight:700;font-size:14px;cursor:pointer;}" +
+          "#jcd-form-success-modal button:hover{filter:brightness(1.06);}";
 
-    document.head.appendChild(style);
-    document.body.appendChild(modal);
+        document.head.appendChild(style);
+        document.body.appendChild(modal);
 
-    function closeModal() {
-      modal.classList.remove("active");
-      modal.setAttribute("aria-hidden", "true");
-      document.body.style.overflow = "";
-    }
-
-    modal.querySelector("#jcd-modal-continue").addEventListener("click", closeModal);
-    modal.querySelector(".jcd-modal-backdrop").addEventListener("click", closeModal);
-    return modal;
-  }
-
-  function openSuccessModal() {
-    var modal = ensureSuccessModal();
-    modal.classList.add("active");
-    modal.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
-  }
-
-  document.querySelectorAll('form[action*="formsubmit.co"]').forEach(function (form) {
-    var emailField = form.querySelector('input[name="email"], input[name="Correo"]');
-    if (emailField) {
-      emailField.setAttribute("type", "email");
-      emailField.setAttribute("required", "required");
-    }
-
-    var nextInput = form.querySelector('input[name="_next"]');
-    if (nextInput) nextInput.remove();
-
-    var templateInput = form.querySelector('input[name="_template"]');
-    if (!templateInput) {
-      templateInput = document.createElement("input");
-      templateInput.type = "hidden";
-      templateInput.name = "_template";
-      form.appendChild(templateInput);
-    }
-    templateInput.value = "table";
-
-    if (form.dataset.ajaxBound === "1") return;
-    form.dataset.ajaxBound = "1";
-
-    form.addEventListener("submit", async function (e) {
-      e.preventDefault();
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-
-      var submitBtn = form.querySelector('button[type="submit"]');
-      var originalLabel = submitBtn ? submitBtn.textContent : "";
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.textContent = "Sending...";
-      }
-
-      try {
-        var fd = new FormData(form);
-        var ajaxAction = form.action.replace("formsubmit.co/", "formsubmit.co/ajax/");
-        var response = await fetch(ajaxAction, {
-          method: "POST",
-          body: fd,
-          headers: { "Accept": "application/json" }
-        });
-
-        if (!response.ok) throw new Error("Request failed");
-        form.reset();
-        openSuccessModal();
-      } catch (err) {
-        alert("We could not send your request right now. Please try again.");
-      } finally {
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.textContent = originalLabel || "Submit Request";
+        function closeModal() {
+          modal.classList.remove("active");
+          modal.setAttribute("aria-hidden", "true");
+          document.body.style.overflow = "";
         }
+
+        modal.querySelector("#jcd-modal-continue").addEventListener("click", closeModal);
+        modal.querySelector(".jcd-modal-backdrop").addEventListener("click", closeModal);
+        return modal;
       }
+
+      function openSuccessModal() {
+        var modal = ensureSuccessModal();
+        modal.classList.add("active");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+
+      document.querySelectorAll('form[action*="formsubmit.co"]').forEach(function (form) {
+        var emailField = form.querySelector('input[name="email"], input[name="Correo"]');
+        if (emailField) {
+          emailField.setAttribute("type", "email");
+          emailField.setAttribute("required", "required");
+        }
+
+        var nextInput = form.querySelector('input[name="_next"]');
+        if (nextInput) nextInput.remove();
+
+        var templateInput = form.querySelector('input[name="_template"]');
+        if (!templateInput) {
+          templateInput = document.createElement("input");
+          templateInput.type = "hidden";
+          templateInput.name = "_template";
+          form.appendChild(templateInput);
+        }
+        templateInput.value = "table";
+
+        if (form.dataset.ajaxBound === "1") return;
+        form.dataset.ajaxBound = "1";
+
+        form.addEventListener("submit", async function (e) {
+          e.preventDefault();
+          if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+          }
+
+          var submitBtn = form.querySelector('button[type="submit"]');
+          var originalLabel = submitBtn ? submitBtn.textContent : "";
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = "Sending...";
+          }
+
+          try {
+            var fd = new FormData(form);
+            var ajaxAction = form.action.replace("formsubmit.co/", "formsubmit.co/ajax/");
+            var response = await fetch(ajaxAction, {
+              method: "POST",
+              body: fd,
+              headers: { "Accept": "application/json" }
+            });
+
+            if (!response.ok) throw new Error("Request failed");
+            form.reset();
+            openSuccessModal();
+          } catch (err) {
+            alert("We could not send your request right now. Please try again.");
+          } finally {
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.textContent = originalLabel || "Submit Request";
+            }
+          }
+        });
+      });
     });
-  });
-});
-</script>
+  </script>
 </body>
 
 </html>
