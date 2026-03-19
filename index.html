@@ -515,7 +515,7 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      gap: 0;
+      gap: 6px;
       text-align: center;
       transform: translateY(-12px);
     }
@@ -528,7 +528,6 @@
       justify-content: center;
       position: relative;
       margin-top: -55px;
-      margin-bottom: 20px;
     }
 
     .brand .logo {
@@ -556,7 +555,7 @@
       -webkit-text-stroke: 2px rgba(255, 255, 255, .70);
       paint-order: stroke fill;
       line-height: 1.05;
-      margin-top: 20px;
+      margin-top: -18px;
       margin-bottom: 20px;
     }
 
@@ -2200,6 +2199,105 @@
       .hero-copy .subline {
         font-size: 14px;
         line-height: 1.6;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-bottom: 24px;
+      }
+
+      .hero-top {
+        width: 100%;
+        padding: 94px 16px 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 14px;
+        text-align: center;
+      }
+
+      .rating-area,
+      .top-actions,
+      .service-area,
+      .phone {
+        grid-column: 1;
+        grid-row: auto;
+        justify-self: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .rating {
+        justify-content: center;
+      }
+
+      .top-actions {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 2px;
+      }
+
+      .cta-top {
+        display: inline-flex;
+        min-width: min(100%, 420px);
+        width: min(100%, 420px);
+      }
+
+      .brand {
+        width: 100%;
+        margin: 18px auto 8px;
+        transform: none;
+      }
+
+      .brand .logo {
+        width: 120px;
+        height: 120px;
+        margin-top: 0;
+      }
+
+      .brand .logo img {
+        height: 120px;
+      }
+
+      .brand .name {
+        font-size: 22px;
+        -webkit-text-stroke: 1px rgba(255, 255, 255, .7);
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+
+      .hero-main {
+        padding: 20px 16px 32px;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .hero-copy {
+        max-width: 100%;
+        margin: 0 auto;
+        margin-left: 0;
+        text-align: center;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(24px, 8.2vw, 34px);
+        line-height: 1.12;
+        text-align: center;
+      }
+
+      .hero-copy .subline {
+        margin-top: 14px;
+        margin-left: 0;
+        font-size: 16px;
+        line-height: 1.5;
+        text-align: center;
+      }
+
+      .estimate {
+        width: 100%;
+        margin: 8px auto 0;
+        justify-self: stretch;
       }
     }
 
