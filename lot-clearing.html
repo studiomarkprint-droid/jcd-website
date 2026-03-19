@@ -2749,9 +2749,6 @@ header,
 </head>
 
 <body>
-  <div id="gsap-preloader"
-    style="z-index: 99999; background-color: #000; pointer-events: none; width: 100%; height: 100svh; display: flex; position: fixed; inset: 0;">
-  </div>
   <header class="site-header" aria-label="Site Header">
     <div class="topbar">
       <div class="brand-left">
@@ -3544,18 +3541,6 @@ function initMobileMenu() {
 (function () {
   'use strict';
 
-  function hidePreloader() {
-    var preloader = document.getElementById('gsap-preloader');
-    if (!preloader) return;
-
-    preloader.style.opacity = '0';
-    preloader.style.transition = 'opacity 0.35s ease';
-
-    window.setTimeout(function () {
-      preloader.style.display = 'none';
-    }, 380);
-  }
-
   function updateYear() {
     var yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = String(new Date().getFullYear());
@@ -3648,7 +3633,6 @@ function initMobileMenu() {
     applyServiceMobileFixes();
     initReveal();
     initQuickActions();
-    hidePreloader();
   }
 
   if (document.readyState === 'loading') {
@@ -3657,8 +3641,6 @@ function initMobileMenu() {
     init();
   }
 
-  window.addEventListener('load', hidePreloader);
-  window.setTimeout(hidePreloader, 1200);
 })();
 
 </script>

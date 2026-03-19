@@ -2770,9 +2770,6 @@ header,
 </head>
 
 <body>
-  <div id="gsap-preloader"
-    style="z-index: 99999; background-color: #000; pointer-events: none; width: 100%; height: 100svh; display: flex; position: fixed; inset: 0;">
-  </div>
   <header class="site-header" aria-label="Site Header">
     <div class="topbar">
       <div class="brand-left">
@@ -3791,7 +3788,6 @@ function initMobileMenu() {
       revealObserver: null,
       init() {
         try {
-          this.removePreloader();
           this.updateYear();
           this.initSmoothScroll();
           this.initRevealObservers();
@@ -3802,92 +3798,6 @@ function initMobileMenu() {
           this.initMobileMenu();
         } catch (e) {
           console.error("JCD Init failed:", e);
-          this.removePreloader(); // Fallback removal
-        }
-      },
-      removePreloader() {
-        const preloader = document.getElementById('gsap-preloader');
-        if (!preloader) return;
-
-        const forceRemove = () => {
-          preloader.style.opacity = '0';
-          preloader.style.pointerEvents = 'none';
-          document.body.style.overflow = 'auto';
-          setTimeout(() => { if (preloader.parentNode) preloader.remove(); }, 800);
-        };
-
-        const safetyTimeout = setTimeout(forceRemove, 3000);
-
-        const heroBrand = document.querySelector('.brand');
-        if (!window.gsap || !heroBrand) {
-          forceRemove();
-          clearTimeout(safetyTimeout);
-          return;
-        }
-
-        try {
-          let brandClone = heroBrand.cloneNode(true);
-          brandClone.id = 'preloader-branding';
-          brandClone.classList.remove('reveal', 'in', 'left', 'right');
-          Object.assign(brandClone.style, { position: 'fixed', margin: '0', transform: 'none', transformOrigin: '50% 50%', willChange: 'transform, opacity', pointerEvents: 'none', zIndex: '100000' });
-
-          const cloneLogoLink = brandClone.querySelector('.logo');
-          let overlay, textOverlay;
-          if (cloneLogoLink) {
-            cloneLogoLink.style.position = 'relative';
-            overlay = document.createElement('div');
-            Object.assign(overlay.style, { backgroundColor: '#000', opacity: '0.9', transformOrigin: '100% 50%', width: '100%', height: '100%', position: 'absolute', inset: '0', zIndex: '10' });
-            cloneLogoLink.appendChild(overlay);
-          }
-          const cloneBrandText = brandClone.querySelector('.name');
-          if (cloneBrandText) {
-            cloneBrandText.style.position = 'relative';
-            textOverlay = document.createElement('div');
-            Object.assign(textOverlay.style, { backgroundColor: '#000', opacity: '0.9', transformOrigin: '100% 50%', width: '100%', height: '100%', position: 'absolute', inset: '0', zIndex: '10' });
-            cloneBrandText.appendChild(textOverlay);
-          }
-
-          preloader.appendChild(brandClone);
-
-          let centerOffsetX = 0, centerOffsetY = 0;
-          const sync = () => {
-            const rect = heroBrand.getBoundingClientRect();
-            brandClone.style.left = `${rect.left}px`; brandClone.style.top = `${rect.top}px`;
-            brandClone.style.width = `${rect.width}px`; brandClone.style.height = `${rect.height}px`;
-            const logoEl = brandClone.querySelector('.logo'), nameEl = brandClone.querySelector('.name');
-            let visualCenterY = rect.top + (rect.height / 2);
-            if (logoEl && nameEl) {
-              const lRect = logoEl.getBoundingClientRect(), nRect = nameEl.getBoundingClientRect();
-              visualCenterY = lRect.top + ((nRect.bottom - lRect.top) / 2);
-            }
-            centerOffsetX = (window.innerWidth / 2) - (rect.left + (rect.width / 2));
-            centerOffsetY = (window.innerHeight / 2) - visualCenterY;
-          };
-          sync();
-
-          const tl = gsap.timeline({
-            onComplete: () => {
-              forceRemove();
-              clearTimeout(safetyTimeout);
-            }
-          });
-
-          if (overlay && textOverlay) {
-            tl.set('#preloader-branding', { x: centerOffsetX, y: centerOffsetY, scale: 1.15 })
-              .to(overlay, { scaleX: 0, duration: 0.8, ease: 'power4.out', delay: 0.1 })
-              .to(textOverlay, { scaleX: 0, duration: 0.8, ease: 'power4.out' }, '<0.1')
-              .to('#preloader-branding', { x: 0, y: 0, scale: 1, duration: 0.9, ease: 'power3.inOut' }, '>-0.05')
-              .to('#gsap-preloader', { opacity: 0, duration: 0.35, ease: 'power2.inOut' }, '>-0.1');
-          } else {
-            tl.set('#preloader-branding', { x: centerOffsetX, y: centerOffsetY, scale: 1.15 })
-              .to('#preloader-branding', { x: 0, y: 0, scale: 1, duration: 0.8, ease: 'power3.inOut', delay: 0.2 })
-              .to('#gsap-preloader', { opacity: 0, duration: 0.35, ease: 'power2.inOut' }, '>-0.1');
-          }
-
-        } catch (e) {
-          console.warn("Preloader animation failed", e);
-          forceRemove();
-          clearTimeout(safetyTimeout);
         }
       },
       updateYear() { const yearEl = document.getElementById('year'); if (yearEl) yearEl.textContent = new Date().getFullYear(); },
