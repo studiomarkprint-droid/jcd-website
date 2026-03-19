@@ -4473,39 +4473,45 @@
           let centerOffsetX = 0, centerOffsetY = 0;
           const sync = () => {
             const rect = heroBrand.getBoundingClientRect();
-            brandClone.style.left = `${rect.left}px`; brandClone.style.top = `${rect.top}px`;
-            brandClone.style.width = `${rect.width}px`; brandClone.style.height = `${rect.height}px`;
+            if (rect.width === 0 || rect.height === 0) return; // Guard against hidden layout
+            brandClone.style.left = `${rect.left}px`;
+            brandClone.style.top = `${rect.top}px`;
+            brandClone.style.width = `${rect.width}px`;
+            brandClone.style.height = `${rect.height}px`;
             const logoEl = brandClone.querySelector('.logo'), nameEl = brandClone.querySelector('.name');
             let visualCenterY = rect.top + (rect.height / 2);
             if (logoEl && nameEl) {
               const lRect = logoEl.getBoundingClientRect(), nRect = nameEl.getBoundingClientRect();
-              visualCenterY = lRect.top + ((nRect.bottom - lRect.top) / 2);
+              if (lRect.height > 0 && nRect.height > 0) {
+                visualCenterY = lRect.top + ((nRect.bottom - lRect.top) / 2);
+              }
             }
             centerOffsetX = (window.innerWidth / 2) - (rect.left + (rect.width / 2));
             centerOffsetY = (window.innerHeight / 2) - visualCenterY;
           };
-          sync();
 
-          const tl = gsap.timeline({
-            onComplete: () => {
-              forceRemove();
-              clearTimeout(safetyTimeout);
+          // Wait a tiny bit for layout to settle, then sync and animate
+          setTimeout(() => {
+            sync();
+            const tl = gsap.timeline({
+              onComplete: () => {
+                forceRemove();
+                clearTimeout(safetyTimeout);
+              }
+            });
+
+            if (overlay && textOverlay) {
+              tl.set('#preloader-branding', { opacity: 1, x: centerOffsetX, y: centerOffsetY, scale: 1.15 })
+                .to(overlay, { scaleX: 0, duration: 0.7, ease: 'power3.out', delay: 0.05 })
+                .to(textOverlay, { scaleX: 0, duration: 0.7, ease: 'power3.out' }, '<0.1')
+                .to('#preloader-branding', { x: 0, y: 0, scale: 1, duration: 0.8, ease: 'power2.inOut' }, '>-0.05')
+                .to('#gsap-preloader', { opacity: 0, duration: 0.3, ease: 'none', onComplete: forceRemove }, '>-0.1');
+            } else {
+              tl.set('#preloader-branding', { opacity: 1, x: centerOffsetX, y: centerOffsetY, scale: 1.15 })
+                .to('#preloader-branding', { x: 0, y: 0, scale: 1, duration: 0.7, ease: 'power2.inOut', delay: 0.1 })
+                .to('#gsap-preloader', { opacity: 0, duration: 0.3, ease: 'none', onComplete: forceRemove }, '>-0.1');
             }
-          });
-
-          if (overlay && textOverlay) {
-            tl.set('#preloader-branding', { x: centerOffsetX, y: centerOffsetY, scale: 1.15 })
-              .to(overlay, { scaleX: 0, duration: 0.8, ease: 'power4.out', delay: 0.1 })
-              .to(textOverlay, { scaleX: 0, duration: 0.8, ease: 'power4.out' }, '<0.1')
-              .add(() => sync()) // Recalculate right before moving for sub-pixel accuracy
-              .to('#preloader-branding', { x: 0, y: 0, scale: 1, duration: 0.9, ease: 'power3.inOut' }, '>-0.05')
-              .to('#gsap-preloader', { opacity: 0, duration: 0.35, ease: 'power2.inOut' }, '>-0.1');
-          } else {
-            tl.set('#preloader-branding', { x: centerOffsetX, y: centerOffsetY, scale: 1.15 })
-              .add(() => sync())
-              .to('#preloader-branding', { x: 0, y: 0, scale: 1, duration: 0.8, ease: 'power3.inOut', delay: 0.2 })
-              .to('#gsap-preloader', { opacity: 0, duration: 0.35, ease: 'power2.inOut' }, '>-0.1');
-          }
+          }, 100);
 
         } catch (e) {
           console.warn("Preloader animation failed", e);
