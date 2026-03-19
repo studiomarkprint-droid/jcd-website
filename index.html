@@ -13,33 +13,6 @@
     content="Professional tree services and landscaping in Fairfield County, CT. Trusted experts for tree removal, trimming, and landscape design." />
   <meta property="og:image" content="https://jcdtreeserviceslandscaping.com/og-image.png" />
   <meta property="og:url" content="https://jcdtreeserviceslandscaping.com/" />
-  <meta property="og:type" content="website" />
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png" />
-  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "JCD Tree Service & Landscaping",
-    "url": "https://jcdtreeserviceslandscaping.com",
-    "logo": "https://jcdtreeserviceslandscaping.com/og-image.png",
-    "image": "https://jcdtreeserviceslandscaping.com/og-image.png",
-    "description": "Professional tree services and landscaping in Fairfield County, CT.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Fairfield County",
-      "addressRegion": "CT",
-      "addressCountry": "US"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+1-475-434-5969",
-      "contactType": "customer service"
-    }
-  }
-  </script>
 
   <!-- Fonts (match Aubrey) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -76,8 +49,6 @@
       --max: 1320px;
       --hero-max: 1200px;
     }
-
-    /* Integrated spacing logic below */
 
     * {
       box-sizing: border-box;
@@ -131,8 +102,7 @@
       padding-top: 20px;
     }
 
-    header.site-header {
-      will-change: transform;
+    .site-header {
       position: fixed;
       top: 0;
       left: 0;
@@ -143,41 +113,8 @@
       z-index: 9999;
       display: flex;
       align-items: center;
-      padding: 16px 24px;
+      padding: 2px 24px;
       box-sizing: border-box;
-      transition: padding 0.3s ease, box-shadow 0.3s ease;
-      will-change: transform;
-    }
-
-    header.site-header.scrolled {
-      padding: 8px 24px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    header.site-header .brand-left img {
-      transition: height 0.3s ease, transform 0.3s ease;
-    }
-
-    header.site-header.scrolled .brand-left img {
-      height: 52px;
-      transform: translateY(2px);
-    }
-
-    header.site-header .brand-left .name {
-      transition: margin 0.3s ease, font-size 0.3s ease;
-    }
-
-    header.site-header.scrolled .brand-left .name {
-      margin-top: 14px;
-      font-size: 15px;
-    }
-
-    header.site-header .music-player {
-      transition: margin 0.3s ease;
-    }
-
-    header.site-header.scrolled .music-player {
-      margin-top: 12px;
     }
 
     header,
@@ -213,7 +150,7 @@
       width: auto;
       object-fit: contain;
       display: block;
-      transform: translateY(5px);
+      transform: translateY(10px);
     }
 
     .brand-left .name {
@@ -225,7 +162,7 @@
       text-transform: none;
       white-space: nowrap;
       margin-left: -38px;
-      margin-top: 20px;
+      margin-top: 26px;
     }
 
     .topbar-right {
@@ -427,7 +364,7 @@
     .hero-top {
       width: min(1200px, calc(100% - 80px));
       margin: 0 auto;
-      padding: 55px 0 0;
+      padding: 28px 0 0;
       display: grid;
       grid-template-columns: 1fr auto;
       grid-template-rows: auto auto;
@@ -572,14 +509,15 @@
     /* Center logo + name like Aubrey */
     .brand {
       width: min(var(--hero-max), 100%);
-      margin: -45px auto 5px;
+      margin: -35px auto 10px;
       padding-top: 0;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      gap: 40px;
+      gap: 0;
       text-align: center;
+      transform: translateY(-12px);
     }
 
     .brand .logo {
@@ -589,7 +527,7 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      margin-top: 0;
+      margin-top: -55px;
       margin-bottom: 20px;
     }
 
@@ -605,27 +543,6 @@
       display: block;
     }
 
-    /* Simple “leaf” logo placeholder (you can replace with your PNG) */
-    .leaf {
-      width: 100px;
-      height: 100px;
-      background: radial-gradient(circle at 30% 30%, #d7f0a5, #77b64b 65%, #3f7f2f);
-      clip-path: polygon(6% 54%, 20% 28%, 42% 10%, 66% 8%, 88% 24%, 94% 44%, 78% 52%, 86% 66%, 66% 62%, 56% 74%, 44% 64%, 26% 76%, 22% 60%);
-      border: 2px solid rgba(255, 255, 255, .75);
-      border-radius: 18px;
-      position: relative;
-    }
-
-    .leaf::after {
-      content: "JCD";
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      font-weight: 700;
-      color: #1a4f33;
-      letter-spacing: 0;
-    }
 
     .brand .name {
       font-family: Lexend, "Lexend Fallback", serif;
@@ -640,13 +557,13 @@
       paint-order: stroke fill;
       line-height: 1.05;
       margin-top: 20px;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
     /* Navigation bar */
     .nav {
       width: min(var(--hero-max), calc(100% - 80px));
-      margin: -16px auto 0;
+      margin: -4px auto 0;
       padding: 6px 0 6.8px;
       display: flex;
       justify-content: center;
@@ -782,7 +699,7 @@
     .hero-main {
       width: min(var(--hero-max), 100%);
       margin: 0 auto;
-      padding: 30px 40px;
+      padding: 60px 40px;
       display: grid;
       grid-template-columns: 62% 38%;
       gap: 0;
@@ -796,7 +713,7 @@
       margin: 42px auto 0;
       padding: 0;
       text-align: left;
-      margin-left: 20px;
+      margin-left: -40px;
       font-family: Lexend, "Lexend Fallback", sans-serif;
       font-weight: 700;
     }
@@ -833,23 +750,20 @@
 
     /* Estimate form panel (right) */
     .estimate {
+      background: rgba(43, 92, 52, .8);
+      border: 1px solid rgba(255, 255, 255, .3);
+      border-radius: var(--radius);
       box-shadow: none;
+      padding: 0 0 20px;
       backdrop-filter: none;
-      width: 100%;
-      max-width: 340px;
+      width: 340px;
+      max-width: 100%;
       margin-left: auto;
       margin-top: 24px;
       justify-self: end;
       display: flex;
       flex-direction: column;
       align-items: center;
-    }
-
-    section.estimate {
-      background: rgba(43, 92, 52, .8);
-      border: 1px solid rgba(255, 255, 255, .3);
-      border-radius: var(--radius);
-      padding: 0 0 20px;
     }
 
     .estimate h3 {
@@ -1356,7 +1270,7 @@
       display: flex;
       align-items: center;
       gap: 16px;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
 
     .review-avatar {
@@ -1717,42 +1631,12 @@
     }
 
     .social-section {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
+      display: flex;
+      gap: 40px;
       align-items: flex-start;
       max-width: 1200px;
       margin: 120px auto 0;
       padding-bottom: 0;
-    }
-
-    .social-section-head {
-      grid-column: 1 / -1;
-      text-align: center;
-      margin-bottom: 10px;
-    }
-
-    .social-section-head .kicker {
-      margin: 0 0 8px;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #1f4c35;
-    }
-
-    .social-section-head h2 {
-      margin: 0;
-      font-size: 34px;
-      line-height: 1.1;
-      color: #0f172a;
-      font-weight: 800;
-    }
-
-    .social-section-head .sub {
-      margin: 10px 0 0;
-      font-size: 15px;
-      color: #4b5563;
     }
 
     .social-card {
@@ -1765,8 +1649,7 @@
 
     .instagram-card {
       flex: 1.15;
-      min-width: unset;
-      width: 100%;
+      min-width: 420px;
       min-height: unset;
       height: auto;
       padding-bottom: 0;
@@ -1774,25 +1657,6 @@
 
     .facebook-card {
       flex: 1.35;
-    }
-
-    .social-card-title {
-      margin: 0 0 14px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 22px;
-      color: #0f172a;
-      font-weight: 800;
-      line-height: 1.2;
-    }
-
-    .social-card-title .fa-facebook {
-      color: #1877f2;
-    }
-
-    .social-card-title .fa-instagram {
-      color: #d62976;
     }
 
     .social-card iframe {
@@ -1897,35 +1761,12 @@
 
     @media (max-width: 560px) {
       .big-green-section {
-        padding: 40px 18px 36px;
-      }
-
-      .green-btn {
-        padding: 12px 24px;
-        border-radius: 10px;
-        font-size: 13px;
-        font-weight: 600;
-        letter-spacing: 0.05em;
+        padding: 36px 18px 30px;
       }
 
       .green-icons {
-        grid-template-columns: 1fr;
-        gap: 24px;
-        max-width: 260px;
-        margin: 8px auto 0;
-      }
-
-      .green-icons img {
-        width: 58px;
-        height: 58px;
-        margin-bottom: 10px;
-      }
-
-      .green-icons span {
-        font-size: 13px;
-        line-height: 1.4;
-        font-weight: 500;
-        letter-spacing: 0.01em;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
       }
     }
 
@@ -1937,77 +1778,6 @@
       .facebook-box,
       .instagram-box {
         max-width: 100%;
-      }
-
-      .social-section {
-        display: flex;
-        flex-direction: column;
-        gap: 18px;
-        margin: 44px auto 0;
-        padding: 0 14px;
-        max-width: 100%;
-        align-items: stretch;
-      }
-
-      .social-section-head {
-        margin-bottom: 2px;
-      }
-
-      .social-section-head h2 {
-        font-size: 28px;
-      }
-
-      .social-section-head .sub {
-        font-size: 14px;
-      }
-
-      .social-card,
-      .instagram-card,
-      .facebook-card {
-        width: 100%;
-        flex: none;
-        min-width: 0;
-        margin: 0;
-      }
-
-      .social-card {
-        padding: 12px;
-        border-radius: 12px;
-      }
-
-      .social-card-title {
-        font-size: 20px;
-        margin-bottom: 10px;
-      }
-
-      .instagram-embed-wrapper,
-      .fb-embed {
-        width: 100%;
-        overflow: hidden;
-        border-radius: 10px;
-      }
-
-      .instagram-card iframe {
-        min-height: 460px;
-        height: 460px;
-      }
-
-      .facebook-card iframe {
-        width: 100% !important;
-        min-width: 100% !important;
-        height: 460px !important;
-      }
-    }
-
-    @media (max-width: 420px) {
-      .social-section {
-        padding: 0 10px;
-      }
-
-      .instagram-card iframe,
-      .facebook-card iframe {
-        height: 430px !important;
-        min-height: 430px;
       }
     }
 
@@ -2108,8 +1878,7 @@
     }
 
     .feature .media {
-      width: 100%;
-      max-width: 701px;
+      width: 701px;
       height: 416px;
     }
 
@@ -2422,310 +2191,15 @@
       }
     }
 
-    /* ========== MOBILE NAV TOGGLE ========== */
-    .mobile-nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 24px;
-      color: var(--green-900);
-      cursor: pointer;
-      padding: 8px;
-      z-index: 10001;
-    }
-
     @media (max-width: 768px) {
-
-      html,
-      body {
-        overflow-x: hidden;
-        width: 100%;
-        position: relative;
-      }
-
-      body {
-        padding-top: 52px;
-      }
-
-      .site-header {
-        will-change: transform;
-        padding: 4px 12px;
-        height: 52px;
-        z-index: 9999999;
-      }
-
-      .brand-left {
-        gap: 4px;
-        flex: 1;
-      }
-
-      .brand-left img {
-        height: 38px;
-        transform: translateY(2px);
-      }
-
-      .brand-left .name {
-        display: block !important;
-        font-size: 11px;
-        margin-left: -8px;
-        margin-top: 0;
-        letter-spacing: 0;
-        font-weight: 700;
-        white-space: normal;
-        line-height: 1.3;
-      }
-
-      .topbar-right {
-        width: auto;
-        max-width: none;
-        gap: 8px;
-        flex: 1;
-        justify-content: flex-end;
-      }
-
-      .music-player {
-        width: auto;
-        flex: 0 1 auto;
-        min-width: 0;
-        max-width: 150px;
-        margin-top: 0;
-        padding: 0 4px;
-        height: 32px;
-        background: transparent !important;
-        gap: 6px;
-      }
-
-      .music-player .track {
-        display: flex;
-        flex: 1;
-      }
-
-      .music-player .time {
-        display: none;
-      }
-
-      .music-player button {
-        width: 24px;
-        height: 24px;
-        box-shadow: 0 0 0 2px rgba(227, 234, 170, .9), 0 5px 10px rgba(0, 0, 0, .15);
-      }
-
-      .music-player .eq {
-        display: none;
-      }
-
-      .mobile-nav-toggle {
-        display: block;
-        order: 2;
-        margin-left: 2px;
-        color: var(--green-800);
-        font-size: 22px;
-      }
-
-      .hero {
-        min-height: auto;
-        padding-bottom: 40px;
-      }
-
-      .hero-top {
-        width: 100%;
-        padding: 20px 15px 0;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        gap: 15px;
-        text-align: center;
-      }
-
-      .rating-area,
-      .top-actions,
-      .service-area,
-      .phone {
-        grid-column: 1;
-        grid-row: auto;
-        justify-self: center;
-        align-items: center;
-        text-align: center;
-      }
-
-      .rating {
-        justify-content: center;
-      }
-
-      .cta-top {
-        min-width: 100%;
-      }
-
-      .phone {
-        font-size: 16px;
-        margin-top: 0;
-      }
-
-      .brand {
-        margin: 20px auto;
-        transform: none;
-        width: 100%;
-      }
-
-      .brand .logo {
-        width: 120px;
-        height: 120px;
-        margin-top: 0;
-      }
-
-      .brand .logo img {
-        height: 120px;
-      }
-
-      .brand .name {
-        font-size: 22px;
-        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7);
-        margin-top: 0;
-        margin-bottom: 10px;
-      }
-
-      .nav {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 90%;
-        height: 100vh;
-        background: #163b2a !important;
-        /* var(--green-900) */
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        padding: 80px 30px;
-        gap: 20px;
-        transition: right 0.3s ease;
-        z-index: 999999;
-        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
-        visibility: hidden;
-        overflow-y: auto;
-        overflow-x: hidden;
-      }
-
-      .nav.active {
-        right: 0;
-        visibility: visible;
-        opacity: 1 !important;
-        transform: none !important;
-        filter: none !important;
-      }
-
-      .nav a {
-        font-size: 18px;
-        width: 100%;
-        padding: 10px 0;
-        text-align: left;
-      }
-
-      .nav a::after {
-        display: none;
-      }
-
-      .nav .dropdown-item {
-        width: 100%;
-        min-width: 0;
-        position: relative;
-      }
-
-      .nav .sub-menu {
-        position: static !important;
-        left: auto !important;
-        top: auto !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-        transform: none !important;
-        box-shadow: none !important;
-        border-top: none !important;
-        min-width: 0 !important;
-        width: 100% !important;
-        padding-left: 15px;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-      }
-
-      .nav .dropdown-item.active .sub-menu {
-        max-height: 500px;
-      }
-
-      .hero-main {
-        padding: 20px;
-        grid-template-columns: 1fr;
-      }
-
-      .hero-copy {
-        margin: 0 auto;
-        text-align: center;
-      }
-
       .hero-copy h1 {
-        font-size: 24px;
-        line-height: 1.2;
-        text-align: center;
+        font-size: 34px;
+        line-height: 1.12;
       }
 
       .hero-copy .subline {
-        font-size: 15px;
-        margin-left: 0;
-        text-align: center;
-      }
-
-      .estimate {
-        width: 100%;
-        margin: 30px auto 0;
-        padding: 10px;
-      }
-
-      .side-actions {
-        width: 50px;
-        right: 10px;
-        bottom: 80px;
-      }
-
-      .side-actions a {
-        width: 40px;
-        height: 40px;
-        font-size: 18px;
-      }
-
-      h2 {
-        font-size: 26px !important;
-      }
-
-      h3 {
-        font-size: 22px !important;
-      }
-
-      .feature .grid {
-        gap: 20px;
-      }
-
-      .feature .media {
-        width: 100% !important;
-        height: auto !important;
-        min-height: auto;
-      }
-
-      .reveal {
-        transform: translateY(30px) !important;
-        margin-bottom: 10px !important;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .brand-left .name {
-        font-size: 11px;
-        max-width: 110px;
-      }
-
-      .music-player {
-        max-width: 130px;
-      }
-
-      .music-player .track-slider {
-        min-width: 30px;
+        font-size: 14px;
+        line-height: 1.6;
       }
     }
 
@@ -2760,22 +2234,75 @@
     }
 
     @media (max-width: 640px) {
-      .rating .score {
-        font-size: 32px;
+
+      .hero-top,
+      .brand,
+      .nav,
+      .hero-main,
+      .wrap {
+        width: calc(100% - 40px);
       }
 
-      .brand .logo {
-        width: 100px;
-        height: 100px;
+      .hero-top {
+        grid-template-columns: 1fr;
       }
 
-      .brand .logo img {
-        height: 100px;
+      .rating-area,
+      .top-actions,
+      .service-area,
+      .phone {
+        grid-column: 1;
       }
 
-      .brand .name {
-        font-size: 18px;
+      .phone {
+        text-align: left;
       }
+
+      .nav {
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      .rating-area {
+        flex-direction: column;
+      }
+
+      .cta-top {
+        min-width: unset;
+        width: 100%;
+      }
+
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* CITIES WE SERVE STYLES */
+    .cities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .city-card {
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: 700;
+      color: #1f4c35;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .city-card:hover {
+      transform: translateY(-5px);
+      background: #1f4c35;
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(31, 76, 53, 0.15);
     }
 
 
@@ -2897,85 +2424,7 @@
     #about .services-list i {
       display: none !important;
     }
-
-    /* ========== CITIES SECTION ========== */
-    .cities-section {
-      background: #f8faf9;
-      padding: 80px 0;
-    }
-
-    .cities-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 20px;
-      margin-top: 40px;
-    }
-
-    .city-card {
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease;
-      font-weight: 700;
-      color: #1f4c35;
-      border: 1px solid rgba(0, 0, 0, 0.03);
-    }
-
-    .city-card:hover {
-      transform: translateY(-5px);
-      background: #1f4c35;
-      color: #fff;
-    }
-
-    /* ========== FAQ SECTION ========== */
-    .faq-section {
-      padding: 80px 0;
-      background: #fff;
-    }
-
-    .faq-grid {
-      max-width: 800px;
-      margin: 40px auto 0;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .faq-item {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-      padding-bottom: 20px;
-    }
-
-    .faq-question {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #0b1220;
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .faq-question i {
-      color: #1f4c35;
-    }
-
-    .faq-answer {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #4b5563;
-    }
   </style>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18016426896"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'AW-18016426896');
-  </script>
 </head>
 
 <body>
@@ -2997,19 +2446,13 @@
             <i class="fa-solid fa-play"></i>
           </button>
           <div class="track">
-            <input class="progress" type="range" min="0" max="100" value="0" aria-label="Audio progress"
-              id="volumeSlider">
-            <div class="time"><span class="current" id="timeDisplay">0:00</span> / <span class="duration">0:00</span>
-            </div>
+            <input class="progress" type="range" min="0" max="100" value="0" aria-label="Audio progress" id="volumeSlider">
+            <div class="time"><span class="current" id="timeDisplay">0:00</span> / <span class="duration">0:00</span></div>
           </div>
           <audio class="audio" preload="metadata" loop id="bgMusic">
-            <source src="https://pub-45dbfe14f92441f39e4e12859502fd03.r2.dev/JCD-Music.mp3" type="audio/mpeg">
+            <source src="Nueva%20carpeta%20con%20elementos%202/JCD-MUSIC.mp3" type="audio/mpeg">
           </audio>
         </div>
-        <button type="button" class="mobile-nav-toggle" aria-label="Toggle Menu" aria-expanded="false"
-          id="mobileNavToggle">
-          <i class="fa-solid fa-bars"></i>
-        </button>
       </div>
     </div>
   </header>
@@ -3057,7 +2500,7 @@
   <div id="page-container">
     <header class="hero" id="top">
       <video class="hero-video" autoplay muted loop playsinline>
-        <source src="https://pub-45dbfe14f92441f39e4e12859502fd03.r2.dev/test2.mp4" type="video/mp4">
+        <source src="Nueva%20carpeta%20con%20elementos%202/test2.mp4" type="video/mp4">
       </video>
       <div class="hero-top">
         <div class="rating-area">
@@ -3080,7 +2523,7 @@
         </div>
 
         <div class="service-area">Serving Fairfield County Areas</div>
-        <div class="phone"><a href="tel:+14754345969">(475) 434-5969</a></div>
+        <div class="phone">(475) 434-5969</div>
       </div>
 
       <div class="brand reveal">
@@ -3091,7 +2534,7 @@
       </div>
 
       <nav class="nav reveal" aria-label="Primary">
-        <a class="active" href="index.html">Home</a>
+        <a class="active" href="#top">Home</a>
 
         <div class="dropdown-item">
           <a href="#services">Landscaping Services <span class="caret">˅</span></a>
@@ -3133,15 +2576,14 @@
             <span class="line">Fairfield County, CT and</span>
             <span class="line">Surrounding Areas</span>
           </h1>
-          <div class="subline">24/7 Emergency Service<br>Fully Licensed and Insured<br>OSHA- and ISA-Certified<br><a
-              href="tel:+14754345969">(475) 434-5969</a></div>
+          <div class="subline">24/7 Emergency Service<br>Fully Licensed and Insured<br>OSHA- and ISA-Certified<br>(475)
+            434-5969</div>
         </div>
 
         <section class="estimate reveal right" id="estimate" aria-label="Request Estimate Form">
           <h3>Request Estimate</h3>
 
-          <form class="estimate" id="estimateForm" action="https://formsubmit.co/jcdtreeservice@gmail.com"
-            method="POST">
+          <form class="estimate" id="estimateForm" action="https://formsubmit.co/cristianemilmedranogarcia@gmail.com" method="POST">
             <input type="hidden" name="_subject" value="Nuevo Presupuesto Solicitado - JCD Tree Service">
             <input type="hidden" name="_captcha" value="false">
             <div class="field">
@@ -3156,7 +2598,7 @@
 
             <div class="field">
               <label for="email">Email*</label>
-              <input id="email" name="email" type="email" placeholder="Email*" required />
+              <input id="email" name="email" placeholder="Email*" required />
             </div>
 
             <div class="field">
@@ -3643,24 +3085,6 @@
     </section>
 
 
-    <!-- CITIES WE SERVE -->
-    <section class="cities-section" id="service-areas">
-      <div class="wrap">
-        <h2 style="text-align: center; font-size: 2.2rem; font-weight: 800; color: #111;">Cities We Serve in Fairfield
-          County</h2>
-        <p style="text-align: center; max-width: 700px; margin: 10px auto 0; color: #555;">Professional tree services
-          and landscaping available across Connecticut. We are your local experts for tree removal and yard maintenance.
-        </p>
-        <div class="cities-grid">
-          <a href="tree-service-stamford-ct.html" class="city-card">Stamford, CT</a>
-          <a href="tree-service-norwalk-ct.html" class="city-card">Norwalk, CT</a>
-          <a href="tree-service-bridgeport-ct.html" class="city-card">Bridgeport, CT</a>
-          <a href="tree-service-fairfield-ct.html" class="city-card">Fairfield, CT</a>
-          <a href="service-areas.html" class="city-card">View All Service Areas</a>
-        </div>
-      </div>
-    </section>
-
     <section class="section reviews-section" id="reviews" style="padding: 60px 0 20px 0;">
       <div class="wrap">
         <!-- CUSTOM GOOGLE REVIEWS HEADER -->
@@ -3880,6 +3304,21 @@
             </div>
           </div>
         </div>
+    <section class="section" id="cities-we-serve" style="background: #fdfdfd; padding: 60px 0;">
+      <div class="wrap">
+        <!-- CITIES WE SERVE -->
+        <h2 style="text-align: center; font-size: 2.2rem; font-weight: 800; color: #111;">Cities We Serve in Fairfield County</h2>
+        <p style="text-align: center; max-width: 700px; margin: 10px auto 0; color: #555;">Professional tree services
+          and landscaping available across Connecticut. We are your local experts for tree removal and yard maintenance.
+        </p>
+        <div class="cities-grid">
+          <a href="tree-service-stamford-ct.html" class="city-card">Stamford, CT</a>
+          <a href="tree-service-norwalk-ct.html" class="city-card">Norwalk, CT</a>
+          <a href="tree-service-bridgeport-ct.html" class="city-card">Bridgeport, CT</a>
+          <a href="tree-service-fairfield-ct.html" class="city-card">Fairfield, CT</a>
+          <a href="service-areas.html" class="city-card">View All Service Areas</a>
+        </div>
+      </div>
     </section>
 
     <section class="section" id="about">
@@ -3911,42 +3350,6 @@
     </section>
 
 
-    <section class="faq-section" id="faq">
-      <div class="wrap">
-        <h2 style="text-align: center; font-size: 2.2rem; font-weight: 800; color: #111;">Frequently Asked Questions
-        </h2>
-        <div class="faq-grid">
-          <div class="faq-item">
-            <div class="faq-question"><i class="fa-solid fa-circle-question"></i> Do you offer free estimates?</div>
-            <div class="faq-answer">Yes, we provide free, no-obligation estimates for all our tree and landscaping
-              services in Fairfield County.</div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question"><i class="fa-solid fa-circle-question"></i> Are you licensed and insured?</div>
-            <div class="faq-answer">Absolutely. JCD Tree Service & Landscaping is fully licensed and insured, protecting
-              both our crew and your property.</div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question"><i class="fa-solid fa-circle-question"></i> Do you provide 24/7 emergency
-              services?</div>
-            <div class="faq-answer">Yes, we offer 24/7 emergency tree removal and storm response for hazardous
-              situations.</div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question"><i class="fa-solid fa-circle-question"></i> What areas do you serve?</div>
-            <div class="faq-answer">We primarily serve Fairfield County, including Stamford, Norwalk, Bridgeport,
-              Fairfield, Greenwich, and surrounding towns.</div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question"><i class="fa-solid fa-circle-question"></i> What types of landscaping do you do?
-            </div>
-            <div class="faq-answer">We specialize in landscape design, hardscaping (patios, walkways), sod installation,
-              and regular seasonal maintenance.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Learn more about (like the bottom of the real site) -->
     <section class="about-band" id="contact">
       <div class="wrap">
@@ -3972,26 +3375,19 @@
     </section>
 
     <section class="social-section">
-      <div class="social-section-head">
-        <p class="kicker">Stay Connected</p>
-        <h2>Our Social Media</h2>
-        <p class="sub">Follow us on Facebook and Instagram for recent work and updates.</p>
+      <div class="social-card instagram-card">
+        <div class="instagram-embed-wrapper" aria-label="Open Instagram">
+          <iframe src="https://www.instagram.com/jcd.treeservices/embed" frameborder="0" scrolling="no"
+            allowtransparency="true" allowfullscreen>
+          </iframe>
+        </div>
       </div>
       <div class="social-card facebook-card">
-        <h3 class="social-card-title"><i class="fa-brands fa-facebook"></i> Facebook</h3>
         <div class="fb-embed">
           <iframe title="Facebook Page - JC Four Seasons"
             src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FJCfourseasons&tabs=timeline&width=500&height=520&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
             width="100%" height="420" style="border:none;overflow:hidden;" scrolling="no" frameborder="0"
             allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen="true">
-          </iframe>
-        </div>
-      </div>
-      <div class="social-card instagram-card">
-        <h3 class="social-card-title"><i class="fa-brands fa-instagram"></i> Instagram</h3>
-        <div class="instagram-embed-wrapper" aria-label="Open Instagram">
-          <iframe src="https://www.instagram.com/jcd.treeservices/embed" frameborder="0" scrolling="no"
-            allowtransparency="true" allowfullscreen>
           </iframe>
         </div>
       </div>
@@ -4048,363 +3444,24 @@
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="js/audio-player.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/common.js"></script>
   <script>
-    /**
-     * JCD Navigation System
-     * Handles mobile menu robustly by moving .nav to body and managing states.
-     */
-    document.addEventListener('DOMContentLoaded', () => {
-      initMobileMenu();
-    });
-
-    function initMobileMenu() {
-      const toggle = document.getElementById('mobileNavToggle');
-      const nav = document.querySelector('.nav');
-
-      if (toggle && nav) {
-        const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
-        const dropdownItems = Array.from(nav.querySelectorAll('.dropdown-item'));
-        const originalParent = nav.parentNode;
-        const originalNextSibling = nav.nextElementSibling;
-
-        const ensureNavRuntimeStyles = () => {
-          if (document.getElementById("jcd-nav-runtime")) return;
-          const style = document.createElement("style");
-          style.id = "jcd-nav-runtime";
-          style.textContent =
-            ".nav-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;visibility:hidden;transition:opacity .25s ease;z-index:999998;}" +
-            ".nav-backdrop.active{opacity:1;visibility:visible;}" +
-            "@media (max-width: 768px){" +
-            " .mobile-nav-toggle{position:relative !important;z-index:10000001 !important;pointer-events:auto !important;touch-action:manipulation !important;}" +
-            " .site-header .brand-left .name{white-space:normal !important;max-width:none !important;overflow:visible !important;text-overflow:clip !important;line-height:1.2 !important;font-size:clamp(11px,3.5vw,14px) !important;}" +
-            " .nav{position:fixed !important;top:0 !important;right:-100% !important;width:min(88vw,360px) !important;height:100dvh !important;background:#163b2a !important;display:flex !important;flex-direction:column !important;justify-content:flex-start !important;align-items:flex-start !important;padding:80px 22px 24px !important;gap:18px !important;transition:right .3s ease !important;z-index:999999 !important;visibility:hidden !important;opacity:1 !important;overflow-y:auto !important;overflow-x:hidden !important;margin:0 !important;}" +
-            " .nav.active{right:0 !important;visibility:visible !important;}" +
-            " .nav a{width:100% !important;text-align:left !important;padding:10px 0 !important;font-size:18px !important;}" +
-            " .nav a::after{display:none !important;}" +
-            " .nav .dropdown-item{width:100% !important;position:relative !important;}" +
-            " .nav .sub-menu{position:static !important;left:auto !important;top:auto !important;opacity:1 !important;visibility:visible !important;transform:none !important;box-shadow:none !important;border-top:none !important;min-width:0 !important;width:100% !important;padding-left:15px !important;max-height:0;overflow:hidden;transition:max-height .3s ease;}" +
-            " .nav .dropdown-item.active .sub-menu{max-height:520px;}" +
-            "}";
-          document.head.appendChild(style);
-        };
-
-        // Some pages miss desktop CSS for this button; enforce visibility by viewport.
-        const syncToggleVisibility = () => {
-          toggle.style.display = isMobile() ? 'block' : 'none';
-        };
-
-        const collapseSubmenu = (item) => {
-          const submenu = item.querySelector(':scope > .sub-menu');
-          if (!submenu) return;
-          item.classList.remove('active');
-          submenu.style.maxHeight = '0px';
-          submenu.style.opacity = '0';
-          submenu.style.visibility = 'hidden';
-          submenu.style.overflow = 'hidden';
-        };
-
-        const expandSubmenu = (item) => {
-          const submenu = item.querySelector(':scope > .sub-menu');
-          if (!submenu) return;
-          item.classList.add('active');
-          submenu.style.position = 'static';
-          submenu.style.transform = 'none';
-          submenu.style.boxShadow = 'none';
-          submenu.style.borderTop = 'none';
-          submenu.style.opacity = '1';
-          submenu.style.visibility = 'visible';
-          submenu.style.overflow = 'hidden';
-          submenu.style.maxHeight = `${submenu.scrollHeight}px`;
-        };
-
-        const resetSubmenuStyles = () => {
-          dropdownItems.forEach(item => {
-            item.classList.remove('active');
-            const submenu = item.querySelector(':scope > .sub-menu');
-            if (!submenu) return;
-            submenu.style.maxHeight = '';
-            submenu.style.opacity = '';
-            submenu.style.visibility = '';
-            submenu.style.overflow = '';
-            submenu.style.position = '';
-            submenu.style.transform = '';
-            submenu.style.boxShadow = '';
-            submenu.style.borderTop = '';
-          });
-        };
-
-        const placeNavForViewport = () => {
-          if (isMobile()) {
-            // On mobile, keep nav outside hero stacking contexts.
-            nav.classList.remove('reveal');
-            if (nav.parentNode !== document.body) {
-              document.body.appendChild(nav);
-            }
-            return;
-          }
-
-          // On desktop, nav must stay below logo/name in its original place.
-          if (nav.parentNode !== originalParent) {
-            if (originalNextSibling && originalNextSibling.parentNode === originalParent) {
-              originalParent.insertBefore(nav, originalNextSibling);
-            } else {
-              originalParent.appendChild(nav);
-            }
-          }
-          nav.classList.add('reveal');
-        };
-
-        ensureNavRuntimeStyles();
-        placeNavForViewport();
-        syncToggleVisibility();
-
-        // Ensure backdrop exists
-        let backdrop = document.querySelector('.nav-backdrop');
-        if (!backdrop) {
-          backdrop = document.createElement('div');
-          backdrop.className = 'nav-backdrop';
-          document.body.appendChild(backdrop);
-        }
-
-        const openMenu = () => {
-          nav.classList.add('active');
-          nav.style.right = '0';
-          nav.style.visibility = 'visible';
-          nav.setAttribute('aria-hidden', 'false');
-          backdrop.classList.add('active');
-          document.body.style.overflow = 'hidden';
-          toggle.setAttribute('aria-expanded', 'true');
-          const icon = toggle.querySelector('i');
-          if (icon) icon.className = 'fa-solid fa-xmark';
-        };
-        const closeMenu = () => {
-          nav.classList.remove('active');
-          if (isMobile()) {
-            nav.style.right = '-100%';
-            nav.style.visibility = 'hidden';
-          } else {
-            nav.style.right = '';
-            nav.style.visibility = '';
-          }
-          nav.setAttribute('aria-hidden', 'true');
-          backdrop.classList.remove('active');
-          document.body.style.overflow = '';
-          resetSubmenuStyles();
-          toggle.setAttribute('aria-expanded', 'false');
-          const icon = toggle.querySelector('i');
-          if (icon) icon.className = 'fa-solid fa-bars';
-        };
-
-        nav.setAttribute('aria-hidden', isMobile() ? 'true' : 'false');
-
-        const onTogglePress = (e) => {
-          if (e) {
-            e.preventDefault();
-            e.stopPropagation();
-          }
-          nav.classList.contains('active') ? closeMenu() : openMenu();
-        };
-
-        toggle.onclick = null;
-        toggle.addEventListener('click', onTogglePress, { passive: false });
-        toggle.addEventListener('touchend', onTogglePress, { passive: false });
-        backdrop.onclick = closeMenu;
-
-        // Close menu only on navigation links, NOT on dropdown parent toggles
-        nav.querySelectorAll('a').forEach(link => {
-          if (!link.parentElement.classList.contains('dropdown-item')) {
-            link.addEventListener('click', (e) => {
-              const href = (link.getAttribute('href') || '').trim();
-              const isHtmlPage = /\.html(?:#.*)?$/i.test(href);
-
-              // On mobile, force full-page navigation for service pages
-              // so destination always starts at the hero/top.
-              if (isMobile() && isHtmlPage) {
-                e.preventDefault();
-                e.stopPropagation();
-                closeMenu();
-                document.body.style.overflow = '';
-                window.location.href = href.split('#')[0];
-                return;
-              }
-
-              closeMenu();
-              window.scrollTo({ top: 0, behavior: 'instant' });
-            });
-          }
-        });
-
-        // Dropdown parent links toggle submenu, they don't navigate
-        dropdownItems.forEach(item => {
-          const link = item.querySelector(':scope > a');
-          if (link) {
-            link.onclick = (e) => {
-              if (isMobile()) {
-                e.preventDefault();
-                const isOpen = item.classList.contains('active');
-                dropdownItems.forEach(otherItem => {
-                  if (otherItem !== item) collapseSubmenu(otherItem);
-                });
-                if (isOpen) {
-                  collapseSubmenu(item);
-                } else {
-                  expandSubmenu(item);
-                }
-              }
-            };
-          }
-          // Also handle submenu link click closing menu
-          item.querySelectorAll('.sub-menu a').forEach(subLink => {
-            subLink.addEventListener('click', (e) => {
-              const href = (subLink.getAttribute('href') || '').trim();
-              const isHtmlPage = /\.html(?:#.*)?$/i.test(href);
-
-              if (isMobile() && isHtmlPage) {
-                e.preventDefault();
-                e.stopPropagation();
-                closeMenu();
-                document.body.style.overflow = '';
-                window.location.href = href.split('#')[0];
-                return;
-              }
-
-              closeMenu();
-              window.scrollTo({ top: 0, behavior: 'instant' });
-            });
-          });
-        });
-
-        window.addEventListener('resize', () => {
-          ensureNavRuntimeStyles();
-          placeNavForViewport();
-          syncToggleVisibility();
-          if (!isMobile()) {
-            resetSubmenuStyles();
-            closeMenu();
-          } else {
-            dropdownItems.forEach(item => {
-              if (item.classList.contains('active')) {
-                expandSubmenu(item);
-              } else {
-                collapseSubmenu(item);
-              }
-            });
-          }
-        });
-        let scrollScheduled = false;
-        window.addEventListener('scroll', () => {
-          if (scrollScheduled) return;
-          scrollScheduled = true;
-          requestAnimationFrame(() => {
-            const header = document.querySelector('.site-header');
-            if (header) {
-              if (window.scrollY > 40) header.classList.add('scrolled');
-              else header.classList.remove('scrolled');
-            }
-            scrollScheduled = false;
-          });
-        }, { passive: true });
-      }
-    }
-
-  </script>
-  <script>
-    /* JCD Navigation (v2 Prefetch) */
-    var JCDNav = {
-      containerId: 'page-container',
-      cache: new Map(),
-      init() {
-        try {
-          this.interceptLinks();
-          this.handlePopState();
-          this.initPrefetch();
-          console.log("JCD Navigation Initialized");
-        } catch (e) { console.error("Nav init failed", e); }
-      },
-      interceptLinks() {
-        document.addEventListener('click', (e) => {
-          const link = e.target.closest('a');
-          if (!link) return;
-          const href = link.getAttribute('href');
-          if (this.isInternal(href)) {
-            e.preventDefault();
-            this.navigateTo(href);
-          }
-        });
-      },
-      initPrefetch() {
-        document.addEventListener('mouseover', (e) => {
-          const link = e.target.closest('a');
-          if (link && this.isInternal(link.getAttribute('href'))) {
-            this.prefetch(link.getAttribute('href'));
-          }
-        }, { passive: true });
-      },
-      isInternal(href) {
-        return href && !href.startsWith('http') && !href.startsWith('tel:') && !href.startsWith('mailto:') && !href.startsWith('#') && href.endsWith('.html');
-      },
-      async prefetch(url) {
-        if (this.cache.has(url)) return;
-        try {
-          const response = await fetch(url);
-          const html = await response.text();
-          this.cache.set(url, html);
-        } catch (err) { }
-      },
-      async navigateTo(url) {
-        try {
-          let html = this.cache.has(url) ? this.cache.get(url) : await (await fetch(url)).text();
-          const doc = new DOMParser().parseFromString(html, 'text/html');
-          const newContent = doc.getElementById(this.containerId);
-          if (newContent) {
-            document.getElementById(this.containerId).innerHTML = newContent.innerHTML;
-            document.title = doc.title;
-            window.history.pushState({ url }, doc.title, url);
-            if (window.JCD && typeof window.JCD.init === 'function') window.JCD.init();
-            const hash = url.split('#')[1];
-            if (hash) {
-              const el = document.getElementById(hash);
-              if (el) el.scrollIntoView();
-            } else { window.scrollTo(0, 0); }
-          }
-        } catch (err) {
-          window.location.href = url;
-        }
-      },
-      handlePopState(e) {
-        const url = (e.state && e.state.url) ? e.state.url : window.location.pathname;
-        this.navigateTo(url);
-      }
-    };
-
-    /* JCD Common Scripts */
     window.JCD = {
-      revealObserver: null,
       init() {
-        try {
-          this.removePreloader();
-          this.updateYear();
-          this.initSmoothScroll();
-          this.initRevealObservers();
-          this.initSideActions();
-          this.initCarousels();
-          this.initInstagramModal();
-          this.initQuickActions();
-          this.initMobileMenu();
-        } catch (e) {
-          console.error("JCD Init failed:", e);
-          this.removePreloader(); // Fallback removal
-        }
+        this.preloader();
+        this.updateYear();
+        this.initSmoothScroll();
+        this.initRevealObservers();
+        this.initSideActions();
+        this.initCarousels();
+        this.initInstagramModal();
+        this.initQuickActions();
       },
-      removePreloader() {
+      preloader() {
         const preloader = document.getElementById('gsap-preloader');
         if (!preloader) return;
-
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const saveData = !!(navigator.connection && navigator.connection.saveData);
-        const lowCpu = typeof navigator.hardwareConcurrency === 'number' && navigator.hardwareConcurrency <= 4;
-        const lowMemory = typeof navigator.deviceMemory === 'number' && navigator.deviceMemory <= 4;
-        const useLitePreloader = prefersReducedMotion || saveData || (lowCpu && lowMemory);
 
         const forceRemove = () => {
           preloader.style.opacity = '0';
@@ -4412,12 +3469,6 @@
           document.body.style.overflow = 'auto';
           setTimeout(() => { if (preloader.parentNode) preloader.remove(); }, 800);
         };
-
-        if (useLitePreloader) {
-          // Keep a short visible preloader on constrained devices without heavy GSAP animation.
-          setTimeout(forceRemove, 220);
-          return;
-        }
 
         const safetyTimeout = setTimeout(forceRemove, 3000);
 
@@ -4445,12 +3496,8 @@
           const cloneBrandText = brandClone.querySelector('.name');
           if (cloneBrandText) {
             cloneBrandText.style.position = 'relative';
-            // Avoid subpixel seams on descenders (p/g/y) during preloader wipe.
             cloneBrandText.style.overflow = 'visible';
-            cloneBrandText.style.backfaceVisibility = 'hidden';
-            cloneBrandText.style.transform = 'translateZ(0)';
             cloneBrandText.style.webkitTextStroke = '0px transparent';
-            cloneBrandText.style.paintOrder = 'normal';
             textOverlay = document.createElement('div');
             Object.assign(textOverlay.style, {
               backgroundColor: '#000',
@@ -4459,25 +3506,23 @@
               position: 'absolute',
               left: '0',
               right: '0',
-              top: '-6px',
-              bottom: '-6px',
-              zIndex: '10',
-              backfaceVisibility: 'hidden',
-              transform: 'translateZ(0)'
+              top: '-10px',
+              bottom: '-10px',
+              zIndex: '10'
             });
             cloneBrandText.appendChild(textOverlay);
           }
 
           preloader.appendChild(brandClone);
 
-          let centerOffsetX = 0, centerOffsetY = 0;
           const sync = () => {
             const rect = heroBrand.getBoundingClientRect();
-            if (rect.width === 0 || rect.height === 0) return; // Guard against hidden layout
+            if (rect.width === 0 || rect.height === 0) return;
             brandClone.style.left = `${rect.left}px`;
             brandClone.style.top = `${rect.top}px`;
             brandClone.style.width = `${rect.width}px`;
             brandClone.style.height = `${rect.height}px`;
+
             const logoEl = brandClone.querySelector('.logo'), nameEl = brandClone.querySelector('.name');
             let visualCenterY = rect.top + (rect.height / 2);
             if (logoEl && nameEl) {
@@ -4486,11 +3531,12 @@
                 visualCenterY = lRect.top + ((nRect.bottom - lRect.top) / 2);
               }
             }
-            centerOffsetX = (window.innerWidth / 2) - (rect.left + (rect.width / 2));
-            centerOffsetY = (window.innerHeight / 2) - visualCenterY;
+            const centerOffsetX = (window.innerWidth / 2) - (rect.left + (rect.width / 2));
+            const centerOffsetY = (window.innerHeight / 2) - visualCenterY;
+
+            gsap.set('#preloader-branding', { x: centerOffsetX, y: centerOffsetY, scale: 1.15, opacity: 1 });
           };
 
-          // Wait a tiny bit for layout to settle, then sync and animate
           setTimeout(() => {
             sync();
             const tl = gsap.timeline({
@@ -4501,31 +3547,24 @@
             });
 
             if (overlay && textOverlay) {
-              tl.set('#preloader-branding', { opacity: 1, x: centerOffsetX, y: centerOffsetY, scale: 1.15 })
-                .to(overlay, { scaleX: 0, duration: 0.7, ease: 'power3.out', delay: 0.05 })
-                .to(textOverlay, { scaleX: 0, duration: 0.7, ease: 'power3.out' }, '<0.1')
-                .to('#preloader-branding', { x: 0, y: 0, scale: 1, duration: 0.8, ease: 'power2.inOut' }, '>-0.05')
-                .to('#gsap-preloader', { opacity: 0, duration: 0.3, ease: 'none', onComplete: forceRemove }, '>-0.1');
+              tl.to(overlay, { scaleX: 0, duration: 0.7, ease: 'power3.out', delay: 0.1 })
+                .to(textOverlay, { scaleX: 0, duration: 0.7, ease: 'power3.out' }, '<0.15')
+                .to('#preloader-branding', { x: 0, y: 0, scale: 1, duration: 0.8, ease: 'power2.inOut' }, '>-0.1')
+                .to('#gsap-preloader', { opacity: 0, duration: 0.4, ease: 'none', onComplete: forceRemove }, '>-0.2');
             } else {
-              tl.set('#preloader-branding', { opacity: 1, x: centerOffsetX, y: centerOffsetY, scale: 1.15 })
-                .to('#preloader-branding', { x: 0, y: 0, scale: 1, duration: 0.7, ease: 'power2.inOut', delay: 0.1 })
-                .to('#gsap-preloader', { opacity: 0, duration: 0.3, ease: 'none', onComplete: forceRemove }, '>-0.1');
+              tl.to('#preloader-branding', { x: 0, y: 0, scale: 1, duration: 0.8, ease: 'power2.inOut', delay: 0.2 })
+                .to('#gsap-preloader', { opacity: 0, duration: 0.4, ease: 'none', onComplete: forceRemove }, '>-0.2');
             }
-          }, 100);
+          }, 120);
 
         } catch (e) {
-          console.warn("Preloader animation failed", e);
           forceRemove();
-          clearTimeout(safetyTimeout);
         }
       },
       updateYear() { const yearEl = document.getElementById('year'); if (yearEl) yearEl.textContent = new Date().getFullYear(); },
       initSmoothScroll() {
         document.querySelectorAll('a[href^="#"]').forEach(a => {
-          if (a.dataset.smoothBound === '1') return;
-          a.dataset.smoothBound = '1';
           a.addEventListener('click', (e) => {
-            if (a.parentElement && a.parentElement.classList.contains('dropdown-item')) return;
             const id = a.getAttribute('href');
             if (!id || id === "#" || id === "#contact" || id === "#about") return;
             const el = document.querySelector(id);
@@ -4536,8 +3575,7 @@
         });
       },
       initRevealObservers() {
-        if (this.revealObserver) this.revealObserver.disconnect();
-        this.revealObserver = new IntersectionObserver((entries) => {
+        const obs = new IntersectionObserver((entries) => {
           entries.forEach(ent => {
             if (!ent.isIntersecting) return;
             const reveals = Array.from(ent.target.querySelectorAll('.reveal'));
@@ -4545,53 +3583,20 @@
               el.style.transitionDelay = `${index * 80}ms`;
               el.classList.add('in');
             });
-            this.revealObserver.unobserve(ent.target);
+            obs.unobserve(ent.target);
           });
         }, { threshold: 0.12 });
         document.querySelectorAll('header:not(.site-header), section, footer').forEach(s => {
-          if (s.querySelector('.reveal')) this.revealObserver.observe(s);
+          if (s.querySelector('.reveal')) obs.observe(s);
         });
       },
       initSideActions() {
         const sa = document.querySelector('.side-actions');
-        const rev = document.querySelector('#reviews');
-        const startMarker = document.querySelector('#services') || document.querySelector('.big-green-section');
-        if (!sa || !rev || !startMarker) return;
-
-        if (typeof this.sideActionsCleanup === 'function') this.sideActionsCleanup();
-
-        const updateVisibility = () => {
-          const probeY = window.innerHeight * 0.35;
-          const startRect = startMarker.getBoundingClientRect();
-          const endRect = rev.getBoundingClientRect();
-          const hideNow = startRect.top <= probeY && endRect.top > probeY;
-          sa.classList.toggle('is-hidden', hideNow);
-        };
-
-        let sideScheduled = false;
-        const throttledUpdate = () => {
-          if (sideScheduled) return;
-          sideScheduled = true;
-          requestAnimationFrame(() => {
-            updateVisibility();
-            sideScheduled = false;
-          });
-        };
-
-        window.addEventListener('scroll', throttledUpdate, { passive: true });
-        document.addEventListener('scroll', throttledUpdate, { passive: true });
-        window.addEventListener('resize', throttledUpdate, { passive: true });
-        window.addEventListener('orientationchange', throttledUpdate);
-        const intervalId = window.setInterval(throttledUpdate, 400);
-        updateVisibility();
-
-        this.sideActionsCleanup = () => {
-          window.removeEventListener('scroll', updateVisibility);
-          document.removeEventListener('scroll', updateVisibility);
-          window.removeEventListener('resize', updateVisibility);
-          window.removeEventListener('orientationchange', updateVisibility);
-          window.clearInterval(intervalId);
-        };
+        if (!sa) return;
+        window.addEventListener('scroll', () => {
+          const hideNow = window.scrollY > 500 && window.scrollY < (document.body.scrollHeight - 1000);
+          // sa.classList.toggle('is-hidden', hideNow); // User might prefer them always visible or original logic
+        });
       },
       initCarousels() {
         document.querySelectorAll('.carousel').forEach(c => {
@@ -4607,7 +3612,6 @@
         if (!modal) return;
         if (wrapper) wrapper.onclick = () => { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; };
         if (close) close.onclick = () => { modal.style.display = 'none'; document.body.style.overflow = ''; };
-        window.addEventListener('click', (e) => { if (e.target === modal) { modal.style.display = 'none'; document.body.style.overflow = ''; } });
       },
       initQuickActions() {
         const fav = document.getElementById('addToFavorites'), copy = document.getElementById('copyLink');
@@ -4617,21 +3621,12 @@
           try {
             await navigator.clipboard.writeText(window.location.href);
             const icon = copy.querySelector('i');
-            if (icon) {
-              icon.className = 'fa-solid fa-check';
-              setTimeout(() => { icon.className = 'fa-solid fa-copy'; }, 1500);
-            }
+            if (icon) { icon.className = 'fa-solid fa-check'; setTimeout(() => { icon.className = 'fa-solid fa-copy'; }, 1500); }
           } catch (err) { }
         };
-      },
-      initMobileMenu() {
-        // The mobile menu core logic is now in navigation.js
-        // We only keep the dropdown toggle logic here if it's still needed, 
-        // but navigation.js also handles it.
       }
     };
 
-    /* Audio Player Logic */
     document.addEventListener("DOMContentLoaded", () => {
       const b = document.getElementById("bgMusic"), pB = document.getElementById("playPauseBtn"), mP = document.querySelector(".music-player"), vS = document.getElementById("volumeSlider"), tD = document.getElementById("timeDisplay"), durD = document.querySelector(".music-player .duration");
       if (!b || !pB || !mP || !vS) return;
@@ -4639,7 +3634,6 @@
       const fmt = (s) => { const m = Math.floor(s / 60), rS = Math.floor(s % 60); return `${m}:${rS.toString().padStart(2, '0')}`; };
       const updDur = () => { if (durD && b.duration) durD.textContent = fmt(b.duration); };
       b.addEventListener("loadedmetadata", updDur);
-      if (b.readyState >= 1) updDur();
       const t = () => {
         if (isP) { b.pause(); pB.innerHTML = '<i class="fa-solid fa-play"></i>'; mP.classList.remove("playing"); }
         else { b.play().catch(() => { }); pB.innerHTML = '<i class="fa-solid fa-pause"></i>'; mP.classList.add("playing"); }
@@ -4648,128 +3642,41 @@
       pB.onclick = () => { t(); localStorage.setItem("jcd_playing", isP); };
       vS.oninput = () => { b.currentTime = (vS.value / 100) * b.duration; };
       if (localStorage.getItem("jcd_playing") === "true") {
-        b.play().then(() => { isP = true; pB.innerHTML = '<i class="fa-solid fa-pause"></i>'; mP.classList.add("playing"); }).catch(() => { isP = false; });
+        b.play().then(() => { isP = true; pB.innerHTML = '<i class="fa-solid fa-pause"></i>'; mP.classList.add("playing"); }).catch(() => { });
       }
       b.addEventListener("timeupdate", () => {
         if (tD) tD.textContent = fmt(b.currentTime);
         if (vS && b.duration) vS.value = (b.currentTime / b.duration) * 100;
-        if (durD && !durD.textContent.includes(':') && b.duration) updDur();
       });
     });
 
-    // Auto-init
     document.addEventListener('DOMContentLoaded', () => {
-      // Disabled to keep page rendering consistent when navigating from index.
-      // if (window.JCDNav && typeof window.JCDNav.init === 'function') window.JCDNav.init();
       if (window.JCD && typeof window.JCD.init === 'function') window.JCD.init();
     });
   </script>
-  <script id="formsubmit-client-flow-v1">
+  <script>
     document.addEventListener("DOMContentLoaded", function () {
-      function ensureSuccessModal() {
-        var existing = document.getElementById("jcd-form-success-modal");
-        if (existing) return existing;
-
-        var modal = document.createElement("div");
-        modal.id = "jcd-form-success-modal";
-        modal.setAttribute("aria-hidden", "true");
-        modal.innerHTML =
-          '<div class="jcd-modal-backdrop"></div>' +
-          '<div class="jcd-modal-card" role="dialog" aria-modal="true" aria-labelledby="jcd-modal-title">' +
-          '<h3 id="jcd-modal-title">Request Sent Successfully</h3>' +
-          '<p>Your request has been submitted successfully. Would you like to continue browsing?</p>' +
-          '<div class="jcd-modal-actions">' +
-          '<button type="button" id="jcd-modal-continue">Continue</button>' +
-          "</div></div>";
-
-        var style = document.createElement("style");
-        style.textContent =
-          "#jcd-form-success-modal{position:fixed;inset:0;display:none;z-index:10000020;}" +
-          "#jcd-form-success-modal.active{display:block;}" +
-          "#jcd-form-success-modal .jcd-modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.45);}" +
-          "#jcd-form-success-modal .jcd-modal-card{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(92vw,460px);background:#fff;border-radius:14px;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,.25);font-family:Lexend,Arial,sans-serif;color:#0f172a;text-align:center;}" +
-          "#jcd-form-success-modal h3{margin:0 0 10px;font-size:28px;line-height:1.2;}" +
-          "#jcd-form-success-modal p{margin:0 0 18px;font-size:15px;line-height:1.55;color:#334155;}" +
-          "#jcd-form-success-modal .jcd-modal-actions{display:flex;justify-content:center;}" +
-          "#jcd-form-success-modal button{border:0;border-radius:10px;padding:11px 20px;background:#1f4c35;color:#fff;font-weight:700;font-size:14px;cursor:pointer;}" +
-          "#jcd-form-success-modal button:hover{filter:brightness(1.06);}";
-
-        document.head.appendChild(style);
-        document.body.appendChild(modal);
-
-        function closeModal() {
-          modal.classList.remove("active");
-          modal.setAttribute("aria-hidden", "true");
-          document.body.style.overflow = "";
-        }
-
-        modal.querySelector("#jcd-modal-continue").addEventListener("click", closeModal);
-        modal.querySelector(".jcd-modal-backdrop").addEventListener("click", closeModal);
-        return modal;
-      }
-
-      function openSuccessModal() {
-        var modal = ensureSuccessModal();
-        modal.classList.add("active");
-        modal.setAttribute("aria-hidden", "false");
-        document.body.style.overflow = "hidden";
-      }
-
       document.querySelectorAll('form[action*="formsubmit.co"]').forEach(function (form) {
-        var emailField = form.querySelector('input[name="email"], input[name="Correo"]');
-        if (emailField) {
-          emailField.setAttribute("type", "email");
-          emailField.setAttribute("required", "required");
-        }
-
-        var nextInput = form.querySelector('input[name="_next"]');
-        if (nextInput) nextInput.remove();
-
-        var templateInput = form.querySelector('input[name="_template"]');
-        if (!templateInput) {
-          templateInput = document.createElement("input");
-          templateInput.type = "hidden";
-          templateInput.name = "_template";
-          form.appendChild(templateInput);
-        }
-        templateInput.value = "table";
-
-        if (form.dataset.ajaxBound === "1") return;
-        form.dataset.ajaxBound = "1";
-
         form.addEventListener("submit", async function (e) {
           e.preventDefault();
-          if (!form.checkValidity()) {
-            form.reportValidity();
-            return;
-          }
-
           var submitBtn = form.querySelector('button[type="submit"]');
           var originalLabel = submitBtn ? submitBtn.textContent : "";
-          if (submitBtn) {
-            submitBtn.disabled = true;
-            submitBtn.textContent = "Sending...";
-          }
+          if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "Sending..."; }
 
           try {
             var fd = new FormData(form);
-            var ajaxAction = form.action.replace("formsubmit.co/", "formsubmit.co/ajax/");
-            var response = await fetch(ajaxAction, {
+            var response = await fetch(form.action.replace("formsubmit.co/", "formsubmit.co/ajax/"), {
               method: "POST",
               body: fd,
               headers: { "Accept": "application/json" }
             });
-
             if (!response.ok) throw new Error("Request failed");
+            alert("Request submitted successfully!");
             form.reset();
-            openSuccessModal();
           } catch (err) {
-            alert("We could not send your request right now. Please try again.");
+            alert("We could not send your request. Please try again.");
           } finally {
-            if (submitBtn) {
-              submitBtn.disabled = false;
-              submitBtn.textContent = originalLabel || "Submit Request";
-            }
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel || "Submit Request"; }
           }
         });
       });
