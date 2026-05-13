@@ -2985,6 +2985,48 @@ header,
         position: static;
       }
     }
+    /* ========== SEO SECTION (SERVICE PAGES) ========== */
+    .seo-service-block {
+      background: #f8faf9;
+      padding: 60px 0;
+      border-top: 1px solid #e5e7eb;
+      text-align: center;
+    }
+    .seo-service-block .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .seo-service-block .seo-toggle-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      color: #1f4c35;
+      font-weight: 700;
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: opacity 0.3s ease;
+    }
+    .seo-service-block .seo-toggle-header:hover { opacity: 0.8; }
+    .seo-service-block .seo-toggle-header i { transition: transform 0.3s ease; }
+    .seo-service-block .seo-toggle-header.active i { transform: rotate(180deg); }
+    .seo-service-block .seo-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+      text-align: left;
+    }
+    .seo-service-block .seo-content.active {
+      max-height: 4000px;
+      transition: max-height 1s ease-in-out;
+      padding-top: 30px;
+    }
+    .seo-service-block .seo-content h3 { color: #0f172a; font-size: 24px; margin-bottom: 15px; }
+    .seo-service-block .seo-content p { color: #4b5563; font-size: 15px; line-height: 1.7; margin-bottom: 20px; }
+    .seo-service-block .city-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .seo-service-block .city-tag { background: #fff; color: #1f4c35; border: 1px solid #e5e7eb; padding: 4px 12px; border-radius: 6px; font-size: 13px; font-weight: 600; }
   </style>
 
   <div id="page-container">
@@ -3143,6 +3185,44 @@ header,
         </aside>
       </div>
     </section>
+    <section class="seo-service-block">
+      <div class="wrap">
+        <div class="seo-toggle-header" onclick="toggleSeoContent()">
+          About JCD Tree Service & Landscaping <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="seo-content" id="seoContent">
+          <h3>Full-Service Seasonal Maintenance in Fairfield County, CT</h3>
+          <p>
+            Ensure your property looks its best all year round with **professional seasonal maintenance in Fairfield County, CT**. From comprehensive spring cleanups and mulching to leaf removal and winter preparation, JCD Tree Service & Landscaping provides the recurring care your landscape needs to stay healthy and beautiful through every season. We handle the hard work so you can simply enjoy your outdoor space.
+          </p>
+          <p>
+            Each season brings unique challenges to your landscape. Our **spring cleanups** focus on removing winter debris, edging beds, and applying fresh mulch to suppress weeds and retain moisture. During the fall, our **comprehensive leaf removal** and gutter cleaning ensure your property remains tidy and your lawn isn't smothered. We provide year-round support, including pruning, fertilization, and specialized care to protect your investment from the elements. Fully licensed and insured, JCD is your reliable partner for consistent, high-quality property maintenance in Connecticut.
+          </p>
+
+          <h3>Spring/Fall Cleanups, Mulching & Lawn Care</h3>
+          <p>
+            Consistency is the key to a thriving landscape. Our seasonal programs are designed to address your property's needs exactly when they occur. We use professional-grade equipment to ensure a thorough job every time, from precision trimming of perennials to the final blow-off of your driveway. By choosing JCD, you're ensuring that your property maintains its curb appeal and health 365 days a year.
+          </p>
+
+          <h3>Serving Homeowners Across Fairfield County</h3>
+          <p>
+            We provide seasonal maintenance services to all major cities in Fairfield County, including:
+          </p>
+          <div class="city-tags">
+            <span class="city-tag">Stamford</span> <span class="city-tag">Norwalk</span> <span class="city-tag">Bridgeport</span> 
+            <span class="city-tag">Fairfield</span> <span class="city-tag">Greenwich</span> <span class="city-tag">Darien</span> 
+            <span class="city-tag">Westport</span> <span class="city-tag">New Canaan</span> <span class="city-tag">Wilton</span> 
+            <span class="city-tag">Weston</span> <span class="city-tag">Trumbull</span> <span class="city-tag">Stratford</span>
+          </div>
+
+          <h3>Contact Us for a Seasonal Maintenance Plan</h3>
+          <p>
+            Ready to take the work out of your weekends? Contact JCD Tree Service & Landscaping at **(475) 434-5969** for a free consultation and estimate on a customized seasonal maintenance plan. Let us help you keep your Connecticut home looking pristine through every change of the season.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <footer class="footer" id="contact">
       <div class="wrap">
         <div class="footer-grid reveal">
@@ -3735,6 +3815,14 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+  <script>
+    function toggleSeoContent() {
+      const content = document.getElementById('seoContent');
+      const header = document.querySelector('.seo-toggle-header');
+      content.classList.toggle('active');
+      header.classList.toggle('active');
+    }
+  </script>
 </body>
 
 </html>

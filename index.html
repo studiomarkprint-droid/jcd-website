@@ -5,37 +5,70 @@
   <script>if (history.scrollRestoration) history.scrollRestoration = "manual"; window.scrollTo(0, 0); window.addEventListener("load", function () { window.scrollTo(0, 0); });</script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>JCD Tree Service & Landscaping</title>
-  <meta name="description" content="Professional tree services and landscaping in Fairfield County, CT. JCD Tree Service & Landscaping offers expert tree removal, trimming, and landscape design." />
-  <meta property="og:title" content="JCD Tree Service & Landscaping" />
-  <meta property="og:description" content="Professional tree services and landscaping in Fairfield County, CT. Trusted experts for tree removal, trimming, and landscape design." />
+  <title>JCD Tree Service & Landscaping | Expert Tree Removal & Landscape Design in CT</title>
+  <meta name="description" content="JCD Tree Service & Landscaping provides professional tree removal, trimming, and landscape design in Fairfield County, CT. 24/7 Emergency storm response. Call (475) 434-5969." />
+  <link rel="canonical" href="https://jcdtreeserviceslandscaping.com/" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="JCD Tree Service & Landscaping | CT Tree Experts" />
+  <meta property="og:description" content="Professional tree removal, trimming, and landscaping in Fairfield County, CT. Licensed and insured experts." />
   <meta property="og:image" content="https://jcdtreeserviceslandscaping.com/og-image.png" />
   <meta property="og:url" content="https://jcdtreeserviceslandscaping.com/" />
   <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="JCD Tree Service & Landscaping | CT Tree Experts" />
+  <meta name="twitter:description" content="Professional tree removal and landscaping in Fairfield County, CT. 24/7 Emergency response." />
+  <meta name="twitter:image" content="https://jcdtreeserviceslandscaping.com/og-image.png" />
+
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   
+  <!-- Structured Data (Schema) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "HomeAndConstructionBusiness",
     "name": "JCD Tree Service & Landscaping",
+    "alternateName": "JCD Tree Removal",
     "url": "https://jcdtreeserviceslandscaping.com",
     "logo": "https://jcdtreeserviceslandscaping.com/og-image.png",
     "image": "https://jcdtreeserviceslandscaping.com/og-image.png",
-    "description": "Professional tree services and landscaping in Fairfield County, CT.",
+    "description": "Professional tree services and landscaping in Fairfield County, CT. Expert tree removal, trimming, and landscape design.",
+    "telephone": "+1-475-434-5969",
+    "email": "jcdtreeservice@gmail.com",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Fairfield County",
       "addressRegion": "CT",
       "addressCountry": "US"
     },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+1-475-434-5969",
-      "contactType": "customer service"
-    }
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 41.1792,
+      "longitude": -73.1894
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Bridgeport" },
+      { "@type": "City", "name": "Norwalk" },
+      { "@type": "City", "name": "Stamford" },
+      { "@type": "City", "name": "Fairfield" },
+      { "@type": "City", "name": "Greenwich" }
+    ],
+    "hasMap": "https://www.google.com/maps?cid=YOUR_CID_HERE",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "sameAs": [
+      "https://www.facebook.com/JCfourseasons",
+      "https://www.instagram.com/jcd.treeservices/"
+    ]
   }
   </script>
 
@@ -2892,6 +2925,85 @@
     #about .services-list i {
       display: none !important;
     }
+
+    /* ========== SEO SECTION (INSIDE SOCIAL) ========== */
+    .seo-social-block {
+      grid-column: 1 / -1;
+      margin-top: 40px;
+      padding: 40px;
+      background: #f8faf9;
+      border-radius: 14px;
+      border: 1px solid #e5e7eb;
+      text-align: center;
+    }
+
+    .seo-social-block .seo-toggle-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      color: #1f4c35;
+      font-weight: 700;
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: opacity 0.3s ease;
+    }
+
+    .seo-social-block .seo-toggle-header:hover {
+      opacity: 0.8;
+    }
+
+    .seo-social-block .seo-toggle-header i {
+      transition: transform 0.3s ease;
+    }
+
+    .seo-social-block .seo-toggle-header.active i {
+      transform: rotate(180deg);
+    }
+
+    .seo-social-block .seo-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+      text-align: left;
+    }
+
+    .seo-social-block .seo-content.active {
+      max-height: 4000px;
+      transition: max-height 1s ease-in-out;
+      padding-top: 30px;
+    }
+
+    .seo-social-block .seo-content h3 {
+      color: #0f172a;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .seo-social-block .seo-content p {
+      color: #4b5563;
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .seo-social-block .city-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .seo-social-block .city-tag {
+      background: #fff;
+      color: #1f4c35;
+      border: 1px solid #e5e7eb;
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+    }
   </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18016426896"></script>
@@ -3866,10 +3978,59 @@
           </iframe>
         </div>
       </div>
-    </section>
+      <div class="seo-social-block">
+        <div class="seo-toggle-header" onclick="toggleSeoContent()">
+          About JCD Tree Service & Landscaping <i class="fa-solid fa-chevron-down" style="margin-left: 10px;"></i>
+        </div>
+        <div class="seo-content" id="seoContent">
+          <h3>Expert Tree Removal & Professional Landscaping in Fairfield County, CT</h3>
+          <p>
+            Welcome to <strong>JCD Tree Service & Landscaping</strong>, your premier partner for comprehensive property care throughout Fairfield County, Connecticut. With over two decades of dedicated experience, we have established ourselves as the region's leading experts in <strong>professional tree removal services</strong>. Our mission is to provide safe, efficient, and affordable solutions for residential and commercial properties, ensuring your outdoor environment remains safe, beautiful, and thriving.
+          </p>
 
+          <h3>24/7 Emergency Tree Service & Storm Damage Response</h3>
+          <p>
+            Connecticut weather can be unpredictable, often bringing high winds and severe storms that threaten your property's safety. JCD is proud to offer a <strong>24/7 emergency tree service</strong>, providing rapid response when you need it most. Whether a tree has fallen on your home or hazardous limbs are looming over your driveway, our team utilizes advanced equipment, including specialized cranes and bucket trucks, to perform <strong>hazardous tree removals</strong> with precision and care, even in the most challenging conditions.
+          </p>
+
+          <h3>Complete Landscape Design, Hardscaping, & Site Development</h3>
+          <p>
+            Transform your backyard into a stunning outdoor sanctuary with our <strong>custom landscape design</strong> and <strong>hardscaping</strong> expertise. From elegant stone patios and custom paver walkways to structural retaining walls, we combine superior masonry techniques with artistic vision. Our full-service approach includes <strong>sod installation</strong> for instant curb appeal, professional <strong>mulching</strong> for soil health, and comprehensive <strong>lot clearing</strong> to prepare your site for new construction or expansion projects.
+          </p>
+
+          <h3>Proudly Serving Fairfield County & Surrounding Areas</h3>
+          <p>
+            Our commitment to excellence extends across the entire region. We bring professional-grade equipment and local expertise to every neighborhood we serve. JCD is the top choice for property owners in:
+          </p>
+          <div class="city-tags">
+            <span class="city-tag">Stamford, CT</span>
+            <span class="city-tag">Norwalk, CT</span>
+            <span class="city-tag">Bridgeport, CT</span>
+            <span class="city-tag">Fairfield, CT</span>
+            <span class="city-tag">Greenwich, CT</span>
+            <span class="city-tag">Darien, CT</span>
+            <span class="city-tag">Westport, CT</span>
+            <span class="city-tag">New Canaan, CT</span>
+            <span class="city-tag">Wilton, CT</span>
+            <span class="city-tag">Weston, CT</span>
+            <span class="city-tag">Trumbull, CT</span>
+            <span class="city-tag">Stratford, CT</span>
+            <span class="city-tag">Shelton, CT</span>
+            <span class="city-tag">Milford, CT</span>
+          </div>
+
+          <h3>Why Choose JCD Tree Service & Landscaping?</h3>
+          <p>
+            When you hire JCD, you are choosing a company that is fully <strong>licensed and insured (HIC #0660601)</strong>, giving you total peace of mind. We specialize in low-impact tree care, meaning we protect your lawn and existing gardens during every phase of the job. From precision <strong>tree trimming</strong> and <strong>stump grinding</strong> to large-scale <strong>land clearing</strong>, we handle every project with the same level of safety and meticulous cleanup.
+          </p>
+          <p>
+            <strong>Call us today at (475) 434-5969</strong> for a free, no-obligation estimate. Discover why JCD is Fairfield County's most trusted name for professional tree removal, masonry, and landscape maintenance.
+          </p>
+        </div>
+      </div>
+    </section>
     <!-- Footer columns like video -->
-    <footer class="footer">
+    <footer class="footer" id="contact">
       <div class="wrap">
         <div class="footer-grid reveal">
           <div>
@@ -3902,7 +4063,6 @@
         </div>
       </div>
     </footer>
-
     <div class="legal" id="accessibility">
       Privacy Policy | Manage Consent Preferences | Website Accessibility Policy<br>
       © <span id="year"></span> JCD Tree Service &amp; Landscaping. All rights reserved.
@@ -4250,6 +4410,13 @@
         this.navigateTo(url);
       }
     };
+
+    function toggleSeoContent() {
+      const content = document.getElementById('seoContent');
+      const header = document.querySelector('.seo-toggle-header');
+      content.classList.toggle('active');
+      header.classList.toggle('active');
+    }
 
     /* JCD Common Scripts */
     window.JCD = {

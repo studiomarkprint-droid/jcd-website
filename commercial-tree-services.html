@@ -2519,6 +2519,48 @@
     #about .services-list i {
       display: none !important;
     }
+    /* ========== SEO SECTION (SERVICE PAGES) ========== */
+    .seo-service-block {
+      background: #f8faf9;
+      padding: 60px 0;
+      border-top: 1px solid #e5e7eb;
+      text-align: center;
+    }
+    .seo-service-block .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .seo-service-block .seo-toggle-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      color: #1f4c35;
+      font-weight: 700;
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: opacity 0.3s ease;
+    }
+    .seo-service-block .seo-toggle-header:hover { opacity: 0.8; }
+    .seo-service-block .seo-toggle-header i { transition: transform 0.3s ease; }
+    .seo-service-block .seo-toggle-header.active i { transform: rotate(180deg); }
+    .seo-service-block .seo-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+      text-align: left;
+    }
+    .seo-service-block .seo-content.active {
+      max-height: 4000px;
+      transition: max-height 1s ease-in-out;
+      padding-top: 30px;
+    }
+    .seo-service-block .seo-content h3 { color: #0f172a; font-size: 24px; margin-bottom: 15px; }
+    .seo-service-block .seo-content p { color: #4b5563; font-size: 15px; line-height: 1.7; margin-bottom: 20px; }
+    .seo-service-block .city-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .seo-service-block .city-tag { background: #fff; color: #1f4c35; border: 1px solid #e5e7eb; padding: 4px 12px; border-radius: 6px; font-size: 13px; font-weight: 600; }
   </style>
 <style id="header-parity-index">.site-header {
       will-change: transform;
@@ -3244,6 +3286,44 @@ header,
         </aside>
       </div>
     </section>
+    <section class="seo-service-block">
+      <div class="wrap">
+        <div class="seo-toggle-header" onclick="toggleSeoContent()">
+          About JCD Tree Service & Landscaping <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="seo-content" id="seoContent">
+          <h3>Professional Commercial Tree Services in Fairfield County, CT</h3>
+          <p>
+            Protect your business assets and ensure the safety of your clients with **professional commercial tree services in Fairfield County, CT**. JCD Tree Service & Landscaping provides specialized arboreal care for commercial properties, corporate campuses, and municipal spaces. From proactive risk assessments and structural pruning to large-scale emergency removals, we offer the scale and expertise required to maintain a safe and attractive commercial environment.
+          </p>
+          <p>
+            Commercial properties require a unique level of precision and reliability. Our team is equipped with advanced technology, including cranes and high-reach bucket trucks, to handle any job with minimal disruption to your daily operations. We work closely with property managers and business owners to create comprehensive tree management plans that mitigate risk and enhance property value. Fully licensed and insured (HIC #0660601), JCD is your trusted partner for high-quality, professional-grade tree care in Connecticut.
+          </p>
+
+          <h3>Site Management, Risk Assessment & Emergency Response</h3>
+          <p>
+            We provide 24/7 emergency response for commercial clients, ensuring that storm damage is cleared rapidly to maintain business continuity. Our arborists are experts in diagnosing health issues and providing structural support systems for mature trees. By choosing JCD, you're ensuring that your commercial landscape remains a safe, welcoming, and professional environment for your employees and visitors.
+          </p>
+
+          <h3>Serving Businesses Across Fairfield County</h3>
+          <p>
+            We provide commercial tree care to businesses and municipalities throughout the region, including:
+          </p>
+          <div class="city-tags">
+            <span class="city-tag">Stamford</span> <span class="city-tag">Norwalk</span> <span class="city-tag">Bridgeport</span> 
+            <span class="city-tag">Fairfield</span> <span class="city-tag">Greenwich</span> <span class="city-tag">Darien</span> 
+            <span class="city-tag">Westport</span> <span class="city-tag">New Canaan</span> <span class="city-tag">Wilton</span> 
+            <span class="city-tag">Weston</span> <span class="city-tag">Trumbull</span> <span class="city-tag">Stratford</span>
+          </div>
+
+          <h3>Schedule a Commercial Consultation</h3>
+          <p>
+            Looking for a reliable partner for your commercial property care? Contact JCD Tree Service & Landscaping at **(475) 434-5969** for a free consultation and estimate. Let us show you how our professional tree services can benefit your business.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <footer class="footer" id="contact">
       <div class="wrap">
         <div class="footer-grid reveal">
@@ -3839,6 +3919,14 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+  <script>
+    function toggleSeoContent() {
+      const content = document.getElementById('seoContent');
+      const header = document.querySelector('.seo-toggle-header');
+      content.classList.toggle('active');
+      header.classList.toggle('active');
+    }
+  </script>
 </body>
 
 </html>

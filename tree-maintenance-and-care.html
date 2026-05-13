@@ -3135,6 +3135,44 @@ header,
         </aside>
       </div>
     </section>
+    <section class="seo-service-block">
+      <div class="wrap">
+        <div class="seo-toggle-header" onclick="toggleSeoContent()">
+          About JCD Tree Service & Landscaping <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="seo-content" id="seoContent">
+          <h3>Complete Tree Maintenance & Health Care in Fairfield County, CT</h3>
+          <p>
+            Preserve the legacy of your property's trees with **expert tree maintenance in Fairfield County, CT**. At JCD Tree Service & Landscaping, we go beyond basic cutting to provide comprehensive health management for your arboreal assets. Our team specializes in diagnosing tree diseases, managing pest infestations, and providing deep-root fertilization to ensure your trees remain vibrant and resilient. Proper care today prevents costly removals tomorrow, protecting both your property's beauty and its market value.
+          </p>
+          <p>
+            From seasonal inspections to specialized soil treatments, we provide a proactive approach to tree care. We understand the specific challenges faced by Connecticut's native species and offer tailored solutions to combat environmental stress and structural weaknesses. Fully licensed and insured, JCD is your partner in sustainable property management, ensuring your trees grow safely and beautifully for generations.
+          </p>
+
+          <h3>Tree Health Diagnosis, Fertilization & Risk Assessment</h3>
+          <p>
+            We offer professional tree risk assessments to identify potential hazards before they become emergencies. Our fertilization programs are designed to restore nutrients to compacted soils, boosting tree immunity and vigor. By choosing our **professional tree care services**, you are ensuring that your landscape remains a safe and healthy environment for your family and community.
+          </p>
+
+          <h3>Reliable Service Across the Region</h3>
+          <p>
+            We provide tree maintenance and care services to all major cities in Fairfield County, including:
+          </p>
+          <div class="city-tags">
+            <span class="city-tag">Stamford</span> <span class="city-tag">Norwalk</span> <span class="city-tag">Bridgeport</span> 
+            <span class="city-tag">Fairfield</span> <span class="city-tag">Greenwich</span> <span class="city-tag">Darien</span> 
+            <span class="city-tag">Westport</span> <span class="city-tag">New Canaan</span> <span class="city-tag">Wilton</span> 
+            <span class="city-tag">Weston</span> <span class="city-tag">Trumbull</span> <span class="city-tag">Stratford</span>
+          </div>
+
+          <h3>Contact Us for a Professional Assessment</h3>
+          <p>
+            Is your favorite tree looking stressed or unhealthy? Contact JCD Tree Service & Landscaping at **(475) 434-5969** for a professional tree health assessment and estimate. Let our experts help you preserve the natural beauty of your Connecticut home.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <footer class="footer" id="contact">
       <div class="wrap">
         <div class="footer-grid reveal">
@@ -3727,6 +3765,14 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+  <script>
+    function toggleSeoContent() {
+      const content = document.getElementById('seoContent');
+      const header = document.querySelector('.seo-toggle-header');
+      content.classList.toggle('active');
+      header.classList.toggle('active');
+    }
+  </script>
 </body>
 
 </html>

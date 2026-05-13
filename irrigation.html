@@ -2985,6 +2985,48 @@ header,
         position: static;
       }
     }
+    /* ========== SEO SECTION (SERVICE PAGES) ========== */
+    .seo-service-block {
+      background: #f8faf9;
+      padding: 60px 0;
+      border-top: 1px solid #e5e7eb;
+      text-align: center;
+    }
+    .seo-service-block .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .seo-service-block .seo-toggle-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      color: #1f4c35;
+      font-weight: 700;
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: opacity 0.3s ease;
+    }
+    .seo-service-block .seo-toggle-header:hover { opacity: 0.8; }
+    .seo-service-block .seo-toggle-header i { transition: transform 0.3s ease; }
+    .seo-service-block .seo-toggle-header.active i { transform: rotate(180deg); }
+    .seo-service-block .seo-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+      text-align: left;
+    }
+    .seo-service-block .seo-content.active {
+      max-height: 4000px;
+      transition: max-height 1s ease-in-out;
+      padding-top: 30px;
+    }
+    .seo-service-block .seo-content h3 { color: #0f172a; font-size: 24px; margin-bottom: 15px; }
+    .seo-service-block .seo-content p { color: #4b5563; font-size: 15px; line-height: 1.7; margin-bottom: 20px; }
+    .seo-service-block .city-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .seo-service-block .city-tag { background: #fff; color: #1f4c35; border: 1px solid #e5e7eb; padding: 4px 12px; border-radius: 6px; font-size: 13px; font-weight: 600; }
   </style>
 
   <div id="page-container">
@@ -3148,6 +3190,44 @@ header,
         </aside>
       </div>
     </section>
+    <section class="seo-service-block">
+      <div class="wrap">
+        <div class="seo-toggle-header" onclick="toggleSeoContent()">
+          About JCD Tree Service & Landscaping <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="seo-content" id="seoContent">
+          <h3>Custom Irrigation & Pond Services in Fairfield County, CT</h3>
+          <p>
+            Keep your landscape thriving with **custom irrigation and pond services in Fairfield County, CT**. At JCD Tree Service & Landscaping, we design and install efficient watering systems that ensure your plants and lawn receive the perfect amount of hydration. Beyond irrigation, we specialize in the creation and maintenance of beautiful backyard ponds and water features, adding a touch of tranquility and luxury to your outdoor environment.
+          </p>
+          <p>
+            A healthy landscape depends on consistent, well-managed water. Our **professional irrigation systems** are designed to maximize water efficiency, utilizing smart controllers and precision spray patterns to minimize waste. Whether you're installing a new system or upgrading an existing one, our team provides full-service support, from trenching and piping to seasonal startup and winterization. Fully licensed and insured, JCD is your partner for sustainable and beautiful water management in Connecticut.
+          </p>
+
+          <h3>Smart Irrigation, Pond Maintenance & Water Features</h3>
+          <p>
+            We take pride in our ability to integrate water into your landscape beautifully. Our pond services include design, filtration setup, and ongoing maintenance to ensure your water feature remains clear and healthy. If you're looking to enhance your property with a waterfall, stream, or garden pond, JCD provides the technical expertise and artistic vision to make it happen.
+          </p>
+
+          <h3>Serving Homeowners Across the Region</h3>
+          <p>
+            We provide irrigation and pond services to residents and businesses throughout Fairfield County, including:
+          </p>
+          <div class="city-tags">
+            <span class="city-tag">Stamford</span> <span class="city-tag">Norwalk</span> <span class="city-tag">Bridgeport</span> 
+            <span class="city-tag">Fairfield</span> <span class="city-tag">Greenwich</span> <span class="city-tag">Darien</span> 
+            <span class="city-tag">Westport</span> <span class="city-tag">New Canaan</span> <span class="city-tag">Wilton</span> 
+            <span class="city-tag">Weston</span> <span class="city-tag">Trumbull</span> <span class="city-tag">Stratford</span>
+          </div>
+
+          <h3>Schedule Your Free Water Feature Consultation</h3>
+          <p>
+            Ready to enhance your property with custom irrigation or a new pond? Contact JCD Tree Service & Landscaping at **(475) 434-5969** for a free consultation and estimate. Let us show you why we are the preferred choice for water management and luxury outdoor features in Fairfield County.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <footer class="footer" id="contact">
       <div class="wrap">
         <div class="footer-grid reveal">
@@ -3740,6 +3820,14 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+  <script>
+    function toggleSeoContent() {
+      const content = document.getElementById('seoContent');
+      const header = document.querySelector('.seo-toggle-header');
+      content.classList.toggle('active');
+      header.classList.toggle('active');
+    }
+  </script>
 </body>
 
 </html>

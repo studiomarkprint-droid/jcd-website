@@ -5,16 +5,46 @@
   <script>if (history.scrollRestoration) history.scrollRestoration = "manual"; window.scrollTo(0, 0); window.addEventListener("load", function () { window.scrollTo(0, 0); });</script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Tree Removal Services Fairfield County CT | JCD Tree & Landscaping</title>
-  <meta name="description" content="Professional tree removal in Fairfield County, CT. JCD Tree Service & Landscaping provides safe, efficient tree removal and lot clearing. Free estimates available." />
-  <meta property="og:title" content="JCD Tree Service & Landscaping" />
-  <meta property="og:description" content="Professional tree services and landscaping in Fairfield County, CT. Trusted experts for tree removal, trimming, and landscape design." />
-  <meta property="og:image" content="https://jcdtreeserviceslandscaping.com/og-image.png" />
-  <meta property="og:url" content="https://jcdtreeserviceslandscaping.com/" />
+  <title>Professional Tree Removal Services Fairfield County, CT | JCD</title>
+  <meta name="description" content="Expert tree removal services in Fairfield County, CT. JCD Tree Service & Landscaping provides safe, professional tree removal, lot clearing, and emergency response. Free estimates." />
+  <link rel="canonical" href="https://jcdtreeserviceslandscaping.com/tree-removal.html" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Expert Tree Removal Services in CT | JCD Tree & Landscaping" />
+  <meta property="og:description" content="Safe and professional tree removal in Fairfield County. 24/7 emergency storm damage response. Licensed and insured." />
+  <meta property="og:image" content="https://jcdtreeserviceslandscaping.com/Tree%20removal/IMG_0677.JPG" />
+  <meta property="og:url" content="https://jcdtreeserviceslandscaping.com/tree-removal.html" />
   <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tree Removal Fairfield County, CT | JCD" />
+  <meta name="twitter:description" content="Professional tree removal and lot clearing in CT. 24/7 Emergency response." />
+  <meta name="twitter:image" content="https://jcdtreeserviceslandscaping.com/Tree%20removal/IMG_0677.JPG" />
+
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+  <!-- Structured Data (Schema) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Tree Removal",
+    "provider": {
+      "@type": "HomeAndConstructionBusiness",
+      "name": "JCD Tree Service & Landscaping",
+      "telephone": "+1-475-434-5969",
+      "url": "https://jcdtreeserviceslandscaping.com"
+    },
+    "areaServed": {
+      "@type": "State",
+      "name": "Connecticut"
+    },
+    "description": "Safe and professional removal of dead, hazardous, or unwanted trees in Fairfield County, CT."
+  }
+  </script>
 
   <!-- Fonts (match Aubrey) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -2453,6 +2483,48 @@
     #about .services-list i {
       display: none !important;
     }
+    /* ========== SEO SECTION (SERVICE PAGES) ========== */
+    .seo-service-block {
+      background: #f8faf9;
+      padding: 60px 0;
+      border-top: 1px solid #e5e7eb;
+      text-align: center;
+    }
+    .seo-service-block .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .seo-service-block .seo-toggle-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      color: #1f4c35;
+      font-weight: 700;
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: opacity 0.3s ease;
+    }
+    .seo-service-block .seo-toggle-header:hover { opacity: 0.8; }
+    .seo-service-block .seo-toggle-header i { transition: transform 0.3s ease; }
+    .seo-service-block .seo-toggle-header.active i { transform: rotate(180deg); }
+    .seo-service-block .seo-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+      text-align: left;
+    }
+    .seo-service-block .seo-content.active {
+      max-height: 4000px;
+      transition: max-height 1s ease-in-out;
+      padding-top: 30px;
+    }
+    .seo-service-block .seo-content h3 { color: #0f172a; font-size: 24px; margin-bottom: 15px; }
+    .seo-service-block .seo-content p { color: #4b5563; font-size: 15px; line-height: 1.7; margin-bottom: 20px; }
+    .seo-service-block .city-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .seo-service-block .city-tag { background: #fff; color: #1f4c35; border: 1px solid #e5e7eb; padding: 4px 12px; border-radius: 6px; font-size: 13px; font-weight: 600; }
   </style>
 <style id="header-parity-index">.site-header {
       will-change: transform;
@@ -3129,6 +3201,44 @@ header,
         </aside>
       </div>
     </section>
+    <section class="seo-service-block">
+      <div class="wrap">
+        <div class="seo-toggle-header" onclick="toggleSeoContent()">
+          About JCD Tree Service & Landscaping <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="seo-content" id="seoContent">
+          <h3>Expert Tree Removal Services in Fairfield County, CT</h3>
+          <p>
+            When it comes to <strong>professional tree removal in Fairfield County, CT</strong>, JCD Tree Service & Landscaping is the name you can trust. We specialize in the safe and precise removal of hazardous, diseased, or unwanted trees from your residential or commercial property. With over 20 years of experience and a fleet of advanced equipment including cranes and bucket trucks, we handle even the most complex removals with ease and surgical precision.
+          </p>
+          <p>
+            Our commitment to safety is unmatched. We are fully <strong>licensed and insured (HIC #0660601)</strong>, and our team includes OSHA-certified professionals. We don't just cut down trees; we provide a complete solution including site assessment, specialized rigging, and meticulous cleanup, ensuring your lawn and structures remain undamaged.
+          </p>
+
+          <h3>24/7 Emergency Tree Service & Storm Response</h3>
+          <p>
+            Storms can strike at any time, leaving your property vulnerable. That's why JCD offers <strong>24/7 emergency tree removal</strong> throughout Fairfield County. Whether it's a fallen oak on your roof or a dangerous limb hanging over your driveway, our rapid response team is ready to secure your property and prevent further damage.
+          </p>
+
+          <h3>Serving Your Local Community</h3>
+          <p>
+            We are proud to serve homeowners and businesses across all major cities in Fairfield County, including:
+          </p>
+          <div class="city-tags">
+            <span class="city-tag">Stamford</span> <span class="city-tag">Norwalk</span> <span class="city-tag">Bridgeport</span> 
+            <span class="city-tag">Fairfield</span> <span class="city-tag">Greenwich</span> <span class="city-tag">Darien</span> 
+            <span class="city-tag">Westport</span> <span class="city-tag">New Canaan</span> <span class="city-tag">Wilton</span> 
+            <span class="city-tag">Weston</span> <span class="city-tag">Trumbull</span> <span class="city-tag">Stratford</span>
+          </div>
+
+          <h3>Why Choose JCD?</h3>
+          <p>
+            Choosing JCD means choosing quality, reliability, and peace of mind. Beyond removal, we offer <strong>stump grinding</strong>, <strong>lot clearing</strong>, and <strong>tree maintenance</strong> to keep your property looking its best. Call us today at <strong>(475) 434-5969</strong> for a free estimate and see why we are the top-rated tree service in Connecticut.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <footer class="footer" id="contact">
       <div class="wrap">
         <div class="footer-grid reveal">
@@ -3721,6 +3831,14 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+  <script>
+    function toggleSeoContent() {
+      const content = document.getElementById('seoContent');
+      const header = document.querySelector('.seo-toggle-header');
+      content.classList.toggle('active');
+      header.classList.toggle('active');
+    }
+  </script>
 </body>
 
 </html>
